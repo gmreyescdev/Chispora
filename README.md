@@ -39,11 +39,13 @@ Cada juego tendrá tres niveles de dificultad y sesiones sugeridas de entre 5 y 
 - [Ruta personal de aprendizaje](docs/09-ruta-de-aprendizaje.md)
 - [Camino de producto a empresa](docs/10-de-producto-a-empresa.md)
 - [Glosario técnico](docs/11-glosario.md)
+- [Mapa de pantallas y recorridos](docs/12-mapa-de-pantallas-y-recorridos.md)
+- [Especificación del primer prototipo](docs/13-especificacion-del-mvp.md)
 - [Historial de versiones](CHANGELOG.md)
 
 ## Estado
 
-Fase 0: definición y documentación inicial.
+Fase 0 completada: definición y documentación inicial. Fase 1 iniciada: diseño del primer prototipo.
 
 - **Dominio:** `chispora.cl` adquirido por el propietario del proyecto.
 - **Marca CHISPORA:** disponibilidad preliminar informada; todavía no solicitada ni registrada en INAPI.

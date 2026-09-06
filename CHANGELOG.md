@@ -13,4 +13,5 @@ Los cambios importantes de Chispora se registran aquí. El proyecto utiliza un e
 - Registro del dominio `chispora.cl` como adquirido.
 - Estado preliminar de la marca y guía de registro.
 - Sistema de documentación, bitácora, ruta de aprendizaje y glosario.
-
+- Mapa de nueve pantallas y recorridos de niño y adulto.
+- Especificación y criterios de aceptación del primer prototipo con Memorama.

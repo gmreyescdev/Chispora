@@ -9,6 +9,8 @@
 
 ## Fase 1 — MVP local
 
+- Definir mapa de pantallas y recorridos principales. **Completado.**
+- Definir criterios verificables del primer prototipo. **Completado.**
 - Crear inicio y selector de misiones.
 - Implementar perfil local con avatar y apodo no identificable.
 - Construir Memorama y Operación misteriosa.
@@ -45,4 +47,3 @@
 - Resultado explicado sin castigos ni mensajes negativos.
 - Sesión con principio y final.
 - Pruebas de funcionamiento y revisión por un adulto.
-

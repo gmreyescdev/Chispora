@@ -52,3 +52,25 @@ Convertir el desarrollo de Chispora en una experiencia comprensible y reutilizab
 ### Próximo paso
 
 Definir el mapa de pantallas, los recorridos de niño y adulto, y los criterios de aceptación del primer prototipo.
+
+## 5 de septiembre de 2026 — Arquitectura de experiencia
+
+### Objetivo
+
+Convertir la visión del producto en pantallas, recorridos y comportamientos verificables antes de escribir código.
+
+### Trabajo realizado
+
+- Se definieron nueve pantallas para el primer prototipo.
+- Se separaron los recorridos infantil y adulto.
+- Se documentaron el primer uso, una sesión normal y la sugerencia de descanso.
+- Se definió Memorama como único juego completo del primer incremento.
+- Se establecieron criterios funcionales, visuales, educativos y de accesibilidad.
+
+### Aprendizaje técnico
+
+Diseñar el flujo antes de programar reduce retrabajo: permite encontrar pantallas ausentes, ciclos confusos y responsabilidades mal ubicadas cuando todavía son fáciles de cambiar.
+
+### Próximo paso
+
+Crear wireframes visuales de baja fidelidad y luego construir la estructura HTML navegable.
