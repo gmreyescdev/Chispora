@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-labelledby="title desc">
+  <title id="title">Símbolo de Chispora</title>
+  <desc id="desc">Una chispa amarilla rodeada por una ruta turquesa y coral.</desc>
+  <circle cx="128" cy="128" r="116" fill="#FFF8E8"/>
+  <path d="M52 139c-4-49 31-91 79-95 31-3 61 11 79 35" fill="none" stroke="#2EC4B6" stroke-width="14" stroke-linecap="round" stroke-dasharray="3 25"/>
+  <path d="M204 90c15 29 12 65-8 91-23 31-64 42-100 29" fill="none" stroke="#FF6B5E" stroke-width="14" stroke-linecap="round"/>
+  <path d="M128 64c8 39 25 56 64 64-39 8-56 25-64 64-8-39-25-56-64-64 39-8 56-25 64-64Z" fill="#FFC857" stroke="#17324D" stroke-width="8" stroke-linejoin="round"/>
+  <circle cx="204" cy="90" r="10" fill="#70B7FF" stroke="#17324D" stroke-width="6"/>
+</svg>

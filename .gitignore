@@ -1,0 +1,20 @@
+# Archivos del sistema operativo y editores
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Archivos temporales y registros
+*.log
+*.tmp
+*.bak
+
+# Dependencias y resultados generados futuros
+node_modules/
+dist/
+coverage/
+
+# Variables y secretos locales
+.env
+.env.*
+!.env.example
