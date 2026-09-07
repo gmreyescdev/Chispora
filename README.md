@@ -42,11 +42,12 @@ Cada juego tendrá tres niveles de dificultad y sesiones sugeridas de entre 5 y 
 - [Mapa de pantallas y recorridos](docs/12-mapa-de-pantallas-y-recorridos.md)
 - [Especificación del primer prototipo](docs/13-especificacion-del-mvp.md)
 - [Wireframes de baja fidelidad](docs/14-wireframes-de-baja-fidelidad.md)
+- [Implementación del prototipo navegable](docs/15-implementacion-del-prototipo.md)
 - [Historial de versiones](CHANGELOG.md)
 
 ## Estado
 
-Fase 0 completada: definición y documentación inicial. Fase 1 iniciada: diseño del primer prototipo.
+Fase 0 completada: definición y documentación inicial. Fase 1 en progreso: prototipo HTML navegable construido.
 
 - **Dominio:** `chispora.cl` adquirido por el propietario del proyecto.
 - **Marca CHISPORA:** disponibilidad preliminar informada; todavía no solicitada ni registrada en INAPI.
@@ -54,3 +55,13 @@ Fase 0 completada: definición y documentación inicial. Fase 1 iniciada: diseñ
 ## Forma de trabajo
 
 Cada avance debe dejar cuatro rastros: código versionado, motivo de las decisiones, pruebas realizadas y una explicación en lenguaje sencillo. El sistema completo está descrito en la guía de documentación.
+
+## Abrir el prototipo
+
+Puedes abrir `index.html` directamente o iniciar un servidor local desde esta carpeta:
+
+```powershell
+python -m http.server 8765
+```
+
+Luego visita `http://localhost:8765/`. El servidor evita diferencias entre una vista local y el futuro alojamiento.

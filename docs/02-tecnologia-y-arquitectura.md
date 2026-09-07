@@ -14,20 +14,35 @@ La primera versión será una aplicación web estática. Esto reduce costos, fac
 - **localStorage:** guardar progreso únicamente en el dispositivo durante la primera etapa.
 - **PWA más adelante:** instalación opcional y funcionamiento sin conexión.
 
+## Estado técnico actual
+
+El primer prototipo utiliza:
+
+- `index.html` para las nueve pantallas y todo el contenido esencial.
+- `styles.css` para identidad, componentes y adaptación a distintos tamaños.
+- `main.js` para navegación, formularios, almacenamiento y demostraciones.
+- `lib/manifest.js` como configuración central de marca y valores iniciales.
+- GSAP como mejora visual opcional para transiciones.
+- `localStorage` para perfil y ajustes del navegador.
+
+No utiliza frameworks, compilación, servidor de aplicaciones ni base de datos. La carpeta de librerías conserva Lenis como recurso disponible del kit, pero `index.html` no lo carga ni lo ejecuta.
+
 ## Estructura prevista
 
 ```text
 WebDidactico/
 ├── index.html
-├── juegos/
+├── styles.css
+├── main.js
+├── .htaccess
 ├── assets/
-│   ├── audio/
-│   ├── iconos/
-│   └── imagenes/
-├── css/
-├── js/
-│   ├── juegos/
-│   └── componentes/
+│   ├── brand/
+│   ├── img/
+│   └── photos/source/
+├── lib/
+│   ├── manifest.js
+│   ├── gsap.min.js
+│   └── ScrollTrigger.min.js
 ├── docs/
 └── tests/
 ```
@@ -52,4 +67,3 @@ La elección del backend se realizará cuando existan requisitos concretos. Evit
 - Se probará navegación táctil, teclado y tamaños de pantalla habituales.
 - Los juegos tendrán pruebas de reglas, puntuación y niveles.
 - No se solicitarán nombre completo, fotografía, ubicación, escuela ni fecha de nacimiento exacta.
-

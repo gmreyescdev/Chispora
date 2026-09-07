@@ -93,6 +93,37 @@ Este archivo conserva las decisiones importantes y sus motivos. Se actualizará 
 - **Motivo:** refuerza que jugar tiene un final y evita convertir la continuidad en la opción por defecto.
 - **Estado:** aceptada.
 
+## D-014 — JavaScript progresivo sobre HTML completo
+
+- **Fecha:** 7 de septiembre de 2026.
+- **Decisión:** conservar las nueve pantallas y su contenido en HTML; JavaScript solamente oculta, navega y mejora la interacción.
+- **Motivo:** si JavaScript falla, el contenido sigue siendo visible y comprensible. También facilita accesibilidad, revisión y alojamiento estático.
+- **Alternativas consideradas:** generar todas las pantallas dinámicamente desde JavaScript o usar un framework SPA.
+- **Estado:** aceptada e implementada.
+
+## D-015 — Arquitectura Glassmorphism Modern adaptada
+
+- **Fecha:** 7 de septiembre de 2026.
+- **Decisión:** utilizar superficies claras translúcidas, formas redondeadas y gradientes suaves como dirección del prototipo.
+- **Motivo:** comunica tecnología amable y permite aplicar la identidad de Chispora sin una estética infantil excesiva.
+- **Límite:** todo componente translúcido tiene un fondo sólido de respaldo para conservar legibilidad.
+- **Estado:** aceptada para el prototipo.
+
+## D-016 — Navegación nativa sin ejecutar Lenis
+
+- **Fecha:** 7 de septiembre de 2026.
+- **Decisión:** usar desplazamiento nativo del navegador y no cargar Lenis en la página.
+- **Motivo:** reduce peso y evita inconsistencias de rueda, panel táctil y escalado en Windows. Chispora no necesita inercia especial para cumplir su propósito.
+- **Estado:** aceptada e implementada.
+
+## D-017 — Aplicación estática sin framework
+
+- **Fecha:** 7 de septiembre de 2026.
+- **Decisión:** construir con HTML, CSS y JavaScript sin React, Vue, paquetes npm ni proceso de compilación.
+- **Motivo:** el alcance actual es pequeño, puede alojarse fácilmente y permite aprender los fundamentos sin capas adicionales.
+- **Revisión futura:** si la complejidad de estado o equipo crece, se volverá a evaluar con evidencia.
+- **Estado:** aceptada para el MVP.
+
 ## Plantilla para próximas decisiones
 
 - **Fecha:**

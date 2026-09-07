@@ -16,3 +16,6 @@ Los cambios importantes de Chispora se registran aquí. El proyecto utiliza un e
 - Mapa de nueve pantallas y recorridos de niño y adulto.
 - Especificación y criterios de aceptación del primer prototipo con Memorama.
 - Wireframes navegables de las nueve pantallas del MVP.
+- Prototipo web con nueve pantallas, navegación, perfil local y panel familiar.
+- Tablero demostrativo de Memorama y diálogos de pausa y salida.
+- Configuración de caché, librerías locales y diseño adaptable.

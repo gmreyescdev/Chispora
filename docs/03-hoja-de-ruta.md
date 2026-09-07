@@ -12,8 +12,10 @@
 - Definir mapa de pantallas y recorridos principales. **Completado.**
 - Definir criterios verificables del primer prototipo. **Completado.**
 - Crear wireframes de baja fidelidad. **Completado.**
-- Crear inicio y selector de misiones.
-- Implementar perfil local con avatar y apodo no identificable.
+- Crear inicio y selector de misiones. **Prototipo navegable completado.**
+- Implementar perfil local con avatar y apodo no identificable. **Primera versión completada.**
+- Crear panel familiar con ajustes locales. **Primera versión completada.**
+- Implementar navegación, pausa y cierre de sesión. **Primera versión completada.**
 - Construir Memorama y Operación misteriosa.
 - Incorporar control de sonido, dificultad y tiempo.
 - Probar con adultos y luego en sesiones breves supervisadas.

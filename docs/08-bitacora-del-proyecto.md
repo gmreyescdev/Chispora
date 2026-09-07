@@ -96,3 +96,38 @@ Un wireframe representa estructura y comportamiento, no apariencia definitiva. S
 ### Próximo paso
 
 Construir un prototipo HTML navegable usando contenido real y sin implementar todavía la lógica completa de Memorama.
+
+## 7 de septiembre de 2026 — Primer prototipo navegable
+
+### Objetivo
+
+Transformar los wireframes en una web real sin ampliar todavía el alcance hacia un juego completo.
+
+### Trabajo realizado
+
+- Se construyeron las nueve pantallas en HTML semántico.
+- Se aplicó la identidad Chispora en CSS con diseño adaptable.
+- Se implementó navegación por hash, perfil local, selección de avatar y ajustes familiares.
+- Se añadió un tablero demostrativo, diálogos de pausa y salida, resultado y cierre de sesión.
+- Se incorporó acceso adulto por pulsación prolongada, descrito correctamente como barrera disuasoria.
+- Se configuró caché para alojamiento estático y versiones en los archivos CSS y JavaScript.
+
+### Verificación
+
+- Sintaxis de JavaScript comprobada con Node.
+- Verificador del proyecto: 11 controles correctos, 0 advertencias y 0 errores.
+- Servidor local: respuesta HTTP 200.
+- Documento servido con título, estilos, JavaScript y nueve pantallas detectados.
+- Navegación bienvenida → perfil → misiones comprobada en navegador.
+- Validación de apodo y selección de avatar comprobadas.
+- Cambio de dificultad, giro demostrativo de cartas y diálogo de pausa comprobados.
+- Vista móvil comprobada a 360 × 800 píxeles sin desbordamiento horizontal.
+- Consola del navegador revisada sin errores ni advertencias.
+
+### Aprendizaje técnico
+
+HTML contiene estructura y significado; CSS controla presentación; JavaScript agrega comportamiento. Mantener esas responsabilidades separadas facilita encontrar errores y reemplazar una parte sin reconstruir las demás.
+
+### Próximo paso
+
+Probar la navegación en el navegador, corregir detalles visuales observados y después implementar la lógica completa de Memorama con pruebas automatizadas.

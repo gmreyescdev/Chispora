@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Chispora es un espacio de juegos didácticos breves, tranquilos y seguros para niños de 7 a 9 años.">
+  <meta name="theme-color" content="#fff8e8">
+  <title>Chispora · Juega. Piensa. Descubre.</title>
+  <link rel="icon" href="assets/img/chispora-symbol.svg?v=20260907" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css?v=20260907">
+  <script defer src="lib/gsap.min.js?v=20260907"></script>
+  <script defer src="lib/ScrollTrigger.min.js?v=20260907"></script>
+  <script defer src="lib/manifest.js?v=20260907"></script>
+  <script defer src="main.js?v=20260907"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Saltar al contenido principal</a>
+
+  <div class="ambient" aria-hidden="true">
+    <span class="ambient-orb ambient-orb-coral"></span>
+    <span class="ambient-orb ambient-orb-blue"></span>
+    <span class="ambient-orb ambient-orb-yellow"></span>
+  </div>
+
+  <header class="site-header" data-app-header>
+    <button class="brand-link" type="button" data-go="bienvenida" aria-label="Ir a la bienvenida de Chispora">
+      <img src="assets/img/chispora-symbol.svg" alt="" width="44" height="44">
+      <span>Chispora</span>
+    </button>
+    <div class="header-actions">
+      <span class="profile-chip" data-profile-chip hidden>
+        <span data-profile-avatar aria-hidden="true">🦊</span>
+        <span data-profile-name>Explorador</span>
+      </span>
+      <button class="text-button" type="button" data-go="acceso-familias">Para familias</button>
+    </div>
+  </header>
+
+  <main id="main-content" class="app-shell">
+    <noscript>
+      <p class="noscript-note">Puedes leer todas las pantallas, pero la navegación interactiva necesita JavaScript.</p>
+    </noscript>
+
+    <section id="bienvenida" class="app-screen welcome-screen" data-screen="bienvenida" aria-labelledby="welcome-title">
+      <div class="welcome-copy">
+        <p class="eyebrow">Un lugar tranquilo para mentes curiosas</p>
+        <h1 id="welcome-title">Juega.<br>Piensa.<br><span>Descubre.</span></h1>
+        <p class="lead">Misiones breves para ejercitar la memoria, la lógica, la lectura y la creatividad sin anuncios ni chat.</p>
+        <div class="action-group">
+          <button class="button button-primary" type="button" data-go="perfil">Comenzar misión</button>
+          <button class="button button-secondary" type="button" data-go="acceso-familias">Conocer el espacio familiar</button>
+        </div>
+        <ul class="trust-list" aria-label="Principios de Chispora">
+          <li>Sin anuncios</li>
+          <li>Sin compras infantiles</li>
+          <li>Sesiones con final</li>
+        </ul>
+      </div>
+      <div class="welcome-visual" aria-hidden="true">
+        <div class="orbit orbit-large"></div>
+        <div class="orbit orbit-small"></div>
+        <img src="assets/img/chispora-symbol.svg" alt="" width="256" height="256">
+        <span class="visual-note visual-note-memory">Memoria</span>
+        <span class="visual-note visual-note-logic">Lógica</span>
+        <span class="visual-note visual-note-reading">Lectura</span>
+      </div>
+    </section>
+
+    <section id="perfil" class="app-screen panel-screen" data-screen="perfil" aria-labelledby="profile-title">
+      <div class="screen-heading">
+        <button class="back-button" type="button" data-go="bienvenida">← Volver</button>
+        <p class="eyebrow">Tu espacio</p>
+        <h2 id="profile-title">¿Cómo quieres llamarte?</h2>
+        <p>Puede ser un apodo inventado. No necesitamos tu nombre real.</p>
+      </div>
+
+      <form class="form-card" data-profile-form novalidate>
+        <label class="field-label" for="nickname">Apodo</label>
+        <input id="nickname" name="nickname" type="text" maxlength="12" autocomplete="off" aria-describedby="nickname-help nickname-error" required>
+        <p id="nickname-help" class="field-help">Entre 2 y 12 caracteres.</p>
+        <p id="nickname-error" class="field-error" data-nickname-error role="alert"></p>
+
+        <fieldset class="avatar-fieldset">
+          <legend>Elige tu explorador</legend>
+          <div class="avatar-grid" data-avatar-grid>
+            <button class="avatar-option is-selected" type="button" data-avatar="zorro" aria-pressed="true"><span aria-hidden="true">🦊</span><span>Zorro</span></button>
+            <button class="avatar-option" type="button" data-avatar="gato" aria-pressed="false"><span aria-hidden="true">🐱</span><span>Gato</span></button>
+            <button class="avatar-option" type="button" data-avatar="robot" aria-pressed="false"><span aria-hidden="true">🤖</span><span>Robot</span></button>
+            <button class="avatar-option" type="button" data-avatar="luna" aria-pressed="false"><span aria-hidden="true">🌙</span><span>Luna</span></button>
+          </div>
+        </fieldset>
+
+        <button class="button button-primary button-full" type="submit">Guardar y continuar</button>
+        <p class="privacy-note">El perfil se guarda únicamente en este navegador.</p>
+      </form>
+    </section>
+
+    <section id="misiones" class="app-screen" data-screen="misiones" aria-labelledby="missions-title">
+      <div class="screen-heading screen-heading-wide">
+        <p class="eyebrow">Hola, <span data-greeting-name>explorador</span></p>
+        <h2 id="missions-title">Elige una misión</h2>
+        <p>Hoy basta con una. Siempre puedes volver otro día.</p>
+      </div>
+
+      <div class="mission-grid">
+        <article class="mission-card mission-card-active">
+          <div class="mission-icon" aria-hidden="true">◇</div>
+          <div>
+            <span class="mission-status">Disponible</span>
+            <h3>Memorama</h3>
+            <p>Encuentra parejas y entrena tu memoria visual.</p>
+          </div>
+          <div class="mission-progress">
+            <span>Progreso del prototipo</span>
+            <div class="progress-track" role="progressbar" aria-label="Progreso de Memorama" aria-valuenow="33" aria-valuemin="0" aria-valuemax="100"><span></span></div>
+          </div>
+          <button class="button button-primary" type="button" data-go="introduccion-memoria">Ver misión</button>
+        </article>
+
+        <article class="mission-card mission-card-upcoming" aria-label="Operación misteriosa, próximamente">
+          <div class="mission-icon" aria-hidden="true">＋</div>
+          <div>
+            <span class="mission-status">Próximamente</span>
+            <h3>Operación misteriosa</h3>
+            <p>Resuelve cálculos para revelar una sorpresa.</p>
+          </div>
+        </article>
+
+        <article class="mission-card mission-card-upcoming" aria-label="Palabra desordenada, próximamente">
+          <div class="mission-icon" aria-hidden="true">Aa</div>
+          <div>
+            <span class="mission-status">Próximamente</span>
+            <h3>Palabra desordenada</h3>
+            <p>Ordena letras y descubre nuevas palabras.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="introduccion-memoria" class="app-screen panel-screen" data-screen="introduccion-memoria" aria-labelledby="memory-intro-title">
+      <div class="screen-heading">
+        <button class="back-button" type="button" data-go="misiones">← Mapa de misiones</button>
+        <p class="eyebrow">Misión 01 · Memoria visual</p>
+        <h2 id="memory-intro-title">Memorama</h2>
+        <p>Encuentra las parejas recordando dónde viste cada figura.</p>
+      </div>
+
+      <div class="form-card">
+        <label class="field-label" for="difficulty">Dificultad</label>
+        <select id="difficulty" data-difficulty>
+          <option value="explorador">Explorador</option>
+          <option value="aventurero">Aventurero</option>
+          <option value="maestro">Maestro del mapa</option>
+        </select>
+        <div class="difficulty-summary" data-difficulty-summary aria-live="polite">
+          <strong>12 cartas</strong>
+          <span>6 parejas</span>
+          <span>Vista previa de 3 segundos</span>
+        </div>
+        <button class="button button-primary button-full" type="button" data-go="partida-memoria">Comenzar</button>
+      </div>
+    </section>
+
+    <section id="partida-memoria" class="app-screen game-screen" data-screen="partida-memoria" aria-labelledby="game-title">
+      <div class="game-toolbar">
+        <button class="text-button" type="button" data-action="request-exit">Salir</button>
+        <div>
+          <span class="sr-only" id="game-title">Partida de Memorama</span>
+          <strong>Parejas <span data-pairs-count>2</span>/6</strong>
+        </div>
+        <button class="button button-small button-secondary" type="button" data-action="pause-game">Pausa</button>
+      </div>
+
+      <div class="memory-board" data-memory-board aria-label="Tablero demostrativo de Memorama">
+        <button class="memory-card" type="button" data-symbol="★" aria-label="Carta oculta 1"><span class="card-back">?</span><span class="card-front">★</span></button>
+        <button class="memory-card" type="button" data-symbol="●" aria-label="Carta oculta 2"><span class="card-back">?</span><span class="card-front">●</span></button>
+        <button class="memory-card is-found" type="button" data-symbol="◆" aria-label="Pareja encontrada, diamante"><span class="card-back">?</span><span class="card-front">◆</span></button>
+        <button class="memory-card" type="button" data-symbol="▲" aria-label="Carta oculta 4"><span class="card-back">?</span><span class="card-front">▲</span></button>
+        <button class="memory-card" type="button" data-symbol="☀" aria-label="Carta oculta 5"><span class="card-back">?</span><span class="card-front">☀</span></button>
+        <button class="memory-card is-found" type="button" data-symbol="◆" aria-label="Pareja encontrada, diamante"><span class="card-back">?</span><span class="card-front">◆</span></button>
+        <button class="memory-card" type="button" data-symbol="●" aria-label="Carta oculta 7"><span class="card-back">?</span><span class="card-front">●</span></button>
+        <button class="memory-card" type="button" data-symbol="☀" aria-label="Carta oculta 8"><span class="card-back">?</span><span class="card-front">☀</span></button>
+        <button class="memory-card is-found" type="button" data-symbol="■" aria-label="Pareja encontrada, cuadrado"><span class="card-back">?</span><span class="card-front">■</span></button>
+        <button class="memory-card" type="button" data-symbol="▲" aria-label="Carta oculta 10"><span class="card-back">?</span><span class="card-front">▲</span></button>
+        <button class="memory-card" type="button" data-symbol="★" aria-label="Carta oculta 11"><span class="card-back">?</span><span class="card-front">★</span></button>
+        <button class="memory-card is-found" type="button" data-symbol="■" aria-label="Pareja encontrada, cuadrado"><span class="card-back">?</span><span class="card-front">■</span></button>
+      </div>
+
+      <div class="game-help">
+        <p data-game-message aria-live="polite">Este tablero demuestra cómo se sentirán las cartas. La lógica completa llegará en el siguiente incremento.</p>
+        <button class="button button-primary" type="button" data-go="resultado">Simular misión completa</button>
+      </div>
+    </section>
+
+    <section id="resultado" class="app-screen result-screen" data-screen="resultado" aria-labelledby="result-title">
+      <div class="result-spark" aria-hidden="true">✦</div>
+      <p class="eyebrow">Misión completa</p>
+      <h2 id="result-title">¡Bien pensado!</h2>
+      <p class="lead">Encontraste 6 parejas usando tu memoria visual.</p>
+      <div class="reward-card">
+        <span aria-hidden="true">🧩</span>
+        <div><strong>Una pieza para tu mapa</strong><p>Terminaste el nivel Explorador.</p></div>
+      </div>
+      <div class="action-group action-group-centered">
+        <button class="button button-primary" type="button" data-go="misiones">Volver al mapa</button>
+        <button class="text-button" type="button" data-go="pausa">Terminar sesión</button>
+      </div>
+    </section>
+
+    <section id="pausa" class="app-screen pause-screen" data-screen="pausa" aria-labelledby="pause-title">
+      <div class="pause-illustration" aria-hidden="true"><span>○</span><span>✦</span><span>○</span></div>
+      <p class="eyebrow">Buen trabajo por hoy</p>
+      <h2 id="pause-title">Tu mente también descansa.</h2>
+      <p class="lead">Puedes beber agua, moverte un poco o mirar algo a lo lejos.</p>
+      <div class="action-group action-group-centered">
+        <button class="button button-primary" type="button" data-go="bienvenida">Terminar por hoy</button>
+        <button class="text-button" type="button" data-go="misiones">Volver con un adulto</button>
+      </div>
+    </section>
+
+    <section id="acceso-familias" class="app-screen panel-screen" data-screen="acceso-familias" aria-labelledby="adult-access-title">
+      <div class="screen-heading">
+        <button class="back-button" type="button" data-go="bienvenida">← Bienvenida</button>
+        <p class="eyebrow">Espacio para adultos</p>
+        <h2 id="adult-access-title">Ajustes familiares</h2>
+        <p>Mantén presionado el botón durante un momento para evitar accesos accidentales.</p>
+      </div>
+
+      <div class="form-card adult-gate-card">
+        <button class="hold-button" type="button" data-adult-gate aria-describedby="adult-gate-help">
+          <span>Mantener para entrar</span>
+          <span class="hold-progress" aria-hidden="true"></span>
+        </button>
+        <p id="adult-gate-help" class="privacy-note">Esta acción no es una contraseña ni una medida de seguridad.</p>
+        <p data-adult-gate-status class="field-help" aria-live="polite">Mantén el botón aproximadamente un segundo.</p>
+      </div>
+    </section>
+
+    <section id="panel-familiar" class="app-screen" data-screen="panel-familiar" aria-labelledby="family-title">
+      <div class="screen-heading screen-heading-wide">
+        <button class="back-button" type="button" data-go="bienvenida">← Salir del espacio familiar</button>
+        <p class="eyebrow">Configuración local</p>
+        <h2 id="family-title">Para familias</h2>
+        <p>Estas opciones se guardan únicamente en este navegador.</p>
+      </div>
+
+      <div class="family-layout">
+        <form class="settings-card" data-settings-form novalidate>
+          <div class="setting-row">
+            <label for="session-minutes"><strong>Duración sugerida</strong><span>Cuándo proponer una pausa.</span></label>
+            <select id="session-minutes" name="sessionMinutes">
+              <option value="15">15 minutos</option>
+              <option value="20">20 minutos</option>
+              <option value="30">30 minutos</option>
+            </select>
+          </div>
+          <div class="setting-row">
+            <label for="sound-enabled"><strong>Sonido</strong><span>Siempre podrá silenciarse durante el juego.</span></label>
+            <select id="sound-enabled" name="soundEnabled">
+              <option value="true">Activado</option>
+              <option value="false">Silenciado</option>
+            </select>
+          </div>
+          <div class="setting-row">
+            <label for="preferred-difficulty"><strong>Dificultad inicial</strong><span>El niño podrá cambiarla antes de jugar.</span></label>
+            <select id="preferred-difficulty" name="preferredDifficulty">
+              <option value="auto">Automática</option>
+              <option value="explorador">Explorador</option>
+              <option value="aventurero">Aventurero</option>
+            </select>
+          </div>
+          <button class="button button-primary" type="submit">Guardar configuración</button>
+          <p data-settings-status class="field-help" aria-live="polite"></p>
+        </form>
+
+        <aside class="progress-card" aria-labelledby="local-progress-title">
+          <span class="mission-status">Solo en este equipo</span>
+          <h3 id="local-progress-title">Progreso local</h3>
+          <dl class="progress-list">
+            <div><dt>Juego</dt><dd>Memorama</dd></div>
+            <div><dt>Partidas terminadas</dt><dd data-completed-games>0</dd></div>
+            <div><dt>Nivel alcanzado</dt><dd>Prototipo</dd></div>
+          </dl>
+          <p>No mostramos diagnósticos ni comparaciones con otros niños.</p>
+          <button class="button button-secondary button-full" type="button" data-go="misiones">Ir a las misiones</button>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p><strong>Chispora</strong> · Juega. Piensa. Descubre.</p>
+    <p>Prototipo local · Sin anuncios · Sin cuentas</p>
+  </footer>
+
+  <dialog class="app-dialog" data-pause-dialog aria-labelledby="pause-dialog-title">
+    <form method="dialog">
+      <p class="eyebrow">Partida en pausa</p>
+      <h2 id="pause-dialog-title">Respira cuando quieras.</h2>
+      <p>Las cartas permanecerán como están en este prototipo.</p>
+      <button class="button button-primary button-full" value="continue">Continuar</button>
+    </form>
+  </dialog>
+
+  <dialog class="app-dialog" data-exit-dialog aria-labelledby="exit-dialog-title">
+    <form method="dialog">
+      <p class="eyebrow">Salir de la misión</p>
+      <h2 id="exit-dialog-title">¿Volvemos al mapa?</h2>
+      <p>Esta partida demostrativa no guarda avances parciales.</p>
+      <div class="dialog-actions">
+        <button class="button button-secondary" value="cancel">Seguir jugando</button>
+        <button class="button button-primary" type="button" data-confirm-exit>Volver al mapa</button>
+      </div>
+    </form>
+  </dialog>
+</body>
+</html>
