@@ -41,6 +41,7 @@ Cada juego tendrá tres niveles de dificultad y sesiones sugeridas de entre 5 y 
 - [Glosario técnico](docs/11-glosario.md)
 - [Mapa de pantallas y recorridos](docs/12-mapa-de-pantallas-y-recorridos.md)
 - [Especificación del primer prototipo](docs/13-especificacion-del-mvp.md)
+- [Wireframes de baja fidelidad](docs/14-wireframes-de-baja-fidelidad.md)
 - [Historial de versiones](CHANGELOG.md)
 
 ## Estado

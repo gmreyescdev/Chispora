@@ -11,6 +11,7 @@
 
 - Definir mapa de pantallas y recorridos principales. **Completado.**
 - Definir criterios verificables del primer prototipo. **Completado.**
+- Crear wireframes de baja fidelidad. **Completado.**
 - Crear inicio y selector de misiones.
 - Implementar perfil local con avatar y apodo no identificable.
 - Construir Memorama y Operación misteriosa.

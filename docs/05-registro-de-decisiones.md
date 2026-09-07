@@ -70,6 +70,29 @@ Este archivo conserva las decisiones importantes y sus motivos. Se actualizará 
 - **Motivo:** evita accesos accidentales sin crear cuentas en esta etapa. Un PIN o autenticación real se evaluará si aparecen datos, pagos o controles sensibles.
 - **Estado:** aceptada para el MVP.
 
+## D-011 — Navegación infantil lineal y visible
+
+- **Fecha:** 7 de septiembre de 2026.
+- **Decisión:** cada pantalla infantil tendrá una acción principal evidente y una salida secundaria predecible.
+- **Motivo:** una navegación lineal reduce dudas en el primer uso y facilita observar dónde se bloquea el niño.
+- **Alternativas consideradas:** barra inferior permanente con varias secciones y menú lateral.
+- **Estado:** aceptada para el primer prototipo.
+
+## D-012 — Un perfil local durante el MVP
+
+- **Fecha:** 7 de septiembre de 2026.
+- **Decisión:** la primera versión guardará un único perfil infantil por navegador.
+- **Motivo:** permite validar el juego y el progreso sin diseñar todavía selección, edición y eliminación de varios perfiles.
+- **Consecuencia:** varios hermanos compartirían el perfil durante esta etapa; el soporte multiperfil se evaluará después de las primeras pruebas.
+- **Estado:** aceptada para el MVP.
+
+## D-013 — Cierre explícito de la sesión
+
+- **Fecha:** 7 de septiembre de 2026.
+- **Decisión:** el resultado ofrecerá volver al mapa o terminar; nunca iniciará otra partida automáticamente.
+- **Motivo:** refuerza que jugar tiene un final y evita convertir la continuidad en la opción por defecto.
+- **Estado:** aceptada.
+
 ## Plantilla para próximas decisiones
 
 - **Fecha:**

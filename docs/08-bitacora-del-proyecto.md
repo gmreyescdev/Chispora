@@ -74,3 +74,25 @@ Diseñar el flujo antes de programar reduce retrabajo: permite encontrar pantall
 ### Próximo paso
 
 Crear wireframes visuales de baja fidelidad y luego construir la estructura HTML navegable.
+
+## 7 de septiembre de 2026 — Wireframes de baja fidelidad
+
+### Objetivo
+
+Comprobar jerarquía, navegación y contenido de las nueve pantallas sin invertir todavía en ilustraciones o animaciones finales.
+
+### Trabajo realizado
+
+- Se creó un recorrido visual navegable de las nueve pantallas.
+- Se definieron acciones principales y secundarias en cada paso.
+- Se diseñaron estados representativos de Memorama, resultado, pausa y panel familiar.
+- Se estableció un único perfil local para reducir el alcance del MVP.
+- Se documentaron preguntas de validación para las primeras pruebas.
+
+### Aprendizaje técnico
+
+Un wireframe representa estructura y comportamiento, no apariencia definitiva. Sirve para corregir el producto cuando mover un botón todavía cuesta minutos y no horas de programación.
+
+### Próximo paso
+
+Construir un prototipo HTML navegable usando contenido real y sin implementar todavía la lógica completa de Memorama.

@@ -15,3 +15,4 @@ Los cambios importantes de Chispora se registran aquí. El proyecto utiliza un e
 - Sistema de documentación, bitácora, ruta de aprendizaje y glosario.
 - Mapa de nueve pantallas y recorridos de niño y adulto.
 - Especificación y criterios de aceptación del primer prototipo con Memorama.
+- Wireframes navegables de las nueve pantallas del MVP.
