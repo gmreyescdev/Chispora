@@ -6,12 +6,19 @@
   <meta name="description" content="Chispora es un espacio de juegos didácticos breves, tranquilos y seguros para niños de 7 a 9 años.">
   <meta name="theme-color" content="#fff8e8">
   <title>Chispora · Juega. Piensa. Descubre.</title>
-  <link rel="icon" href="assets/img/chispora-symbol.svg?v=20260907" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css?v=20260907">
-  <script defer src="lib/gsap.min.js?v=20260907"></script>
-  <script defer src="lib/ScrollTrigger.min.js?v=20260907"></script>
-  <script defer src="lib/manifest.js?v=20260907"></script>
-  <script defer src="main.js?v=20260907"></script>
+  <link rel="icon" href="assets/img/chispora-symbol.svg?v=2026090703" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css?v=2026090706">
+  <script defer src="lib/gsap.min.js?v=2026090706"></script>
+  <script defer src="lib/ScrollTrigger.min.js?v=2026090706"></script>
+  <script defer src="lib/manifest.js?v=2026090706"></script>
+  <script defer src="lib/memory-engine.js?v=2026090706"></script>
+  <script defer src="lib/operation-engine.js?v=2026090706"></script>
+  <script defer src="lib/word-engine.js?v=2026090706"></script>
+  <script defer src="lib/sequence-engine.js?v=2026090706"></script>
+  <script defer src="lib/maze-engine.js?v=2026090706"></script>
+  <script defer src="main.js?v=2026090706"></script>
+  <script defer src="sequence-game.js?v=2026090706"></script>
+  <script defer src="maze-game.js?v=2026090706"></script>
 </head>
 <body>
   <a class="skip-link" href="#main-content">Saltar al contenido principal</a>
@@ -111,29 +118,321 @@
             <p>Encuentra parejas y entrena tu memoria visual.</p>
           </div>
           <div class="mission-progress">
-            <span>Progreso del prototipo</span>
-            <div class="progress-track" role="progressbar" aria-label="Progreso de Memorama" aria-valuenow="33" aria-valuemin="0" aria-valuemax="100"><span></span></div>
+            <span data-memory-progress-label>Listo para jugar</span>
+            <div class="progress-track" role="progressbar" aria-label="Progreso de Memorama" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" data-memory-progress><span></span></div>
           </div>
           <button class="button button-primary" type="button" data-go="introduccion-memoria">Ver misión</button>
         </article>
 
-        <article class="mission-card mission-card-upcoming" aria-label="Operación misteriosa, próximamente">
+        <article class="mission-card mission-card-active">
           <div class="mission-icon" aria-hidden="true">＋</div>
           <div>
-            <span class="mission-status">Próximamente</span>
+            <span class="mission-status">Disponible</span>
             <h3>Operación misteriosa</h3>
             <p>Resuelve cálculos para revelar una sorpresa.</p>
           </div>
+          <div class="mission-progress">
+            <span data-operation-progress-label>Listo para jugar</span>
+            <div class="progress-track" role="progressbar" aria-label="Progreso de Operación misteriosa" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" data-operation-progress><span></span></div>
+          </div>
+          <button class="button button-primary" type="button" data-go="introduccion-operacion">Ver misión</button>
         </article>
 
-        <article class="mission-card mission-card-upcoming" aria-label="Palabra desordenada, próximamente">
+        <article class="mission-card mission-card-active">
           <div class="mission-icon" aria-hidden="true">Aa</div>
           <div>
-            <span class="mission-status">Próximamente</span>
+            <span class="mission-status">Disponible</span>
             <h3>Palabra desordenada</h3>
             <p>Ordena letras y descubre nuevas palabras.</p>
           </div>
+          <div class="mission-progress">
+            <span data-word-progress-label>Listo para jugar</span>
+            <div class="progress-track" role="progressbar" aria-label="Progreso de Palabra desordenada" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" data-word-progress><span></span></div>
+          </div>
+          <button class="button button-primary" type="button" data-go="introduccion-palabras">Ver misión</button>
         </article>
+
+        <article class="mission-card mission-card-active">
+          <div class="mission-icon" aria-hidden="true">◌</div>
+          <div>
+            <span class="mission-status">Disponible</span>
+            <h3>Secuencia lógica</h3>
+            <p>Observa el patrón y descubre qué elemento sigue.</p>
+          </div>
+          <div class="mission-progress">
+            <span data-sequence-progress-label>Listo para jugar</span>
+            <div class="progress-track" role="progressbar" aria-label="Progreso de Secuencia lógica" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" data-sequence-progress><span></span></div>
+          </div>
+          <button class="button button-primary" type="button" data-go="introduccion-secuencia">Ver misión</button>
+        </article>
+
+        <article class="mission-card mission-card-active">
+          <div class="mission-icon" aria-hidden="true">⌁</div>
+          <div>
+            <span class="mission-status">Disponible</span>
+            <h3>Laberintos</h3>
+            <p>Encuentra el camino y entrena tu orientación espacial.</p>
+          </div>
+          <div class="mission-progress">
+            <span data-maze-progress-label>Listo para jugar</span>
+            <div class="progress-track" role="progressbar" aria-label="Progreso de Laberintos" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" data-maze-progress><span></span></div>
+          </div>
+          <button class="button button-primary" type="button" data-go="introduccion-laberinto">Ver misión</button>
+        </article>
+      </div>
+    </section>
+
+    <section id="introduccion-operacion" class="app-screen panel-screen" data-screen="introduccion-operacion" aria-labelledby="operation-intro-title">
+      <div class="screen-heading">
+        <button class="back-button" type="button" data-go="misiones">← Mapa de misiones</button>
+        <p class="eyebrow">Misión 02 · Cálculo mental</p>
+        <h2 id="operation-intro-title">Operación misteriosa</h2>
+        <p>Descubre qué signo hace que cada cálculo sea correcto.</p>
+      </div>
+      <div class="form-card">
+        <label class="field-label" for="operation-difficulty">Dificultad</label>
+        <select id="operation-difficulty" data-operation-difficulty>
+          <option value="explorador">Explorador</option>
+          <option value="aventurero">Aventurero</option>
+          <option value="maestro">Maestro del cálculo</option>
+        </select>
+        <div class="difficulty-summary" data-operation-difficulty-summary aria-live="polite">
+          <strong>6 desafíos</strong><span>Sumas y restas</span><span>Números hasta 12</span>
+        </div>
+        <button class="button button-primary button-full" type="button" data-start-operation>Comenzar</button>
+      </div>
+    </section>
+
+    <section id="partida-operacion" class="app-screen game-screen" data-screen="partida-operacion" aria-labelledby="operation-game-title">
+      <div class="game-toolbar">
+        <button class="text-button" type="button" data-action="request-exit">Salir</button>
+        <div class="game-stats">
+          <span class="sr-only" id="operation-game-title">Partida de Operación misteriosa</span>
+          <strong>Desafío <span data-operation-round>1</span>/<span data-operation-total>6</span></strong>
+          <span>Aciertos <strong data-operation-score>0</strong></span>
+          <span>Tiempo <strong data-operation-time>0:00</strong></span>
+        </div>
+        <button class="button button-small button-secondary" type="button" data-action="pause-game">Pausa</button>
+      </div>
+      <div class="operation-card" data-operation-card>
+        <p class="eyebrow">Elige el signo misterioso</p>
+        <div class="operation-equation" aria-live="polite">
+          <span data-operation-left>4</span><span class="operation-mystery" data-operation-mystery>?</span><span data-operation-right>3</span><span>=</span><span data-operation-result>7</span>
+        </div>
+        <div class="operation-options" data-operation-options aria-label="Opciones de operación"></div>
+      </div>
+      <div class="game-help">
+        <p data-operation-message aria-live="polite">Piensa qué operación produce el resultado.</p>
+        <button class="text-button" type="button" data-restart-operation>Comenzar una partida nueva</button>
+      </div>
+    </section>
+
+    <section id="resultado-operacion" class="app-screen result-screen" data-screen="resultado-operacion" aria-labelledby="operation-result-title">
+      <div class="result-spark" aria-hidden="true">＋</div>
+      <p class="eyebrow">Misión completa</p>
+      <h2 id="operation-result-title">¡Misterio resuelto!</h2>
+      <p class="lead">Completaste <strong data-operation-result-rounds>6 desafíos</strong> con <strong data-operation-result-mistakes>0 errores</strong>.</p>
+      <div class="reward-card">
+        <span aria-hidden="true">🔎</span>
+        <div><strong>Una pista para tu mapa</strong><p>Nivel <span data-operation-result-level>Explorador</span> · <span data-operation-result-time>0:00</span>.</p></div>
+      </div>
+      <div class="action-group action-group-centered">
+        <button class="button button-primary" type="button" data-replay-operation>Jugar otra vez</button>
+        <button class="text-button" type="button" data-go="misiones">Volver al mapa</button>
+        <button class="text-button" type="button" data-go="pausa">Terminar sesión</button>
+      </div>
+    </section>
+
+    <section id="introduccion-palabras" class="app-screen panel-screen" data-screen="introduccion-palabras" aria-labelledby="word-intro-title">
+      <div class="screen-heading">
+        <button class="back-button" type="button" data-go="misiones">← Mapa de misiones</button>
+        <p class="eyebrow">Misión 03 · Lectura y vocabulario</p>
+        <h2 id="word-intro-title">Palabra desordenada</h2>
+        <p>Ordena las letras hasta descubrir la palabra escondida.</p>
+      </div>
+      <div class="form-card">
+        <label class="field-label" for="word-difficulty">Dificultad</label>
+        <select id="word-difficulty" data-word-difficulty>
+          <option value="explorador">Explorador</option>
+          <option value="aventurero">Aventurero</option>
+          <option value="maestro">Maestro de palabras</option>
+        </select>
+        <div class="difficulty-summary" data-word-difficulty-summary aria-live="polite">
+          <strong>5 palabras</strong><span>Entre 3 y 4 letras</span><span>Pistas disponibles</span>
+        </div>
+        <button class="button button-primary button-full" type="button" data-start-word>Comenzar</button>
+      </div>
+    </section>
+
+    <section id="partida-palabras" class="app-screen game-screen" data-screen="partida-palabras" aria-labelledby="word-game-title">
+      <div class="game-toolbar">
+        <button class="text-button" type="button" data-action="request-exit">Salir</button>
+        <div class="game-stats">
+          <span class="sr-only" id="word-game-title">Partida de Palabra desordenada</span>
+          <strong>Palabra <span data-word-round>1</span>/<span data-word-total>5</span></strong>
+          <span>Aciertos <strong data-word-score>0</strong></span>
+          <span>Tiempo <strong data-word-time>0:00</strong></span>
+        </div>
+        <button class="button button-small button-secondary" type="button" data-action="pause-game">Pausa</button>
+      </div>
+      <div class="word-card">
+        <p class="eyebrow">Construye la palabra</p>
+        <div class="word-answer" data-word-answer aria-label="Palabra en construcción"></div>
+        <div class="word-letters" data-word-letters aria-label="Letras disponibles"></div>
+        <div class="word-tools">
+          <button class="button button-small button-secondary" type="button" data-word-undo>Quitar última</button>
+          <button class="text-button" type="button" data-word-clear>Limpiar</button>
+          <button class="text-button" type="button" data-word-hint>Ver una pista</button>
+        </div>
+        <p class="word-hint" data-word-hint-text aria-live="polite" hidden></p>
+      </div>
+      <div class="game-help">
+        <p data-word-message aria-live="polite">Toca las letras en el orden correcto.</p>
+        <button class="text-button" type="button" data-restart-word>Comenzar una partida nueva</button>
+      </div>
+    </section>
+
+    <section id="resultado-palabras" class="app-screen result-screen" data-screen="resultado-palabras" aria-labelledby="word-result-title">
+      <div class="result-spark" aria-hidden="true">Aa</div>
+      <p class="eyebrow">Misión completa</p>
+      <h2 id="word-result-title">¡Palabras descubiertas!</h2>
+      <p class="lead">Completaste <strong data-word-result-rounds>5 palabras</strong> con <strong data-word-result-mistakes>0 intentos extra</strong>.</p>
+      <div class="reward-card">
+        <span aria-hidden="true">📖</span>
+        <div><strong>Una página para tu mapa</strong><p>Nivel <span data-word-result-level>Explorador</span> · <span data-word-result-time>0:00</span> · <span data-word-result-hints>0 pistas</span>.</p></div>
+      </div>
+      <div class="action-group action-group-centered">
+        <button class="button button-primary" type="button" data-replay-word>Jugar otra vez</button>
+        <button class="text-button" type="button" data-go="misiones">Volver al mapa</button>
+        <button class="text-button" type="button" data-go="pausa">Terminar sesión</button>
+      </div>
+    </section>
+
+    <section id="introduccion-secuencia" class="app-screen panel-screen" data-screen="introduccion-secuencia" aria-labelledby="sequence-intro-title">
+      <div class="screen-heading">
+        <button class="back-button" type="button" data-go="misiones">← Mapa de misiones</button>
+        <p class="eyebrow">Misión 04 · Lógica y atención</p>
+        <h2 id="sequence-intro-title">Secuencia lógica</h2>
+        <p>Busca la regla que conecta los elementos y elige qué viene después.</p>
+      </div>
+      <div class="form-card">
+        <label class="field-label" for="sequence-difficulty">Dificultad</label>
+        <select id="sequence-difficulty" data-sequence-difficulty>
+          <option value="explorador">Explorador</option>
+          <option value="aventurero">Aventurero</option>
+          <option value="maestro">Maestro de patrones</option>
+        </select>
+        <div class="difficulty-summary" data-sequence-difficulty-summary aria-live="polite">
+          <strong>6 patrones</strong><span>Patrones de uno y dos pasos</span><span>Explicación después de acertar</span>
+        </div>
+        <button class="button button-primary button-full" type="button" data-start-sequence>Comenzar</button>
+      </div>
+    </section>
+
+    <section id="partida-secuencia" class="app-screen game-screen" data-screen="partida-secuencia" aria-labelledby="sequence-game-title">
+      <div class="game-toolbar">
+        <button class="text-button" type="button" data-sequence-exit>Salir</button>
+        <div class="game-stats">
+          <span class="sr-only" id="sequence-game-title">Partida de Secuencia lógica</span>
+          <strong>Patrón <span data-sequence-round>1</span>/<span data-sequence-total>6</span></strong>
+          <span>Aciertos <strong data-sequence-score>0</strong></span>
+          <span>Tiempo <strong data-sequence-time>0:00</strong></span>
+        </div>
+        <button class="button button-small button-secondary" type="button" data-sequence-pause>Pausa</button>
+      </div>
+      <div class="sequence-card">
+        <div class="sequence-puzzle">
+          <p class="eyebrow">¿Qué elemento sigue?</p>
+          <div class="sequence-items" data-sequence-items aria-label="Secuencia a completar"></div>
+        </div>
+        <div class="sequence-answer-zone" aria-labelledby="sequence-answer-title">
+          <p class="sequence-answer-title" id="sequence-answer-title">Elige tu respuesta</p>
+          <div class="sequence-options" data-sequence-options aria-label="Opciones de respuesta"></div>
+        </div>
+      </div>
+      <div class="game-help">
+        <p data-sequence-message aria-live="polite">Observa el patrón y elige qué sigue.</p>
+        <button class="text-button" type="button" data-restart-sequence>Comenzar una partida nueva</button>
+      </div>
+    </section>
+
+    <section id="resultado-secuencia" class="app-screen result-screen" data-screen="resultado-secuencia" aria-labelledby="sequence-result-title">
+      <div class="result-spark" aria-hidden="true">◌</div>
+      <p class="eyebrow">Misión completa</p>
+      <h2 id="sequence-result-title">¡Patrones descubiertos!</h2>
+      <p class="lead">Completaste <strong data-sequence-result-rounds>6 patrones</strong> con <strong data-sequence-result-mistakes>0 intentos extra</strong>.</p>
+      <div class="reward-card">
+        <span aria-hidden="true">🧠</span>
+        <div><strong>Una ruta para tu mapa</strong><p>Nivel <span data-sequence-result-level>Explorador</span> · <span data-sequence-result-time>0:00</span>.</p></div>
+      </div>
+      <div class="action-group action-group-centered">
+        <button class="button button-primary" type="button" data-replay-sequence>Jugar otra vez</button>
+        <button class="text-button" type="button" data-go="misiones">Volver al mapa</button>
+        <button class="text-button" type="button" data-go="pausa">Terminar sesión</button>
+      </div>
+    </section>
+
+    <section id="introduccion-laberinto" class="app-screen panel-screen" data-screen="introduccion-laberinto" aria-labelledby="maze-intro-title">
+      <div class="screen-heading">
+        <button class="back-button" type="button" data-go="misiones">← Mapa de misiones</button>
+        <p class="eyebrow">Misión 05 · Orientación espacial</p>
+        <h2 id="maze-intro-title">Laberintos</h2>
+        <p>Guía el punto azul por los caminos hasta llegar a la estrella.</p>
+      </div>
+      <div class="form-card">
+        <label class="field-label" for="maze-difficulty">Dificultad</label>
+        <select id="maze-difficulty" data-maze-difficulty>
+          <option value="explorador">Explorador</option>
+          <option value="aventurero">Aventurero</option>
+          <option value="maestro">Maestro del laberinto</option>
+        </select>
+        <div class="difficulty-summary" data-maze-difficulty-summary aria-live="polite">
+          <strong>2 laberintos</strong><span>5 × 5 casillas</span><span>Caminos cortos y claros</span>
+        </div>
+        <button class="button button-primary button-full" type="button" data-start-maze>Comenzar</button>
+      </div>
+    </section>
+
+    <section id="partida-laberinto" class="app-screen game-screen maze-game-screen" data-screen="partida-laberinto" aria-labelledby="maze-game-title">
+      <div class="game-toolbar">
+        <button class="text-button" type="button" data-maze-exit>Salir</button>
+        <div class="game-stats">
+          <span class="sr-only" id="maze-game-title">Partida de Laberintos</span>
+          <strong>Laberinto <span data-maze-round>1</span>/<span data-maze-total>2</span></strong>
+          <span>Movimientos <strong data-maze-moves>0</strong></span>
+          <span>Tiempo <strong data-maze-time>0:00</strong></span>
+        </div>
+        <button class="button button-small button-secondary" type="button" data-maze-pause>Pausa</button>
+      </div>
+      <div class="maze-stage">
+        <div class="maze-legend" aria-hidden="true"><span><b class="maze-player-dot">●</b> Tu ficha</span><span><b>★</b> Meta</span></div>
+        <div class="maze-board" data-maze-board tabindex="0"></div>
+        <div class="maze-controls" data-maze-controls aria-label="Controles de dirección">
+          <button class="maze-direction maze-up" type="button" data-maze-direction="up" aria-label="Mover arriba">↑</button>
+          <button class="maze-direction maze-left" type="button" data-maze-direction="left" aria-label="Mover a la izquierda">←</button>
+          <button class="maze-direction maze-down" type="button" data-maze-direction="down" aria-label="Mover abajo">↓</button>
+          <button class="maze-direction maze-right" type="button" data-maze-direction="right" aria-label="Mover a la derecha">→</button>
+        </div>
+      </div>
+      <div class="game-help">
+        <p data-maze-message aria-live="polite">Lleva el punto azul hasta la estrella.</p>
+        <button class="text-button" type="button" data-restart-maze>Crear laberintos nuevos</button>
+      </div>
+    </section>
+
+    <section id="resultado-laberinto" class="app-screen result-screen" data-screen="resultado-laberinto" aria-labelledby="maze-result-title">
+      <div class="result-spark" aria-hidden="true">⌁</div>
+      <p class="eyebrow">Misión completa</p>
+      <h2 id="maze-result-title">¡Encontraste la salida!</h2>
+      <p class="lead">Resolviste <strong data-maze-result-rounds>2 laberintos</strong> en <strong data-maze-result-moves>0 movimientos</strong>.</p>
+      <div class="reward-card">
+        <span aria-hidden="true">🧭</span>
+        <div><strong>Una brújula para tu mapa</strong><p>Nivel <span data-maze-result-level>Explorador</span> · <span data-maze-result-time>0:00</span>.</p></div>
+      </div>
+      <div class="action-group action-group-centered">
+        <button class="button button-primary" type="button" data-replay-maze>Jugar otra vez</button>
+        <button class="text-button" type="button" data-go="misiones">Volver al mapa</button>
+        <button class="text-button" type="button" data-go="pausa">Terminar sesión</button>
       </div>
     </section>
 
@@ -157,38 +456,37 @@
           <span>6 parejas</span>
           <span>Vista previa de 3 segundos</span>
         </div>
-        <button class="button button-primary button-full" type="button" data-go="partida-memoria">Comenzar</button>
+        <button class="button button-primary button-full" type="button" data-start-memory>Comenzar</button>
       </div>
     </section>
 
     <section id="partida-memoria" class="app-screen game-screen" data-screen="partida-memoria" aria-labelledby="game-title">
       <div class="game-toolbar">
         <button class="text-button" type="button" data-action="request-exit">Salir</button>
-        <div>
+        <div class="game-stats">
           <span class="sr-only" id="game-title">Partida de Memorama</span>
-          <strong>Parejas <span data-pairs-count>2</span>/6</strong>
+          <strong>Parejas <span data-pairs-count>0</span>/<span data-pairs-total>6</span></strong>
+          <span>Movimientos <strong data-moves-count>0</strong></span>
+          <span>Tiempo <strong data-time-count>0:00</strong></span>
         </div>
-        <button class="button button-small button-secondary" type="button" data-action="pause-game">Pausa</button>
+        <div class="game-toolbar-actions">
+          <button class="sound-button" type="button" data-sound-toggle aria-pressed="true" aria-label="Silenciar sonidos">Sonido</button>
+          <button class="button button-small button-secondary" type="button" data-action="pause-game">Pausa</button>
+        </div>
       </div>
 
-      <div class="memory-board" data-memory-board aria-label="Tablero demostrativo de Memorama">
-        <button class="memory-card" type="button" data-symbol="★" aria-label="Carta oculta 1"><span class="card-back">?</span><span class="card-front">★</span></button>
-        <button class="memory-card" type="button" data-symbol="●" aria-label="Carta oculta 2"><span class="card-back">?</span><span class="card-front">●</span></button>
-        <button class="memory-card is-found" type="button" data-symbol="◆" aria-label="Pareja encontrada, diamante"><span class="card-back">?</span><span class="card-front">◆</span></button>
-        <button class="memory-card" type="button" data-symbol="▲" aria-label="Carta oculta 4"><span class="card-back">?</span><span class="card-front">▲</span></button>
-        <button class="memory-card" type="button" data-symbol="☀" aria-label="Carta oculta 5"><span class="card-back">?</span><span class="card-front">☀</span></button>
-        <button class="memory-card is-found" type="button" data-symbol="◆" aria-label="Pareja encontrada, diamante"><span class="card-back">?</span><span class="card-front">◆</span></button>
-        <button class="memory-card" type="button" data-symbol="●" aria-label="Carta oculta 7"><span class="card-back">?</span><span class="card-front">●</span></button>
-        <button class="memory-card" type="button" data-symbol="☀" aria-label="Carta oculta 8"><span class="card-back">?</span><span class="card-front">☀</span></button>
-        <button class="memory-card is-found" type="button" data-symbol="■" aria-label="Pareja encontrada, cuadrado"><span class="card-back">?</span><span class="card-front">■</span></button>
-        <button class="memory-card" type="button" data-symbol="▲" aria-label="Carta oculta 10"><span class="card-back">?</span><span class="card-front">▲</span></button>
-        <button class="memory-card" type="button" data-symbol="★" aria-label="Carta oculta 11"><span class="card-back">?</span><span class="card-front">★</span></button>
-        <button class="memory-card is-found" type="button" data-symbol="■" aria-label="Pareja encontrada, cuadrado"><span class="card-back">?</span><span class="card-front">■</span></button>
+      <div class="memory-board" data-memory-board data-pair-count="6" aria-label="Tablero de Memorama">
+        <button class="memory-card" type="button" aria-label="Carta de ejemplo"><span class="card-back">?</span><span class="card-front">★</span></button>
+        <button class="memory-card" type="button" aria-label="Carta de ejemplo"><span class="card-back">?</span><span class="card-front">●</span></button>
+        <button class="memory-card" type="button" aria-label="Carta de ejemplo"><span class="card-back">?</span><span class="card-front">◆</span></button>
+        <button class="memory-card" type="button" aria-label="Carta de ejemplo"><span class="card-back">?</span><span class="card-front">▲</span></button>
+        <button class="memory-card" type="button" aria-label="Carta de ejemplo"><span class="card-back">?</span><span class="card-front">☀</span></button>
+        <button class="memory-card" type="button" aria-label="Carta de ejemplo"><span class="card-back">?</span><span class="card-front">■</span></button>
       </div>
 
       <div class="game-help">
-        <p data-game-message aria-live="polite">Este tablero demuestra cómo se sentirán las cartas. La lógica completa llegará en el siguiente incremento.</p>
-        <button class="button button-primary" type="button" data-go="resultado">Simular misión completa</button>
+        <p data-game-message aria-live="polite">Elige dos cartas para buscar una pareja.</p>
+        <button class="text-button" type="button" data-restart-memory>Mezclar y comenzar de nuevo</button>
       </div>
     </section>
 
@@ -196,13 +494,14 @@
       <div class="result-spark" aria-hidden="true">✦</div>
       <p class="eyebrow">Misión completa</p>
       <h2 id="result-title">¡Bien pensado!</h2>
-      <p class="lead">Encontraste 6 parejas usando tu memoria visual.</p>
+      <p class="lead">Encontraste <strong data-result-pairs>6 parejas</strong> en <strong data-result-moves>0 movimientos</strong>.</p>
       <div class="reward-card">
         <span aria-hidden="true">🧩</span>
-        <div><strong>Una pieza para tu mapa</strong><p>Terminaste el nivel Explorador.</p></div>
+        <div><strong>Una pieza para tu mapa</strong><p>Terminaste el nivel <span data-result-level>Explorador</span> en <span data-result-time>0:00</span>.</p></div>
       </div>
       <div class="action-group action-group-centered">
-        <button class="button button-primary" type="button" data-go="misiones">Volver al mapa</button>
+        <button class="button button-primary" type="button" data-replay-memory>Jugar otra vez</button>
+        <button class="text-button" type="button" data-go="misiones">Volver al mapa</button>
         <button class="text-button" type="button" data-go="pausa">Terminar sesión</button>
       </div>
     </section>
@@ -277,9 +576,13 @@
           <span class="mission-status">Solo en este equipo</span>
           <h3 id="local-progress-title">Progreso local</h3>
           <dl class="progress-list">
-            <div><dt>Juego</dt><dd>Memorama</dd></div>
+            <div><dt>Juegos disponibles</dt><dd>5</dd></div>
             <div><dt>Partidas terminadas</dt><dd data-completed-games>0</dd></div>
-            <div><dt>Nivel alcanzado</dt><dd>Prototipo</dd></div>
+            <div><dt>Niveles de Memorama</dt><dd data-memory-levels>0/3</dd></div>
+            <div><dt>Niveles de cálculo</dt><dd data-operation-levels>0/3</dd></div>
+            <div><dt>Niveles de palabras</dt><dd data-word-levels>0/3</dd></div>
+            <div><dt>Niveles de secuencias</dt><dd data-sequence-levels>0/3</dd></div>
+            <div><dt>Niveles de laberintos</dt><dd data-maze-levels>0/3</dd></div>
           </dl>
           <p>No mostramos diagnósticos ni comparaciones con otros niños.</p>
           <button class="button button-secondary button-full" type="button" data-go="misiones">Ir a las misiones</button>
@@ -297,7 +600,7 @@
     <form method="dialog">
       <p class="eyebrow">Partida en pausa</p>
       <h2 id="pause-dialog-title">Respira cuando quieras.</h2>
-      <p>Las cartas permanecerán como están en este prototipo.</p>
+      <p>El tiempo y las cartas se detendrán hasta que continúes.</p>
       <button class="button button-primary button-full" value="continue">Continuar</button>
     </form>
   </dialog>
@@ -306,10 +609,52 @@
     <form method="dialog">
       <p class="eyebrow">Salir de la misión</p>
       <h2 id="exit-dialog-title">¿Volvemos al mapa?</h2>
-      <p>Esta partida demostrativa no guarda avances parciales.</p>
+      <p>Las partidas incompletas no se guardan.</p>
       <div class="dialog-actions">
         <button class="button button-secondary" value="cancel">Seguir jugando</button>
         <button class="button button-primary" type="button" data-confirm-exit>Volver al mapa</button>
+      </div>
+    </form>
+  </dialog>
+
+  <dialog class="app-dialog" data-sequence-pause-dialog aria-labelledby="sequence-pause-dialog-title">
+    <form method="dialog">
+      <p class="eyebrow">Partida en pausa</p>
+      <h2 id="sequence-pause-dialog-title">Respira cuando quieras.</h2>
+      <p>El tiempo y el patrón se detendrán hasta que continúes.</p>
+      <button class="button button-primary button-full" value="continue">Continuar</button>
+    </form>
+  </dialog>
+
+  <dialog class="app-dialog" data-sequence-exit-dialog aria-labelledby="sequence-exit-dialog-title">
+    <form method="dialog">
+      <p class="eyebrow">Salir de la misión</p>
+      <h2 id="sequence-exit-dialog-title">¿Volvemos al mapa?</h2>
+      <p>Las partidas incompletas no se guardan.</p>
+      <div class="dialog-actions">
+        <button class="button button-secondary" value="cancel">Seguir jugando</button>
+        <button class="button button-primary" type="button" data-sequence-confirm-exit>Volver al mapa</button>
+      </div>
+    </form>
+  </dialog>
+
+  <dialog class="app-dialog" data-maze-pause-dialog aria-labelledby="maze-pause-dialog-title">
+    <form method="dialog">
+      <p class="eyebrow">Partida en pausa</p>
+      <h2 id="maze-pause-dialog-title">Respira cuando quieras.</h2>
+      <p>El tiempo y el laberinto se detendrán hasta que continúes.</p>
+      <button class="button button-primary button-full" value="continue">Continuar</button>
+    </form>
+  </dialog>
+
+  <dialog class="app-dialog" data-maze-exit-dialog aria-labelledby="maze-exit-dialog-title">
+    <form method="dialog">
+      <p class="eyebrow">Salir de la misión</p>
+      <h2 id="maze-exit-dialog-title">¿Volvemos al mapa?</h2>
+      <p>Las partidas incompletas no se guardan.</p>
+      <div class="dialog-actions">
+        <button class="button button-secondary" value="cancel">Seguir jugando</button>
+        <button class="button button-primary" type="button" data-maze-confirm-exit>Volver al mapa</button>
       </div>
     </form>
   </dialog>

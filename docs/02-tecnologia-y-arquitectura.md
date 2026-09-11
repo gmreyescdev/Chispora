@@ -16,11 +16,13 @@ La primera versión será una aplicación web estática. Esto reduce costos, fac
 
 ## Estado técnico actual
 
-El primer prototipo utiliza:
+El prototipo actual utiliza:
 
-- `index.html` para las nueve pantallas y todo el contenido esencial.
+- `index.html` para las pantallas y todo el contenido esencial.
 - `styles.css` para identidad, componentes y adaptación a distintos tamaños.
-- `main.js` para navegación, formularios, almacenamiento y demostraciones.
+- `main.js` para navegación, formularios, almacenamiento y los tres primeros juegos.
+- `sequence-game.js` y `maze-game.js` para aislar la interfaz de los incrementos más recientes.
+- Motores independientes en `lib/*-engine.js` para separar reglas comprobables de la interfaz.
 - `lib/manifest.js` como configuración central de marca y valores iniciales.
 - GSAP como mejora visual opcional para transiciones.
 - `localStorage` para perfil y ajustes del navegador.
@@ -41,6 +43,11 @@ WebDidactico/
 │   └── photos/source/
 ├── lib/
 │   ├── manifest.js
+│   ├── memory-engine.js
+│   ├── operation-engine.js
+│   ├── word-engine.js
+│   ├── sequence-engine.js
+│   ├── maze-engine.js
 │   ├── gsap.min.js
 │   └── ScrollTrigger.min.js
 ├── docs/

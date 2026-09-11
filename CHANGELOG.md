@@ -19,3 +19,20 @@ Los cambios importantes de Chispora se registran aquí. El proyecto utiliza un e
 - Prototipo web con nueve pantallas, navegación, perfil local y panel familiar.
 - Tablero demostrativo de Memorama y diálogos de pausa y salida.
 - Configuración de caché, librerías locales y diseño adaptable.
+- Memorama completo con tablero mezclado, tres dificultades y vista previa configurable.
+- Comparación de parejas, bloqueo de selecciones, movimientos, tiempo, pausa y sonido opcional.
+- Resultado dinámico, mejores marcas y progreso local por dificultad.
+- Pruebas automáticas del motor y auditoría funcional en navegador y vista móvil.
+- Operación misteriosa con sumas, restas y multiplicaciones graduadas en tres niveles.
+- Reintentos educativos, bloqueo durante la respuesta, estadísticas y progreso local del juego de cálculo.
+- Pruebas automáticas y auditoría en navegador de Operación misteriosa.
+- Palabra desordenada con fichas interactivas, pistas, deshacer, limpiar y reintentos educativos.
+- Tres niveles de vocabulario, progreso local y pruebas automáticas del motor de palabras.
+- Auditoría completa en navegador y móvil de Palabra desordenada.
+- Secuencia lógica con patrones numéricos y visuales graduados en tres niveles.
+- Reintentos con alternativas descartadas, explicación de reglas y progreso local.
+- Pruebas automáticas y auditoría en navegador de Secuencia lógica.
+- Separación visual entre el patrón y la zona de respuestas de Secuencia lógica.
+- Laberintos generados localmente con rutas siempre solucionables y tres tamaños de dificultad.
+- Controles táctiles y de teclado, pausa, movimientos, tiempo y progreso local para Laberintos.
+- Pruebas automáticas de conectividad, paredes, movimiento, avance y finalización de Laberintos.

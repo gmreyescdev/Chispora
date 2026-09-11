@@ -124,6 +124,15 @@ Este archivo conserva las decisiones importantes y sus motivos. Se actualizará 
 - **Revisión futura:** si la complejidad de estado o equipo crece, se volverá a evaluar con evidencia.
 - **Estado:** aceptada para el MVP.
 
+## D-018 — Laberintos perfectos generados localmente
+
+- **Fecha:** 7 de septiembre de 2026.
+- **Decisión:** generar cada laberinto en el navegador mediante búsqueda en profundidad con retroceso, conservando una única ruta simple entre cada par de casillas.
+- **Motivo:** garantiza que todos los tableros tengan solución, permite crear partidas distintas sin descargar contenido y mantiene las reglas fáciles de auditar.
+- **Alternativas consideradas:** dibujar mapas fijos manualmente, utilizar imágenes o generar laberintos con ciclos y múltiples soluciones.
+- **Consecuencia:** la variedad visual es amplia, pero esta primera versión no incluye llaves, obstáculos ni rutas alternativas cíclicas.
+- **Estado:** aceptada para el MVP.
+
 ## Plantilla para próximas decisiones
 
 - **Fecha:**

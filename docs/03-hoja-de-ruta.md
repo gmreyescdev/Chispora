@@ -16,13 +16,17 @@
 - Implementar perfil local con avatar y apodo no identificable. **Primera versión completada.**
 - Crear panel familiar con ajustes locales. **Primera versión completada.**
 - Implementar navegación, pausa y cierre de sesión. **Primera versión completada.**
-- Construir Memorama y Operación misteriosa.
-- Incorporar control de sonido, dificultad y tiempo.
+- Construir Memorama. **Completado y auditado.**
+- Construir Operación misteriosa. **Completado y auditado.**
+- Incorporar control de sonido, dificultad y tiempo. **Completado en los juegos disponibles.**
 - Probar con adultos y luego en sesiones breves supervisadas.
 
 ## Fase 2 — Catálogo inicial
 
-- Añadir Palabra desordenada, Secuencia lógica, Laberintos y Comprensión lectora.
+- Añadir Palabra desordenada. **Completado y auditado.**
+- Añadir Secuencia lógica. **Completado y auditado.**
+- Añadir Laberintos. **Completado y auditado.**
+- Añadir Comprensión lectora.
 - Crear recompensas visuales y resumen por habilidad.
 - Añadir accesibilidad y funcionamiento sin conexión.
 - Publicar una beta gratuita.

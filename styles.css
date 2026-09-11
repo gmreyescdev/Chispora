@@ -636,9 +636,10 @@ input:focus, select:focus {
 
 .progress-track span {
   display: block;
-  width: 33%;
+  width: 0;
   height: 100%;
   background: var(--turquoise);
+  transition: width 0.45s var(--ease-out);
 }
 
 .difficulty-summary {
@@ -666,10 +667,40 @@ input:focus, select:focus {
   gap: 0.8rem;
 }
 
+.game-stats {
+  display: grid;
+  justify-items: center;
+  font-size: 0.82rem;
+  line-height: 1.3;
+}
+
+.game-stats > strong {
+  font-size: 1rem;
+}
+
+.game-toolbar-actions {
+  display: grid;
+  justify-items: end;
+  gap: 0.35rem;
+}
+
+.sound-button {
+  color: var(--ink-soft);
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
 .memory-board {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 0.65rem;
+}
+
+.memory-board[data-pair-count="8"],
+.memory-board[data-pair-count="10"] {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
 .memory-card {
@@ -686,6 +717,11 @@ input:focus, select:focus {
   font-size: clamp(1.5rem, 7vw, 2.4rem);
   font-weight: 800;
   transition: transform 0.35s var(--ease-out), background-color 0.35s var(--ease-out), box-shadow 0.35s var(--ease-out);
+}
+
+.memory-card:disabled {
+  cursor: default;
+  opacity: 1;
 }
 
 .memory-card .card-front {
@@ -714,6 +750,375 @@ input:focus, select:focus {
   gap: 1rem;
   justify-items: center;
   text-align: center;
+}
+
+.operation-card {
+  display: grid;
+  gap: clamp(1.4rem, 5vw, 2.4rem);
+  justify-items: center;
+  border: 2px solid var(--ink);
+  border-radius: var(--radius-large);
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 9px 0 var(--ink), var(--shadow-small);
+  padding: clamp(1.4rem, 6vw, 3rem);
+  text-align: center;
+}
+
+.operation-equation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(0.35rem, 2vw, 1rem);
+  font-family: var(--font-display);
+  font-size: clamp(2.1rem, 12vw, 5rem);
+  font-weight: 900;
+  line-height: 1;
+}
+
+.operation-mystery {
+  display: grid;
+  place-items: center;
+  width: 1.12em;
+  height: 1.12em;
+  border: 2px dashed var(--ink);
+  border-radius: 0.3em;
+  background: var(--yellow);
+  color: var(--coral-deep);
+}
+
+.operation-options {
+  display: flex;
+  justify-content: center;
+  gap: clamp(0.65rem, 3vw, 1rem);
+}
+
+.operation-option {
+  display: grid;
+  place-items: center;
+  width: clamp(4rem, 20vw, 6rem);
+  aspect-ratio: 1;
+  border: 2px solid var(--ink);
+  border-radius: var(--radius-medium);
+  background: var(--sky);
+  box-shadow: 0 6px 0 var(--ink);
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 8vw, 3.4rem);
+  font-weight: 900;
+  transition: transform 0.25s var(--ease-out), background-color 0.25s var(--ease-out), opacity 0.25s var(--ease-out);
+}
+
+.operation-option:disabled {
+  cursor: default;
+}
+
+.operation-option.is-rejected {
+  background: var(--paper-deep);
+  opacity: 0.38;
+  box-shadow: none;
+}
+
+.operation-option.is-correct {
+  background: #bcf1e9;
+  transform: translateY(-4px) scale(1.04);
+}
+
+.word-card {
+  display: grid;
+  gap: 1.4rem;
+  justify-items: center;
+  border: 2px solid var(--ink);
+  border-radius: var(--radius-large);
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 9px 0 var(--ink), var(--shadow-small);
+  padding: clamp(1.2rem, 5vw, 2.5rem);
+  text-align: center;
+}
+
+.word-answer,
+.word-letters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: clamp(0.3rem, 1.5vw, 0.6rem);
+}
+
+.word-answer span {
+  display: grid;
+  place-items: center;
+  width: clamp(2rem, 8vw, 3.2rem);
+  height: clamp(2.5rem, 10vw, 3.8rem);
+  border-bottom: 4px solid var(--ink);
+  font-family: var(--font-display);
+  font-size: clamp(1.35rem, 6vw, 2.2rem);
+  font-weight: 900;
+}
+
+.word-answer.is-correct span {
+  border-color: var(--turquoise);
+  color: #11645d;
+}
+
+.word-answer.is-wrong span {
+  border-color: var(--coral);
+}
+
+.word-letter {
+  display: grid;
+  place-items: center;
+  width: clamp(2.7rem, 11vw, 4rem);
+  aspect-ratio: 1;
+  border: 2px solid var(--ink);
+  border-radius: 12px;
+  background: var(--yellow);
+  box-shadow: 0 5px 0 var(--ink);
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 5vw, 1.8rem);
+  font-weight: 900;
+  transition: transform 0.25s var(--ease-out), opacity 0.25s var(--ease-out);
+}
+
+.word-letter:disabled {
+  cursor: default;
+  opacity: 0.28;
+  box-shadow: none;
+}
+
+.word-tools {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+}
+
+.word-tools button:disabled {
+  cursor: default;
+  opacity: 0.4;
+}
+
+.word-hint {
+  width: min(100%, 34rem);
+  border-radius: var(--radius-small);
+  background: #eefaf8;
+  padding: 0.8rem 1rem;
+  color: var(--ink-soft);
+  font-weight: 700;
+}
+
+.sequence-card {
+  display: grid;
+  gap: 0;
+  overflow: hidden;
+  border: 2px solid var(--ink);
+  border-radius: var(--radius-large);
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: var(--shadow-medium);
+  text-align: center;
+}
+
+.sequence-puzzle {
+  display: grid;
+  gap: 1.4rem;
+  padding: clamp(1.5rem, 5vw, 3rem) clamp(1.25rem, 4vw, 2rem);
+}
+
+.sequence-items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: clamp(0.45rem, 2vw, 0.85rem);
+}
+
+.sequence-items span {
+  display: grid;
+  place-items: center;
+  min-width: clamp(3rem, 12vw, 4.5rem);
+  min-height: clamp(3rem, 12vw, 4.5rem);
+  border: 2px solid var(--ink);
+  border-radius: 18px;
+  background: var(--white);
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-size: clamp(1.15rem, 4vw, 1.65rem);
+  font-weight: 800;
+}
+
+.sequence-items .sequence-missing {
+  border-style: dashed;
+  background: var(--yellow);
+}
+
+.sequence-answer-zone {
+  display: grid;
+  gap: 1rem;
+  border-top: 2px solid var(--ink);
+  background: #eefaf8;
+  padding: clamp(1.25rem, 4vw, 2rem);
+}
+
+.sequence-answer-title {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 0.82rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.sequence-options {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: clamp(0.65rem, 2vw, 1rem);
+}
+
+.sequence-option {
+  display: grid;
+  place-items: center;
+  min-width: clamp(4.5rem, 14vw, 6rem);
+  min-height: clamp(3.25rem, 10vw, 4rem);
+  border: 2px solid var(--ink);
+  border-radius: 16px;
+  background: var(--white);
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-size: clamp(1.1rem, 3vw, 1.45rem);
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 4px 0 var(--ink);
+  transition: transform 0.18s var(--ease-out), box-shadow 0.18s var(--ease-out), opacity 0.18s ease;
+}
+
+.sequence-option:active:not(:disabled) {
+  transform: translateY(3px);
+  box-shadow: 0 1px 0 var(--ink);
+}
+
+.sequence-option:disabled {
+  cursor: default;
+}
+
+.sequence-option.is-rejected {
+  opacity: 0.35;
+  text-decoration: line-through;
+}
+
+.sequence-option.is-correct {
+  background: var(--turquoise);
+}
+
+.maze-stage {
+  display: grid;
+  justify-items: center;
+  gap: 1rem;
+  border: 2px solid var(--ink);
+  border-radius: var(--radius-large);
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: var(--shadow-medium);
+  padding: clamp(1rem, 4vw, 1.75rem);
+}
+
+.maze-legend {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.25rem;
+  color: var(--ink-soft);
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+
+.maze-player-dot,
+.maze-player {
+  color: #1677ff;
+}
+
+.maze-board {
+  display: grid;
+  grid-template-columns: repeat(var(--maze-size), 1fr);
+  width: min(100%, 31rem);
+  aspect-ratio: 1;
+  border: 3px solid var(--ink);
+  background: #eefaf8;
+  outline: none;
+}
+
+.maze-board:focus-visible {
+  box-shadow: 0 0 0 5px rgba(46, 196, 182, 0.35);
+}
+
+.maze-cell {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-width: 0;
+  min-height: 0;
+  border: 0 solid var(--ink);
+}
+
+.maze-cell:nth-child(odd) {
+  background: rgba(255, 255, 255, 0.26);
+}
+
+.maze-player,
+.maze-goal {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  width: 70%;
+  height: 70%;
+  font-size: clamp(0.8rem, 4vw, 1.65rem);
+  line-height: 1;
+}
+
+.maze-player {
+  z-index: 2;
+  animation: maze-pop 0.2s var(--ease-out);
+}
+
+.maze-goal {
+  color: #e59600;
+}
+
+.maze-controls {
+  display: grid;
+  grid-template-columns: repeat(3, 3.4rem);
+  grid-template-areas: ". up ." "left down right";
+  gap: 0.45rem;
+}
+
+.maze-direction {
+  display: grid;
+  place-items: center;
+  min-height: 3.4rem;
+  border: 2px solid var(--ink);
+  border-radius: 14px;
+  background: var(--white);
+  box-shadow: 0 3px 0 var(--ink);
+  color: var(--ink);
+  font-size: 1.5rem;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.maze-direction:active:not(:disabled) {
+  transform: translateY(2px);
+  box-shadow: 0 1px 0 var(--ink);
+}
+
+.maze-direction:disabled {
+  cursor: default;
+  opacity: 0.55;
+}
+
+.maze-up { grid-area: up; }
+.maze-left { grid-area: left; }
+.maze-down { grid-area: down; }
+.maze-right { grid-area: right; }
+
+@keyframes maze-pop {
+  from { transform: scale(0.65); }
+  to { transform: scale(1); }
 }
 
 /* =============================================================
@@ -908,8 +1313,25 @@ input:focus, select:focus {
     transform: translateY(-4px);
   }
 
-  .memory-card:not(.is-found):hover {
+  .memory-card:not(:disabled):hover {
     transform: translateY(-4px) rotate(1deg);
+  }
+
+  .operation-option:not(:disabled):hover {
+    transform: translateY(-4px) rotate(2deg);
+  }
+
+  .word-letter:not(:disabled):hover {
+    transform: translateY(-4px) rotate(-2deg);
+  }
+
+  .sequence-option:not(:disabled):hover {
+    transform: translateY(-3px) rotate(-1deg);
+  }
+
+  .maze-direction:not(:disabled):hover {
+    background: var(--yellow);
+    transform: translateY(-2px);
   }
 }
 
@@ -923,6 +1345,10 @@ input:focus, select:focus {
 
   .memory-board {
     grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .memory-board[data-pair-count="10"] {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
   }
 
   .memory-card {

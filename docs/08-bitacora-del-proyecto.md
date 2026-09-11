@@ -131,3 +131,37 @@ HTML contiene estructura y significado; CSS controla presentación; JavaScript a
 ### Próximo paso
 
 Probar la navegación en el navegador, corregir detalles visuales observados y después implementar la lógica completa de Memorama con pruebas automatizadas.
+
+## 7 de septiembre de 2026 — Expansión del catálogo educativo
+
+### Objetivo
+
+Convertir el prototipo navegable en un catálogo real de juegos breves, graduados y comprobables.
+
+### Trabajo realizado
+
+- Se completaron y documentaron Memorama, Operación misteriosa, Palabra desordenada y Secuencia lógica.
+- Cada juego recibió tres niveles, pausa, tiempo, resultado y progreso guardado localmente.
+- Se separaron los motores de reglas para probarlos con Node sin depender del navegador.
+- Se ajustó Secuencia lógica después de observar que el patrón y las respuestas necesitaban una separación visual más clara.
+- Se completó Laberintos con generación local, controles táctiles y de teclado, tres dificultades y progreso propio.
+
+### Decisiones
+
+- Mantener mensajes educativos sin castigos ni pérdida de puntos por equivocarse.
+- Generar laberintos perfectos para garantizar solución y coherencia de paredes.
+- Mantener el catálogo sin cuentas, anuncios, rastreadores ni transmisión de respuestas.
+
+### Verificación
+
+- Los motores existentes cuentan con pruebas automáticas de reglas y finalización.
+- Los cuatro primeros juegos fueron recorridos en navegador y revisados en vista móvil.
+- Laberintos superó pruebas de conectividad, paredes, teclado, controles táctiles, pausa, salida, resultado, progreso y vista móvil sin errores de consola.
+
+### Aprendizaje técnico
+
+Separar las reglas de un juego de su representación visual permite comprobar casos difíciles con rapidez y cambiar la interfaz sin alterar el comportamiento educativo.
+
+### Próximo paso
+
+Construir Comprensión lectora, el sexto juego del catálogo inicial.

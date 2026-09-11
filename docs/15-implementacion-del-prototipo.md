@@ -4,7 +4,7 @@
 
 El proyecto ya puede abrirse como una web. Las nueve pantallas existen, se puede recorrer el flujo infantil y el familiar, y el navegador conserva el perfil y los ajustes localmente.
 
-Memorama todavía es una demostración visual: permite descubrir cartas y simular el final, pero no evalúa parejas ni mezcla automáticamente el tablero. Esa lógica pertenece al siguiente incremento.
+Memorama nació en esta etapa como una demostración visual. Su implementación completa y la auditoría posterior están documentadas en `16-implementacion-y-auditoria-memorama.md`.
 
 ## Responsabilidad de cada archivo
 
@@ -132,14 +132,6 @@ También se puede abrir `index.html` directamente. El servidor local se recomien
 - Cómo iniciar el servidor y abrir el prototipo.
 - Por qué el contenido permanece en HTML aunque JavaScript gestione la navegación.
 
-## Próximo incremento
+## Incremento siguiente a este documento
 
-Implementar Memorama como un juego real:
-
-1. Crear y mezclar pares.
-2. Bloquear una tercera selección durante la comparación.
-3. Detectar coincidencias.
-4. Contar movimientos y parejas.
-5. Reconocer la finalización.
-6. Guardar progreso al terminar.
-7. Probar reglas y casos límite automáticamente.
+La implementación completa de Memorama se realizó en el incremento posterior. El siguiente juego pendiente de la Fase 1 es Operación misteriosa.

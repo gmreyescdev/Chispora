@@ -43,11 +43,16 @@ Cada juego tendrá tres niveles de dificultad y sesiones sugeridas de entre 5 y 
 - [Especificación del primer prototipo](docs/13-especificacion-del-mvp.md)
 - [Wireframes de baja fidelidad](docs/14-wireframes-de-baja-fidelidad.md)
 - [Implementación del prototipo navegable](docs/15-implementacion-del-prototipo.md)
+- [Implementación y auditoría de Memorama](docs/16-implementacion-y-auditoria-memorama.md)
+- [Implementación y auditoría de Operación misteriosa](docs/17-implementacion-y-auditoria-operacion.md)
+- [Implementación y auditoría de Palabra desordenada](docs/18-implementacion-y-auditoria-palabras.md)
+- [Implementación y auditoría de Secuencia lógica](docs/19-implementacion-y-auditoria-secuencia.md)
+- [Implementación y auditoría de Laberintos](docs/20-implementacion-y-auditoria-laberintos.md)
 - [Historial de versiones](CHANGELOG.md)
 
 ## Estado
 
-Fase 0 completada: definición y documentación inicial. Fase 1 en progreso: prototipo HTML navegable construido.
+Fase 0 completada. Fase 1 técnica completada; Fase 2 iniciada con cinco juegos funcionales: Memorama, Operación misteriosa, Palabra desordenada, Secuencia lógica y Laberintos.
 
 - **Dominio:** `chispora.cl` adquirido por el propietario del proyecto.
 - **Marca CHISPORA:** disponibilidad preliminar informada; todavía no solicitada ni registrada en INAPI.
