@@ -26,6 +26,8 @@ El jugador observa tiras divididas en partes iguales y responde desafíos gradua
 
 Un error descarta temporalmente esa opción, pero no resta puntos ni cambia de desafío. Después de acertar se explica la relación entre el modelo y la respuesta.
 
+En los desafíos de identificación, el modelo no muestra la notación numérica antes de responder. Cada parte conserva una descripción accesible individual para que usuarios de lector de pantalla puedan revisar cuáles están coloreadas sin recibir una respuesta textual directa.
+
 ### Arquitectura
 
 - `lib/fraction-engine.js`: bancos, mezcla, validación, reintentos y finalización.

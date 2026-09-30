@@ -45,3 +45,4 @@ Los cambios importantes de Chispora se registran aquí. El proyecto utiliza un e
 - Fracciones en acción con modelos visuales, comparación, equivalencias, tres niveles y pruebas.
 - Programa al robot con secuencias de comandos, obstáculos, depuración, tres niveles y pruebas de todos los mapas.
 - Catálogo, panel familiar y constelación ampliados de seis a ocho juegos y de 18 a 24 niveles.
+- Corrección del modelo Explorador de Fracciones para no mostrar la respuesta antes de elegir.

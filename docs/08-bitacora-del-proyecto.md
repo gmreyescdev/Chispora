@@ -270,3 +270,10 @@ Agregar dos juegos entretenidos que amplíen las habilidades del catálogo.
 ### Próximo paso
 
 Realizar pruebas supervisadas y retomar accesibilidad ampliada y funcionamiento sin conexión.
+
+### Corrección posterior a la revisión visual
+
+- Se detectó que el nivel Explorador de Fracciones mostraba la notación correcta junto al modelo antes de responder.
+- Se ocultó esa etiqueta únicamente en preguntas de identificación.
+- Comparación y equivalencias conservan las etiquetas necesarias para plantear su relación.
+- Cada segmento del modelo recibió una descripción accesible de su estado coloreado o sin color.
