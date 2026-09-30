@@ -338,3 +338,29 @@ Mostrar antes las acciones importantes y simplificar las instrucciones de todos 
 ### Próximo paso
 
 Observar la interfaz en teléfonos físicos y validar las instrucciones con niños y adultos responsables.
+
+## 30 de septiembre de 2026 — Mapa por áreas
+
+### Objetivo
+
+Ayudar a elegir entre diez juegos sin añadir una pantalla intermedia.
+
+### Trabajo realizado
+
+- Se documentaron las diez ideas de evolución y su orden recomendado.
+- Se agruparon las misiones en Palabras, Números, Lógica y Exploración.
+- Se añadieron filtros con cantidades, estado activo y mensaje anunciable.
+- Se reemplazó “Disponible” por el área de cada juego.
+- Se separaron reglas puras e interfaz en dos archivos.
+
+### Verificación
+
+- Todas muestra diez juegos; Palabras y Exploración muestran dos; Números y Lógica muestran tres.
+- El filtro Lógica se activó correctamente con teclado.
+- Un filtro desconocido recupera la vista completa.
+- No apareció desbordamiento horizontal ni errores de consola.
+- Las tarjetas permanecen visibles en el HTML sin JavaScript.
+
+### Próximo paso
+
+Crear el patrón común para tutoriales breves que puedan repetirse sin modificar progreso.

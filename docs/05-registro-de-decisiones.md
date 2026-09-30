@@ -178,6 +178,15 @@ Este archivo conserva las decisiones importantes y sus motivos. Se actualizará 
 - **Consecuencia:** el contenido aparece antes sin modificar la escala base del texto, el orden semántico ni el tamaño mínimo de los controles esenciales.
 - **Estado:** aceptada e implementada.
 
+## D-024 — Filtros de área sin navegación adicional
+
+- **Fecha:** 30 de septiembre de 2026.
+- **Decisión:** organizar las diez misiones con filtros temporales dentro del mismo mapa.
+- **Motivo:** permite reducir la cantidad de opciones visibles sin añadir pasos obligatorios antes de jugar.
+- **Alternativas consideradas:** cuatro pantallas independientes, acordeones, carruseles y una selección de área obligatoria.
+- **Consecuencia:** todas las misiones siguen visibles por defecto y sin JavaScript; el filtro no se almacena como progreso.
+- **Estado:** aceptada e implementada.
+
 ## Plantilla para próximas decisiones
 
 - **Fecha:**

@@ -33,6 +33,8 @@
 - Añadir Reloj de aventuras. **Completado y auditado.**
 - Añadir Laboratorio curioso. **Completado y auditado.**
 - Compactar la interfaz y simplificar instrucciones. **Completado y auditado.**
+- Organizar el mapa por áreas. **Completado y auditado.**
+- Añadir tutoriales breves por juego.
 - Añadir accesibilidad y funcionamiento sin conexión.
 - Publicar una beta gratuita.
 

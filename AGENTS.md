@@ -107,4 +107,4 @@ No declares una tarea terminada solo porque se vea bien. Debe cumplir sus criter
 
 Hay diez juegos implementados: Memorama, Operación misteriosa, Palabra desordenada, Secuencia lógica, Laberintos, Comprensión lectora, Fracciones en acción, Programa al robot, Reloj de aventuras y Laboratorio curioso.
 
-Las recompensas visuales y el resumen por habilidad están implementados. Las siguientes prioridades son accesibilidad ampliada, funcionamiento sin conexión y publicación de una beta gratuita.
+Las recompensas visuales, el resumen por habilidad y el mapa organizado por áreas están implementados. La siguiente prioridad son tutoriales breves; después siguen accesibilidad ampliada, funcionamiento sin conexión y publicación de una beta gratuita.

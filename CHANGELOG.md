@@ -52,3 +52,5 @@ Los cambios importantes de Chispora se registran aquí. El proyecto utiliza un e
 - Catálogo, panel familiar y constelación ampliados de ocho a diez juegos y de 24 a 30 niveles.
 - Interfaz general más compacta, con introducciones en dos columnas y juegos visibles con menos desplazamiento.
 - Instrucciones iniciales reescritas como acciones breves y botones “Jugar”.
+- Mapa de misiones organizado mediante filtros accesibles para Palabras, Números, Lógica y Exploración.
+- Motor probado para filtrar áreas y recuperar la vista completa ante valores desconocidos.

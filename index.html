@@ -7,7 +7,7 @@
   <meta name="theme-color" content="#fff8e8">
   <title>Chispora · Juega. Piensa. Descubre.</title>
   <link rel="icon" href="assets/img/chispora-symbol.svg?v=2026090703" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css?v=2026093004">
+  <link rel="stylesheet" href="styles.css?v=2026093005">
   <script defer src="lib/gsap.min.js?v=2026090706"></script>
   <script defer src="lib/ScrollTrigger.min.js?v=2026090706"></script>
   <script defer src="lib/manifest.js?v=2026090706"></script>
@@ -23,11 +23,13 @@
   <script defer src="lib/choice-game.js?v=2026093003"></script>
   <script defer src="lib/clock-engine.js?v=2026093003"></script>
   <script defer src="lib/science-engine.js?v=2026093003"></script>
+  <script defer src="lib/mission-map-engine.js?v=2026093001"></script>
   <script defer src="main.js?v=2026093003"></script>
   <script defer src="sequence-game.js?v=2026090706"></script>
   <script defer src="maze-game.js?v=2026090706"></script>
   <script defer src="reading-game.js?v=2026092901"></script>
   <script defer src="progress-summary.js?v=2026092902"></script>
+  <script defer src="mission-map.js?v=2026093001"></script>
   <script defer src="fraction-game.js?v=2026093002"></script>
   <script defer src="robot-game.js?v=2026093001"></script>
   <script defer src="clock-game.js?v=2026093003"></script>
@@ -122,11 +124,22 @@
         <p>Hoy basta con una. Siempre puedes volver otro día.</p>
       </div>
 
+      <nav class="mission-filters" aria-label="Filtrar misiones por área">
+        <div class="mission-filter-buttons" role="group" aria-label="Áreas de juego">
+          <button class="mission-filter is-active" type="button" data-mission-filter="all" aria-pressed="true">Todas <span>10</span></button>
+          <button class="mission-filter" type="button" data-mission-filter="words" aria-pressed="false">Palabras <span>2</span></button>
+          <button class="mission-filter" type="button" data-mission-filter="numbers" aria-pressed="false">Números <span>3</span></button>
+          <button class="mission-filter" type="button" data-mission-filter="logic" aria-pressed="false">Lógica <span>3</span></button>
+          <button class="mission-filter" type="button" data-mission-filter="exploration" aria-pressed="false">Exploración <span>2</span></button>
+        </div>
+        <p class="mission-filter-status" data-mission-filter-status aria-live="polite">10 juegos disponibles</p>
+      </nav>
+
       <div class="mission-grid">
-        <article class="mission-card mission-card-active">
+        <article class="mission-card mission-card-active" data-mission-area="exploration">
           <div class="mission-icon" aria-hidden="true">◇</div>
           <div>
-            <span class="mission-status">Disponible</span>
+            <span class="mission-status">Exploración</span>
             <h3>Memorama</h3>
             <p>Encuentra parejas y entrena tu memoria visual.</p>
           </div>
@@ -137,10 +150,10 @@
           <button class="button button-primary" type="button" data-go="introduccion-memoria">Ver misión</button>
         </article>
 
-        <article class="mission-card mission-card-active">
+        <article class="mission-card mission-card-active" data-mission-area="numbers">
           <div class="mission-icon" aria-hidden="true">＋</div>
           <div>
-            <span class="mission-status">Disponible</span>
+            <span class="mission-status">Números</span>
             <h3>Operación misteriosa</h3>
             <p>Resuelve cálculos para revelar una sorpresa.</p>
           </div>
@@ -151,10 +164,10 @@
           <button class="button button-primary" type="button" data-go="introduccion-operacion">Ver misión</button>
         </article>
 
-        <article class="mission-card mission-card-active">
+        <article class="mission-card mission-card-active" data-mission-area="words">
           <div class="mission-icon" aria-hidden="true">Aa</div>
           <div>
-            <span class="mission-status">Disponible</span>
+            <span class="mission-status">Palabras</span>
             <h3>Palabra desordenada</h3>
             <p>Ordena letras y descubre nuevas palabras.</p>
           </div>
@@ -165,10 +178,10 @@
           <button class="button button-primary" type="button" data-go="introduccion-palabras">Ver misión</button>
         </article>
 
-        <article class="mission-card mission-card-active">
+        <article class="mission-card mission-card-active" data-mission-area="logic">
           <div class="mission-icon" aria-hidden="true">◌</div>
           <div>
-            <span class="mission-status">Disponible</span>
+            <span class="mission-status">Lógica</span>
             <h3>Secuencia lógica</h3>
             <p>Observa el patrón y descubre qué elemento sigue.</p>
           </div>
@@ -179,10 +192,10 @@
           <button class="button button-primary" type="button" data-go="introduccion-secuencia">Ver misión</button>
         </article>
 
-        <article class="mission-card mission-card-active">
+        <article class="mission-card mission-card-active" data-mission-area="logic">
           <div class="mission-icon" aria-hidden="true">⌁</div>
           <div>
-            <span class="mission-status">Disponible</span>
+            <span class="mission-status">Lógica</span>
             <h3>Laberintos</h3>
             <p>Encuentra el camino y entrena tu orientación espacial.</p>
           </div>
@@ -193,10 +206,10 @@
           <button class="button button-primary" type="button" data-go="introduccion-laberinto">Ver misión</button>
         </article>
 
-        <article class="mission-card mission-card-active">
+        <article class="mission-card mission-card-active" data-mission-area="words">
           <div class="mission-icon" aria-hidden="true">≡</div>
           <div>
-            <span class="mission-status">Disponible</span>
+            <span class="mission-status">Palabras</span>
             <h3>Comprensión lectora</h3>
             <p>Lee relatos breves y encuentra las pistas para responder.</p>
           </div>
@@ -207,21 +220,21 @@
           <button class="button button-primary" type="button" data-go="introduccion-lectura">Ver misión</button>
         </article>
 
-        <article class="mission-card mission-card-active">
-          <div class="mission-icon" aria-hidden="true">½</div><div><span class="mission-status">Disponible</span><h3>Fracciones en acción</h3><p>Compara partes y descubre distintas formas de representar una cantidad.</p></div>
+        <article class="mission-card mission-card-active" data-mission-area="numbers">
+          <div class="mission-icon" aria-hidden="true">½</div><div><span class="mission-status">Números</span><h3>Fracciones en acción</h3><p>Compara partes y descubre distintas formas de representar una cantidad.</p></div>
           <div class="mission-progress"><span data-fraction-progress-label>Listo para jugar</span><div class="progress-track" role="progressbar" aria-label="Progreso de Fracciones en acción" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" data-fraction-progress><span></span></div></div>
           <button class="button button-primary" type="button" data-go="introduccion-fracciones">Ver misión</button>
         </article>
 
-        <article class="mission-card mission-card-active">
-          <div class="mission-icon" aria-hidden="true">⌘</div><div><span class="mission-status">Disponible</span><h3>Programa al robot</h3><p>Ordena comandos, prueba tu plan y corrige el recorrido.</p></div>
+        <article class="mission-card mission-card-active" data-mission-area="logic">
+          <div class="mission-icon" aria-hidden="true">⌘</div><div><span class="mission-status">Lógica</span><h3>Programa al robot</h3><p>Ordena comandos, prueba tu plan y corrige el recorrido.</p></div>
           <div class="mission-progress"><span data-robot-progress-label>Listo para jugar</span><div class="progress-track" role="progressbar" aria-label="Progreso de Programa al robot" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" data-robot-progress><span></span></div></div>
           <button class="button button-primary" type="button" data-go="introduccion-robot">Ver misión</button>
         </article>
 
-        <article class="mission-card mission-card-active"><div class="mission-icon" aria-hidden="true">◷</div><div><span class="mission-status">Disponible</span><h3>Reloj de aventuras</h3><p>Lee relojes y calcula cuánto dura cada aventura.</p></div><div class="mission-progress"><span data-clock-progress-label>Listo para jugar</span><div class="progress-track" role="progressbar" aria-label="Progreso de Reloj de aventuras" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" data-clock-progress><span></span></div></div><button class="button button-primary" type="button" data-go="introduccion-reloj">Ver misión</button></article>
+        <article class="mission-card mission-card-active" data-mission-area="numbers"><div class="mission-icon" aria-hidden="true">◷</div><div><span class="mission-status">Números</span><h3>Reloj de aventuras</h3><p>Lee relojes y calcula cuánto dura cada aventura.</p></div><div class="mission-progress"><span data-clock-progress-label>Listo para jugar</span><div class="progress-track" role="progressbar" aria-label="Progreso de Reloj de aventuras" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" data-clock-progress><span></span></div></div><button class="button button-primary" type="button" data-go="introduccion-reloj">Ver misión</button></article>
 
-        <article class="mission-card mission-card-active"><div class="mission-icon" aria-hidden="true">⚗</div><div><span class="mission-status">Disponible</span><h3>Laboratorio curioso</h3><p>Observa evidencias, predice resultados y diseña pruebas justas.</p></div><div class="mission-progress"><span data-science-progress-label>Listo para jugar</span><div class="progress-track" role="progressbar" aria-label="Progreso de Laboratorio curioso" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" data-science-progress><span></span></div></div><button class="button button-primary" type="button" data-go="introduccion-ciencia">Ver misión</button></article>
+        <article class="mission-card mission-card-active" data-mission-area="exploration"><div class="mission-icon" aria-hidden="true">⚗</div><div><span class="mission-status">Exploración</span><h3>Laboratorio curioso</h3><p>Observa evidencias, predice resultados y diseña pruebas justas.</p></div><div class="mission-progress"><span data-science-progress-label>Listo para jugar</span><div class="progress-track" role="progressbar" aria-label="Progreso de Laboratorio curioso" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" data-science-progress><span></span></div></div><button class="button button-primary" type="button" data-go="introduccion-ciencia">Ver misión</button></article>
       </div>
 
       <section class="skill-constellation" aria-labelledby="skill-constellation-title">

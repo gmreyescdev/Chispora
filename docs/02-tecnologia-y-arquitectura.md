@@ -31,6 +31,7 @@ El prototipo actual utiliza:
 - `clock-game.js` y `science-game.js` representan las interfaces específicas de los juegos noveno y décimo.
 - `lib/clock-engine.js` y `lib/science-engine.js` contienen los bancos y reglas educativas probadas.
 - `lib/choice-game.js` reutiliza el flujo de opciones, pausa, salida y progreso sin mezclar reglas de contenido.
+- `lib/mission-map-engine.js` define las áreas y reglas puras del filtro; `mission-map.js` actualiza el mapa sin modificar progreso.
 - `lib/manifest.js` como configuración central de marca y valores iniciales.
 - GSAP como mejora visual opcional para transiciones.
 - `localStorage` para perfil y ajustes del navegador.
@@ -63,6 +64,7 @@ WebDidactico/
 │   ├── clock-engine.js
 │   ├── science-engine.js
 │   ├── choice-game.js
+│   ├── mission-map-engine.js
 │   ├── gsap.min.js
 │   └── ScrollTrigger.min.js
 ├── docs/

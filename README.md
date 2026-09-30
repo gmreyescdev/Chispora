@@ -58,6 +58,8 @@ Cada juego tendrá tres niveles de dificultad y sesiones sugeridas de entre 5 y 
 - [Implementación y auditoría de Fracciones y Robot](docs/24-implementacion-fracciones-y-robot.md)
 - [Implementación y auditoría de Reloj y Laboratorio](docs/25-implementacion-reloj-y-laboratorio.md)
 - [Compactación visual e instrucciones](docs/26-compactacion-visual-e-instrucciones.md)
+- [Plan de evolución del producto](docs/27-plan-de-evolucion-del-producto.md)
+- [Organización del mapa por áreas](docs/28-organizacion-del-mapa-por-areas.md)
 - [Historial de versiones](CHANGELOG.md)
 
 ## Estado

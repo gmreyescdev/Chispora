@@ -572,6 +572,52 @@ input:focus, select:focus {
 /* =============================================================
    8. Missions
    ============================================================= */
+.mission-filters {
+  display: grid;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.mission-filter-buttons {
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  padding: 0.2rem 0.15rem 0.45rem;
+  scrollbar-width: thin;
+}
+
+.mission-filter {
+  flex: 0 0 auto;
+  min-height: 44px;
+  border: 2px solid var(--ink);
+  border-radius: 999px;
+  background: var(--white);
+  padding: 0.45rem 0.75rem;
+  font-weight: 800;
+}
+
+.mission-filter span {
+  display: inline-grid;
+  place-items: center;
+  min-width: 1.6rem;
+  height: 1.6rem;
+  margin-left: 0.25rem;
+  border-radius: 999px;
+  background: var(--paper-deep);
+  font-size: 0.78rem;
+}
+
+.mission-filter.is-active {
+  background: var(--yellow);
+  box-shadow: 0 3px 0 var(--ink);
+}
+
+.mission-filter-status {
+  color: var(--ink-soft);
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
 .mission-grid {
   display: grid;
   gap: 0.9rem;
