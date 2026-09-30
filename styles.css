@@ -1404,6 +1404,41 @@ input:focus, select:focus {
 .robot-hint { margin: 0; border-radius: var(--radius-small); background: #fff3b8; padding: 0.8rem; }
 .robot-stage.is-paused > * { visibility: hidden; }
 
+.choice-card {
+  display: grid;
+  justify-items: center;
+  gap: 1.25rem;
+  border: 2px solid var(--ink);
+  border-radius: var(--radius-large);
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: var(--shadow-medium);
+  padding: clamp(1.2rem, 5vw, 2.4rem);
+  text-align: center;
+}
+
+.choice-card h2 { margin: 0; }
+.choice-card.is-paused > * { visibility: hidden; }
+.choice-options { display: grid; gap: 0.75rem; width: 100%; }
+.choice-option { min-height: 3.8rem; border: 2px solid var(--ink); border-radius: 16px; background: var(--white); box-shadow: 0 4px 0 var(--ink); padding: 0.8rem; font-weight: 800; }
+.choice-option:disabled { cursor: default; }
+.choice-option.is-rejected { opacity: 0.38; text-decoration: line-through; box-shadow: none; }
+.choice-option.is-correct { background: #bcf1e9; }
+.choice-explanation { width: 100%; margin: 0; border-radius: var(--radius-small); background: #dff8f4; padding: 0.9rem; font-weight: 700; }
+
+.clock-visual { display: flex; align-items: center; justify-content: center; gap: clamp(0.65rem, 3vw, 1.4rem); width: 100%; flex-wrap: wrap; }
+.clock-wrap { display: grid; justify-items: center; gap: 0.45rem; }
+.analog-clock { position: relative; width: clamp(9rem, 42vw, 13rem); aspect-ratio: 1; border: 4px solid var(--ink); border-radius: 50%; background: var(--paper); box-shadow: inset 0 0 0 5px var(--white); }
+.clock-number { position: absolute; z-index: 1; color: var(--ink); font-size: clamp(0.65rem, 2.8vw, 0.9rem); font-weight: 900; line-height: 1; transform: translate(-50%, -50%); }
+.clock-hand { position: absolute; left: 50%; bottom: 50%; z-index: 2; width: 4px; border-radius: 4px; background: var(--ink); transform: translateX(-50%) rotate(var(--angle)); transform-origin: 50% 100%; }
+.clock-hand.hour { height: 27%; width: 6px; }
+.clock-hand.minute { height: 37%; background: var(--coral-deep); }
+.clock-center { position: absolute; left: 50%; top: 50%; z-index: 3; width: 0.9rem; height: 0.9rem; border: 3px solid var(--ink); border-radius: 50%; background: var(--yellow); transform: translate(-50%, -50%); }
+.clock-arrow { font-size: 2rem; font-weight: 900; }
+
+.science-visual { display: flex; align-items: center; gap: 1rem; width: 100%; border: 2px dashed var(--ink); border-radius: 18px; background: #eefaf8; padding: clamp(1rem, 4vw, 1.4rem); text-align: left; }
+.science-visual p { margin: 0.35rem 0 0; }
+.science-icon { flex: 0 0 auto; font-size: clamp(2.4rem, 10vw, 4rem); }
+
 @keyframes maze-pop {
   from { transform: scale(0.65); }
   to { transform: scale(1); }
@@ -1627,7 +1662,8 @@ input:focus, select:focus {
   }
 
   .fraction-option:not(:disabled):hover,
-  .robot-controls button:not(:disabled):hover { transform: translateY(-3px); }
+  .robot-controls button:not(:disabled):hover,
+  .choice-option:not(:disabled):hover { transform: translateY(-3px); }
 }
 
 /* =============================================================
@@ -1695,6 +1731,8 @@ input:focus, select:focus {
   }
 
   .fraction-options { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+  .choice-options { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 
   .robot-stage { grid-template-columns: minmax(16rem, 1fr) minmax(16rem, 0.85fr); align-items: center; }
 }

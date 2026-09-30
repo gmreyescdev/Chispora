@@ -17,9 +17,9 @@ function test(name, run) {
 
 test("resume un estado vacío de forma segura", () => {
   const summary = engine.summarize(null);
-  assert.equal(summary.skills.length, 8);
+  assert.equal(summary.skills.length, 10);
   assert.equal(summary.totalLevels, 0);
-  assert.equal(summary.maximumLevels, 24);
+  assert.equal(summary.maximumLevels, 30);
   assert.equal(summary.percentage, 0);
   assert.equal(summary.completedGames, 0);
 });
@@ -28,7 +28,7 @@ test("cuenta únicamente las tres dificultades reconocidas", () => {
   const summary = engine.summarize({ progress: { memory: { completedByDifficulty: { explorador: true, aventurero: true, inventado: true } } } });
   assert.equal(summary.skills.find((skill) => skill.id === "memory").levels, 2);
   assert.equal(summary.totalLevels, 2);
-  assert.equal(summary.percentage, 8);
+  assert.equal(summary.percentage, 7);
 });
 
 test("asigna estados descriptivos sin puntajes ni comparaciones", () => {
@@ -48,7 +48,7 @@ test("calcula el catálogo completo y conserva partidas terminadas", () => {
   const progress = { completedGames: 24 };
   engine.skills.forEach((skill) => { progress[skill.id] = { completedByDifficulty: { explorador: true, aventurero: true, maestro: true } }; });
   const summary = engine.summarize({ progress: progress });
-  assert.equal(summary.totalLevels, 24);
+  assert.equal(summary.totalLevels, 30);
   assert.equal(summary.percentage, 100);
   assert.equal(summary.completedGames, 24);
   assert.equal(summary.message, "Recorriste todo el mapa disponible.");

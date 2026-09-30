@@ -30,6 +30,8 @@
 - Crear recompensas visuales y resumen por habilidad. **Completado y auditado.**
 - Añadir Fracciones en acción. **Completado y auditado.**
 - Añadir Programa al robot. **Completado y auditado.**
+- Añadir Reloj de aventuras. **Completado y auditado.**
+- Añadir Laboratorio curioso. **Completado y auditado.**
 - Añadir accesibilidad y funcionamiento sin conexión.
 - Publicar una beta gratuita.
 

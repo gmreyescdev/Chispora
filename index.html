@@ -7,7 +7,7 @@
   <meta name="theme-color" content="#fff8e8">
   <title>Chispora · Juega. Piensa. Descubre.</title>
   <link rel="icon" href="assets/img/chispora-symbol.svg?v=2026090703" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css?v=2026093001">
+  <link rel="stylesheet" href="styles.css?v=2026093003">
   <script defer src="lib/gsap.min.js?v=2026090706"></script>
   <script defer src="lib/ScrollTrigger.min.js?v=2026090706"></script>
   <script defer src="lib/manifest.js?v=2026090706"></script>
@@ -17,16 +17,21 @@
   <script defer src="lib/sequence-engine.js?v=2026090706"></script>
   <script defer src="lib/maze-engine.js?v=2026090706"></script>
   <script defer src="lib/reading-engine.js?v=2026092901"></script>
-  <script defer src="lib/progress-engine.js?v=2026093001"></script>
+  <script defer src="lib/progress-engine.js?v=2026093003"></script>
   <script defer src="lib/fraction-engine.js?v=2026093001"></script>
   <script defer src="lib/robot-engine.js?v=2026093001"></script>
-  <script defer src="main.js?v=2026093001"></script>
+  <script defer src="lib/choice-game.js?v=2026093003"></script>
+  <script defer src="lib/clock-engine.js?v=2026093003"></script>
+  <script defer src="lib/science-engine.js?v=2026093003"></script>
+  <script defer src="main.js?v=2026093003"></script>
   <script defer src="sequence-game.js?v=2026090706"></script>
   <script defer src="maze-game.js?v=2026090706"></script>
   <script defer src="reading-game.js?v=2026092901"></script>
   <script defer src="progress-summary.js?v=2026092902"></script>
   <script defer src="fraction-game.js?v=2026093002"></script>
   <script defer src="robot-game.js?v=2026093001"></script>
+  <script defer src="clock-game.js?v=2026093003"></script>
+  <script defer src="science-game.js?v=2026093003"></script>
 </head>
 <body>
   <a class="skip-link" href="#main-content">Saltar al contenido principal</a>
@@ -213,6 +218,10 @@
           <div class="mission-progress"><span data-robot-progress-label>Listo para jugar</span><div class="progress-track" role="progressbar" aria-label="Progreso de Programa al robot" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" data-robot-progress><span></span></div></div>
           <button class="button button-primary" type="button" data-go="introduccion-robot">Ver misión</button>
         </article>
+
+        <article class="mission-card mission-card-active"><div class="mission-icon" aria-hidden="true">◷</div><div><span class="mission-status">Disponible</span><h3>Reloj de aventuras</h3><p>Lee relojes y calcula cuánto dura cada aventura.</p></div><div class="mission-progress"><span data-clock-progress-label>Listo para jugar</span><div class="progress-track" role="progressbar" aria-label="Progreso de Reloj de aventuras" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" data-clock-progress><span></span></div></div><button class="button button-primary" type="button" data-go="introduccion-reloj">Ver misión</button></article>
+
+        <article class="mission-card mission-card-active"><div class="mission-icon" aria-hidden="true">⚗</div><div><span class="mission-status">Disponible</span><h3>Laboratorio curioso</h3><p>Observa evidencias, predice resultados y diseña pruebas justas.</p></div><div class="mission-progress"><span data-science-progress-label>Listo para jugar</span><div class="progress-track" role="progressbar" aria-label="Progreso de Laboratorio curioso" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" data-science-progress><span></span></div></div><button class="button button-primary" type="button" data-go="introduccion-ciencia">Ver misión</button></article>
       </div>
 
       <section class="skill-constellation" aria-labelledby="skill-constellation-title">
@@ -222,7 +231,7 @@
             <h3 id="skill-constellation-title">Cada ruta deja una chispa</h3>
             <p data-overall-message>Tu mapa está listo para la primera misión.</p>
           </div>
-          <strong class="overall-level-count" data-overall-levels aria-label="Niveles recorridos">0/24</strong>
+          <strong class="overall-level-count" data-overall-levels aria-label="Niveles recorridos">0/30</strong>
         </div>
         <div class="progress-track overall-progress" role="progressbar" aria-label="Progreso total de habilidades" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" data-overall-progress><span></span></div>
         <div class="skill-grid">
@@ -234,6 +243,8 @@
           <article class="skill-card" data-skill-card="reading"><span class="skill-icon" aria-hidden="true">≡</span><div><h4>Comprensión lectora</h4><p data-skill-label>Lista para explorar</p></div><div class="skill-sparks" data-skill-sparks aria-label="0 de 3 niveles recorridos"></div><strong data-skill-count>0/3</strong></article>
           <article class="skill-card" data-skill-card="fraction"><span class="skill-icon" aria-hidden="true">½</span><div><h4>Fracciones visuales</h4><p data-skill-label>Lista para explorar</p></div><div class="skill-sparks" data-skill-sparks aria-label="0 de 3 niveles recorridos"></div><strong data-skill-count>0/3</strong></article>
           <article class="skill-card" data-skill-card="robot"><span class="skill-icon" aria-hidden="true">⌘</span><div><h4>Pensamiento computacional</h4><p data-skill-label>Lista para explorar</p></div><div class="skill-sparks" data-skill-sparks aria-label="0 de 3 niveles recorridos"></div><strong data-skill-count>0/3</strong></article>
+          <article class="skill-card" data-skill-card="clock"><span class="skill-icon" aria-hidden="true">◷</span><div><h4>Tiempo y duración</h4><p data-skill-label>Lista para explorar</p></div><div class="skill-sparks" data-skill-sparks aria-label="0 de 3 niveles recorridos"></div><strong data-skill-count>0/3</strong></article>
+          <article class="skill-card" data-skill-card="science"><span class="skill-icon" aria-hidden="true">⚗</span><div><h4>Investigación científica</h4><p data-skill-label>Lista para explorar</p></div><div class="skill-sparks" data-skill-sparks aria-label="0 de 3 niveles recorridos"></div><strong data-skill-count>0/3</strong></article>
         </div>
         <p class="skill-note">Las chispas muestran caminos recorridos. No son puntos ni comparan a un niño con otro.</p>
       </section>
@@ -590,6 +601,14 @@
 
     <section id="resultado-robot" class="app-screen result-screen" data-screen="resultado-robot" aria-labelledby="robot-result-title"><div class="result-spark" aria-hidden="true">⌘</div><p class="eyebrow">Misión completa</p><h2 id="robot-result-title">¡Programa completado!</h2><p class="lead">Resolviste <strong data-robot-result-rounds>4 rutas</strong> con <strong data-robot-result-attempts>0 correcciones</strong>.</p><div class="reward-card"><span aria-hidden="true">🤖</span><div><strong>Un comando para tu constelación</strong><p>Nivel <span data-robot-result-level>Explorador</span> · <span data-robot-result-time>0:00</span> · <span data-robot-result-hints>0 pistas</span>.</p></div></div><div class="action-group action-group-centered"><button class="button button-primary" type="button" data-replay-robot>Jugar otra vez</button><button class="text-button" type="button" data-go="misiones">Volver al mapa</button><button class="text-button" type="button" data-go="pausa">Terminar sesión</button></div></section>
 
+    <section id="introduccion-reloj" class="app-screen panel-screen" data-screen="introduccion-reloj" aria-labelledby="clock-intro-title"><div class="screen-heading"><button class="back-button" type="button" data-go="misiones">← Mapa de misiones</button><p class="eyebrow">Misión 09 · Tiempo y duración</p><h2 id="clock-intro-title">Reloj de aventuras</h2><p>Observa las manecillas, descubre la hora y calcula cuánto tiempo transcurre.</p></div><div class="form-card"><label class="field-label" for="clock-difficulty">Dificultad</label><select id="clock-difficulty" data-clock-difficulty><option value="explorador">Explorador</option><option value="aventurero">Aventurero</option><option value="maestro">Maestro del tiempo</option></select><div class="difficulty-summary" data-clock-difficulty-summary aria-live="polite"><strong>5 relojes</strong><span>Horas exactas y medias horas</span><span>Relojes analógicos</span></div><button class="button button-primary button-full" type="button" data-clock-start>Comenzar</button></div></section>
+    <section id="partida-reloj" class="app-screen game-screen" data-screen="partida-reloj" aria-labelledby="clock-game-title"><div class="game-toolbar"><button class="text-button" type="button" data-clock-exit>Salir</button><div class="game-stats"><span class="sr-only" id="clock-game-title">Partida de Reloj de aventuras</span><strong>Reloj <span data-clock-round>1</span>/<span data-clock-total>5</span></strong><span>Aciertos <strong data-clock-score>0</strong></span><span>Tiempo <strong data-clock-time>0:00</strong></span></div><button class="button button-small button-secondary" type="button" data-clock-pause>Pausa</button></div><div class="choice-card clock-card" data-clock-card><h2 data-clock-prompt>¿Qué hora muestra el reloj?</h2><div class="clock-visual" data-clock-visual></div><div class="choice-options" data-clock-options></div><p class="choice-explanation" data-clock-explanation hidden></p><button class="button button-primary" type="button" data-clock-continue hidden>Siguiente reloj</button></div><div class="game-help"><p data-clock-message aria-live="polite">Observa las dos manecillas antes de responder.</p><button class="text-button" type="button" data-clock-restart>Comenzar una partida nueva</button></div></section>
+    <section id="resultado-reloj" class="app-screen result-screen" data-screen="resultado-reloj" aria-labelledby="clock-result-title"><div class="result-spark" aria-hidden="true">◷</div><p class="eyebrow">Misión completa</p><h2 id="clock-result-title">¡Aventura a tiempo!</h2><p class="lead">Resolviste <strong data-clock-result-rounds>5 relojes</strong> con <strong data-clock-result-attempts>0 intentos extra</strong>.</p><div class="reward-card"><span aria-hidden="true">⏰</span><div><strong>Un momento para tu constelación</strong><p>Nivel <span data-clock-result-level>Explorador</span> · <span data-clock-result-time>0:00</span>.</p></div></div><div class="action-group action-group-centered"><button class="button button-primary" type="button" data-clock-replay>Jugar otra vez</button><button class="text-button" type="button" data-go="misiones">Volver al mapa</button></div></section>
+
+    <section id="introduccion-ciencia" class="app-screen panel-screen" data-screen="introduccion-ciencia" aria-labelledby="science-intro-title"><div class="screen-heading"><button class="back-button" type="button" data-go="misiones">← Mapa de misiones</button><p class="eyebrow">Misión 10 · Investigación científica</p><h2 id="science-intro-title">Laboratorio curioso</h2><p>Lee las observaciones, encuentra evidencias y elige la conclusión mejor apoyada.</p></div><div class="form-card"><label class="field-label" for="science-difficulty">Dificultad</label><select id="science-difficulty" data-science-difficulty><option value="explorador">Explorador</option><option value="aventurero">Aventurero</option><option value="maestro">Maestro del laboratorio</option></select><div class="difficulty-summary" data-science-difficulty-summary aria-live="polite"><strong>5 experimentos</strong><span>Observar y clasificar con pistas visibles</span><span>Pistas antes de responder</span></div><button class="button button-primary button-full" type="button" data-science-start>Comenzar</button></div></section>
+    <section id="partida-ciencia" class="app-screen game-screen" data-screen="partida-ciencia" aria-labelledby="science-game-title"><div class="game-toolbar"><button class="text-button" type="button" data-science-exit>Salir</button><div class="game-stats"><span class="sr-only" id="science-game-title">Partida de Laboratorio curioso</span><strong>Observación <span data-science-round>1</span>/<span data-science-total>5</span></strong><span>Aciertos <strong data-science-score>0</strong></span><span>Tiempo <strong data-science-time>0:00</strong></span></div><button class="button button-small button-secondary" type="button" data-science-pause>Pausa</button></div><div class="choice-card science-card" data-science-card><div class="science-visual" data-science-visual></div><h2 data-science-prompt>¿Qué conclusión coincide con las notas?</h2><div class="choice-options" data-science-options></div><p class="choice-explanation" data-science-explanation hidden></p><button class="button button-primary" type="button" data-science-continue hidden>Siguiente observación</button></div><div class="game-help"><p data-science-message aria-live="polite">Lee la observación y busca la evidencia.</p><button class="text-button" type="button" data-science-restart>Comenzar una partida nueva</button></div></section>
+    <section id="resultado-ciencia" class="app-screen result-screen" data-screen="resultado-ciencia" aria-labelledby="science-result-title"><div class="result-spark" aria-hidden="true">⚗</div><p class="eyebrow">Misión completa</p><h2 id="science-result-title">¡Evidencia encontrada!</h2><p class="lead">Resolviste <strong data-science-result-rounds>5 experimentos</strong> con <strong data-science-result-attempts>0 intentos extra</strong>.</p><div class="reward-card"><span aria-hidden="true">🔬</span><div><strong>Un descubrimiento para tu constelación</strong><p>Nivel <span data-science-result-level>Explorador</span> · <span data-science-result-time>0:00</span>.</p></div></div><div class="action-group action-group-centered"><button class="button button-primary" type="button" data-science-replay>Jugar otra vez</button><button class="text-button" type="button" data-go="misiones">Volver al mapa</button></div></section>
+
     <section id="introduccion-memoria" class="app-screen panel-screen" data-screen="introduccion-memoria" aria-labelledby="memory-intro-title">
       <div class="screen-heading">
         <button class="back-button" type="button" data-go="misiones">← Mapa de misiones</button>
@@ -730,9 +749,9 @@
           <span class="mission-status">Solo en este equipo</span>
           <h3 id="local-progress-title">Progreso local</h3>
           <dl class="progress-list">
-            <div><dt>Juegos disponibles</dt><dd>8</dd></div>
+            <div><dt>Juegos disponibles</dt><dd>10</dd></div>
             <div><dt>Partidas terminadas</dt><dd data-completed-games>0</dd></div>
-            <div><dt>Niveles recorridos</dt><dd data-overall-levels>0/24</dd></div>
+            <div><dt>Niveles recorridos</dt><dd data-overall-levels>0/30</dd></div>
             <div><dt>Niveles de Memorama</dt><dd data-memory-levels>0/3</dd></div>
             <div><dt>Niveles de cálculo</dt><dd data-operation-levels>0/3</dd></div>
             <div><dt>Niveles de palabras</dt><dd data-word-levels>0/3</dd></div>
@@ -741,6 +760,8 @@
             <div><dt>Niveles de lectura</dt><dd data-reading-levels>0/3</dd></div>
             <div><dt>Niveles de fracciones</dt><dd data-fraction-levels>0/3</dd></div>
             <div><dt>Niveles de programación</dt><dd data-robot-levels>0/3</dd></div>
+            <div><dt>Niveles de reloj</dt><dd data-clock-levels>0/3</dd></div>
+            <div><dt>Niveles de ciencia</dt><dd data-science-levels>0/3</dd></div>
           </dl>
           <div class="progress-track" role="progressbar" aria-label="Progreso total de habilidades" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" data-overall-progress><span></span></div>
           <p data-overall-message>Tu mapa está listo para la primera misión.</p>
@@ -844,5 +865,9 @@
   <dialog class="app-dialog" data-fraction-exit-dialog aria-labelledby="fraction-exit-title"><form method="dialog"><p class="eyebrow">Salir de la misión</p><h2 id="fraction-exit-title">¿Volvemos al mapa?</h2><p>Las partidas incompletas no se guardan.</p><div class="dialog-actions"><button class="button button-secondary" value="cancel">Seguir jugando</button><button class="button button-primary" type="button" data-fraction-confirm-exit>Volver al mapa</button></div></form></dialog>
   <dialog class="app-dialog" data-robot-pause-dialog aria-labelledby="robot-pause-title"><form method="dialog"><p class="eyebrow">Partida en pausa</p><h2 id="robot-pause-title">El robot también descansa.</h2><p>El tiempo y el programa se detendrán.</p><button class="button button-primary button-full" value="continue">Continuar</button></form></dialog>
   <dialog class="app-dialog" data-robot-exit-dialog aria-labelledby="robot-exit-title"><form method="dialog"><p class="eyebrow">Salir de la misión</p><h2 id="robot-exit-title">¿Volvemos al mapa?</h2><p>Las rutas incompletas no se guardan.</p><div class="dialog-actions"><button class="button button-secondary" value="cancel">Seguir programando</button><button class="button button-primary" type="button" data-robot-confirm-exit>Volver al mapa</button></div></form></dialog>
+  <dialog class="app-dialog" data-clock-pause-dialog aria-labelledby="clock-pause-title"><form method="dialog"><p class="eyebrow">Partida en pausa</p><h2 id="clock-pause-title">El reloj espera.</h2><p>El tiempo de la partida se detendrá hasta que continúes.</p><button class="button button-primary button-full" value="continue">Continuar</button></form></dialog>
+  <dialog class="app-dialog" data-clock-exit-dialog aria-labelledby="clock-exit-title"><form method="dialog"><p class="eyebrow">Salir de la misión</p><h2 id="clock-exit-title">¿Volvemos al mapa?</h2><p>Los relojes incompletos no se guardan.</p><div class="dialog-actions"><button class="button button-secondary" value="cancel">Seguir jugando</button><button class="button button-primary" type="button" data-clock-confirm-exit>Volver al mapa</button></div></form></dialog>
+  <dialog class="app-dialog" data-science-pause-dialog aria-labelledby="science-pause-title"><form method="dialog"><p class="eyebrow">Partida en pausa</p><h2 id="science-pause-title">El laboratorio descansa.</h2><p>Las notas se ocultarán hasta que continúes.</p><button class="button button-primary button-full" value="continue">Continuar</button></form></dialog>
+  <dialog class="app-dialog" data-science-exit-dialog aria-labelledby="science-exit-title"><form method="dialog"><p class="eyebrow">Salir de la misión</p><h2 id="science-exit-title">¿Volvemos al mapa?</h2><p>Las observaciones incompletas no se guardan.</p><div class="dialog-actions"><button class="button button-secondary" value="cancel">Seguir investigando</button><button class="button button-primary" type="button" data-science-confirm-exit>Volver al mapa</button></div></form></dialog>
 </body>
 </html>

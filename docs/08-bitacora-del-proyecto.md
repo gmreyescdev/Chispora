@@ -277,3 +277,37 @@ Realizar pruebas supervisadas y retomar accesibilidad ampliada y funcionamiento 
 - Se ocultó esa etiqueta únicamente en preguntas de identificación.
 - Comparación y equivalencias conservan las etiquetas necesarias para plantear su relación.
 - Cada segmento del modelo recibió una descripción accesible de su estado coloreado o sin color.
+
+## 30 de septiembre de 2026 — Tiempo y laboratorio
+
+### Objetivo
+
+Completar los dos candidatos restantes con práctica cotidiana y razonamiento basado en evidencia.
+
+### Trabajo realizado
+
+- Se construyó Reloj de aventuras con horas, minutos y duración en tres niveles.
+- Se construyó Laboratorio curioso con observaciones, predicciones y pruebas justas.
+- Se creó un controlador compartido para el flujo de opciones sin unir las reglas educativas.
+- Se añadieron seis pantallas, cuatro diálogos, progreso local y dos habilidades nuevas.
+- El catálogo se amplió a diez juegos y la constelación a 30 niveles.
+
+### Decisiones
+
+- Mostrar los doce números en el reloj para apoyar el conteo de cinco en cinco.
+- Diferenciar manecillas por longitud y color.
+- Dar la evidencia antes de cada pregunta científica y explicarla después del acierto.
+- Mantener bancos locales sin imágenes o servicios remotos.
+
+### Verificación
+
+- Las once suites automáticas pasaron y 36 archivos JavaScript tienen sintaxis válida.
+- Se completó una partida Explorador de cada juego con error y corrección.
+- Pausa, reanudación, salida cancelada y salida confirmada fueron comprobadas.
+- Una partida incompleta no alteró el progreso.
+- El HTML no tiene identificadores duplicados ni recursos faltantes.
+- La consola permaneció limpia.
+
+### Próximo paso
+
+Realizar pruebas supervisadas de los diez juegos y continuar con accesibilidad ampliada y funcionamiento sin conexión.

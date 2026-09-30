@@ -160,6 +160,15 @@ Este archivo conserva las decisiones importantes y sus motivos. Se actualizará 
 - **Consecuencia:** la constelación pasa de seis a ocho habilidades y de 18 a 24 niveles disponibles.
 - **Estado:** aceptada e implementada.
 
+## D-022 — Tiempo y ciencia como segunda ampliación
+
+- **Fecha:** 30 de septiembre de 2026.
+- **Decisión:** incorporar Reloj de aventuras y Laboratorio curioso como juegos noveno y décimo.
+- **Motivo:** completan los cuatro candidatos evaluados y añaden una habilidad matemática cotidiana y razonamiento científico basado en evidencia.
+- **Alternativas consideradas:** dinero y compras simuladas, clasificación de memoria y aplazar la ampliación hasta publicar la beta.
+- **Consecuencia:** la constelación pasa de ocho a diez habilidades y de 24 a 30 niveles; ambos juegos comparten un controlador de interfaz, pero conservan motores independientes.
+- **Estado:** aceptada e implementada.
+
 ## Plantilla para próximas decisiones
 
 - **Fecha:**

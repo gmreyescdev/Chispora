@@ -46,3 +46,7 @@ Los cambios importantes de Chispora se registran aquí. El proyecto utiliza un e
 - Programa al robot con secuencias de comandos, obstáculos, depuración, tres niveles y pruebas de todos los mapas.
 - Catálogo, panel familiar y constelación ampliados de seis a ocho juegos y de 18 a 24 niveles.
 - Corrección del modelo Explorador de Fracciones para no mostrar la respuesta antes de elegir.
+- Reloj de aventuras con lectura analógica, cálculo de duración, tres niveles y explicaciones visuales.
+- Laboratorio curioso con observación, predicción, variables, pruebas justas y tres niveles.
+- Controlador reutilizable para juegos de opciones con pausa, salida, progreso y recuperación segura.
+- Catálogo, panel familiar y constelación ampliados de ocho a diez juegos y de 24 a 30 niveles.

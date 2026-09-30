@@ -28,6 +28,9 @@ El prototipo actual utiliza:
 - `progress-summary.js` representa recompensas y mantiene sincronizadas sus vistas.
 - `fraction-game.js` y `robot-game.js` aíslan las interfaces de los juegos séptimo y octavo.
 - `lib/fraction-engine.js` y `lib/robot-engine.js` contienen modelos, comandos y reglas comprobables.
+- `clock-game.js` y `science-game.js` representan las interfaces específicas de los juegos noveno y décimo.
+- `lib/clock-engine.js` y `lib/science-engine.js` contienen los bancos y reglas educativas probadas.
+- `lib/choice-game.js` reutiliza el flujo de opciones, pausa, salida y progreso sin mezclar reglas de contenido.
 - `lib/manifest.js` como configuración central de marca y valores iniciales.
 - GSAP como mejora visual opcional para transiciones.
 - `localStorage` para perfil y ajustes del navegador.
@@ -57,6 +60,9 @@ WebDidactico/
 │   ├── progress-engine.js
 │   ├── fraction-engine.js
 │   ├── robot-engine.js
+│   ├── clock-engine.js
+│   ├── science-engine.js
+│   ├── choice-game.js
 │   ├── gsap.min.js
 │   └── ScrollTrigger.min.js
 ├── docs/
