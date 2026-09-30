@@ -6,6 +6,7 @@
   --paper-deep: #f7edda;
   --surface: rgba(255, 255, 255, 0.82);
   --surface-solid: #ffffff;
+  --white: #ffffff;
   --ink: #17324d;
   --ink-soft: #455f75;
   --ink-muted: #64798a;
@@ -1921,10 +1922,79 @@ input:focus, select:focus {
 }
 
 /* =============================================================
-   13. Reduced motion — only intrusive, continuous motion
+   13. Accessibility preferences
    ============================================================= */
+html[data-text-size="large"] {
+  font-size: 112.5%;
+}
+
+html[data-contrast="high"] {
+  --paper: #ffffff;
+  --paper-deep: #ffffff;
+  --surface: #ffffff;
+  --surface-solid: #ffffff;
+  --ink: #071a2d;
+  --ink-soft: #17324d;
+  --ink-muted: #31485c;
+  --coral: #d9362d;
+  --coral-deep: #a91e18;
+  --yellow: #ffd000;
+  --turquoise: #008579;
+  --sky: #4b9ff0;
+  --line: #071a2d;
+  --shadow: 0 0 0 3px #071a2d;
+  --shadow-small: 0 0 0 2px #071a2d;
+}
+
+html[data-contrast="high"] .ambient {
+  background: var(--paper);
+}
+
+html[data-contrast="high"] .ambient-orb {
+  display: none;
+}
+
+html[data-contrast="high"] .site-header {
+  border-color: var(--ink);
+  background: var(--surface-solid);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+html[data-contrast="high"] :focus-visible {
+  outline-width: 4px;
+  outline-offset: 5px;
+}
+
+html[data-hide-timers="true"] .game-time {
+  display: none;
+}
+
+/* =============================================================
+   14. Reduced motion
+   ============================================================= */
+html[data-reduced-motion="true"] {
+  scroll-behavior: auto;
+}
+
+html[data-reduced-motion="true"] *,
+html[data-reduced-motion="true"] *::before,
+html[data-reduced-motion="true"] *::after {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  scroll-behavior: auto !important;
+  transition-duration: 0.01ms !important;
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .ambient-orb, .welcome-visual > img {
-    animation: none;
+  html {
+    scroll-behavior: auto;
+  }
+
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
   }
 }

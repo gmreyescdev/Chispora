@@ -33,6 +33,7 @@ El prototipo actual utiliza:
 - `lib/choice-game.js` reutiliza el flujo de opciones, pausa, salida y progreso sin mezclar reglas de contenido.
 - `lib/mission-map-engine.js` define las áreas y reglas puras del filtro; `mission-map.js` actualiza el mapa sin modificar progreso.
 - `lib/tutorial-engine.js` contiene las guías y su avance; `tutorials.js` reutiliza un diálogo y registra únicamente tutoriales completados.
+- `lib/accessibility-engine.js` normaliza las preferencias visuales; `main.js` las aplica mediante atributos en el documento sin alterar los juegos.
 - `lib/manifest.js` como configuración central de marca y valores iniciales.
 - GSAP como mejora visual opcional para transiciones.
 - `localStorage` para perfil y ajustes del navegador.
@@ -67,6 +68,7 @@ WebDidactico/
 │   ├── choice-game.js
 │   ├── mission-map-engine.js
 │   ├── tutorial-engine.js
+│   ├── accessibility-engine.js
 │   ├── gsap.min.js
 │   └── ScrollTrigger.min.js
 ├── docs/

@@ -391,3 +391,31 @@ Enseñar las acciones principales antes de jugar sin convertir la guía en una p
 ### Próximo paso
 
 Implementar accesibilidad ampliada con preferencias locales y valores predeterminados seguros.
+
+## 30 de septiembre de 2026 — Accesibilidad ampliada
+
+### Objetivo
+
+Dar a cada familia opciones sencillas para adaptar la presentación sin cambiar el progreso.
+
+### Trabajo realizado
+
+- Se añadieron texto grande, contraste alto, movimiento reducido y cronómetros ocultos.
+- Las preferencias se guardan localmente y se aplican en todas las pantallas.
+- Se creó un motor puro para normalizar ajustes nuevos y antiguos.
+- La reducción manual se combinó con `prefers-reduced-motion`.
+- Se evaluó lectura en voz alta local y se aplazó hasta probar voces y dispositivos reales.
+
+### Verificación
+
+- Un estado antiguo recuperó valores predeterminados sin perder perfil ni progreso.
+- Las cuatro opciones persistieron después de recargar.
+- Los cronómetros quedaron ocultos mientras la medición continuó.
+- Texto grande y contraste alto no provocaron desbordamiento horizontal.
+- Todos los controles conservaron etiquetas, foco visible y semántica nativa.
+- Lighthouse obtuvo 100 en accesibilidad, buenas prácticas y SEO en el panel familiar.
+- La consola permaneció limpia.
+
+### Próximo paso
+
+Preparar el funcionamiento sin conexión y la instalación opcional de Chispora.

@@ -5,10 +5,11 @@
   const memoryEngine = brand.memoryEngine;
   const operationEngine = brand.operationEngine;
   const wordEngine = brand.wordEngine;
+  const accessibilityEngine = brand.accessibilityEngine;
   const STORAGE_KEY = brand.storageKey || "chispora.mvp.v1";
   const $ = (selector, scope) => (scope || document).querySelector(selector);
   const $$ = (selector, scope) => Array.from((scope || document).querySelectorAll(selector));
-  const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const systemReduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
   const fineHover = matchMedia("(hover: hover) and (pointer: fine)").matches;
   const escHTML = (value) => String(value == null ? "" : value).replace(/[&<>"']/g, (character) => ({
     "&": "&amp;",
@@ -64,6 +65,7 @@
 
   window.addEventListener("chispora:state-updated", () => {
     appState = loadState();
+    applyAccessibilitySettings();
   });
 
   function safe(fn, name) {
@@ -77,7 +79,7 @@
   function loadState() {
     const fallback = {
       profile: Object.assign({}, brand.defaultProfile || { nickname: "", avatarId: "zorro" }),
-      settings: Object.assign({}, brand.defaultSettings || { sessionMinutes: 20, soundEnabled: true, preferredDifficulty: "auto" }),
+      settings: Object.assign({}, brand.defaultSettings || { sessionMinutes: 20, soundEnabled: true, preferredDifficulty: "auto", textSize: "normal", highContrast: false, reducedMotion: false, hideTimers: false }),
       progress: { completedGames: 0 }
     };
 
@@ -105,6 +107,31 @@
       console.warn("[storage] No se pudo guardar el progreso local:", error);
       return false;
     }
+  }
+
+  function normalizedAccessibility() {
+    if (accessibilityEngine) return accessibilityEngine.normalize(appState.settings);
+    return {
+      textSize: appState.settings.textSize === "large" ? "large" : "normal",
+      highContrast: appState.settings.highContrast === true,
+      reducedMotion: appState.settings.reducedMotion === true,
+      hideTimers: appState.settings.hideTimers === true
+    };
+  }
+
+  function motionReduced() {
+    return accessibilityEngine
+      ? accessibilityEngine.shouldReduceMotion(appState.settings, systemReduced)
+      : Boolean(systemReduced || appState.settings.reducedMotion);
+  }
+
+  function applyAccessibilitySettings() {
+    const settings = normalizedAccessibility();
+    const root = document.documentElement;
+    root.dataset.textSize = settings.textSize;
+    root.dataset.contrast = settings.highContrast ? "high" : "standard";
+    root.dataset.reducedMotion = String(settings.reducedMotion);
+    root.dataset.hideTimers = String(settings.hideTimers);
   }
 
   function validScreenId(screenId) {
@@ -145,7 +172,7 @@
     if (appHeader) appHeader.hidden = ["partida-memoria", "partida-operacion", "partida-palabras", "partida-secuencia", "partida-laberinto", "partida-lectura", "partida-fracciones", "partida-robot", "partida-reloj", "partida-ciencia"].includes(targetId);
 
     if (window.gsap) {
-      window.gsap.fromTo(target, { opacity: 0, y: reduced ? 0 : 14 }, { opacity: 1, y: 0, duration: 0.45, ease: "power3.out", clearProps: "opacity,transform" });
+      window.gsap.fromTo(target, { opacity: 0, y: motionReduced() ? 0 : 14 }, { opacity: 1, y: 0, duration: motionReduced() ? 0 : 0.45, ease: "power3.out", clearProps: "opacity,transform" });
     }
 
     if (moveFocus) {
@@ -1121,18 +1148,28 @@
     form.elements.sessionMinutes.value = String(appState.settings.sessionMinutes);
     form.elements.soundEnabled.value = String(appState.settings.soundEnabled);
     form.elements.preferredDifficulty.value = appState.settings.preferredDifficulty;
+    const accessibility = normalizedAccessibility();
+    form.elements.textSize.value = accessibility.textSize;
+    form.elements.highContrast.value = String(accessibility.highContrast);
+    form.elements.reducedMotion.value = String(accessibility.reducedMotion);
+    form.elements.hideTimers.value = String(accessibility.hideTimers);
     updateProgressViews();
 
     form.addEventListener("submit", (event) => {
       event.preventDefault();
       const formData = new FormData(form);
-      appState.settings = {
+      appState.settings = Object.assign({}, appState.settings, {
         sessionMinutes: Number(formData.get("sessionMinutes")) || 20,
         soundEnabled: formData.get("soundEnabled") === "true",
-        preferredDifficulty: String(formData.get("preferredDifficulty") || "auto")
-      };
+        preferredDifficulty: String(formData.get("preferredDifficulty") || "auto"),
+        textSize: formData.get("textSize") === "large" ? "large" : "normal",
+        highContrast: formData.get("highContrast") === "true",
+        reducedMotion: formData.get("reducedMotion") === "true",
+        hideTimers: formData.get("hideTimers") === "true"
+      });
       const saved = saveState();
       status.textContent = saved ? "Configuración guardada en este navegador." : "No se pudo guardar. Revisa la configuración del navegador.";
+      applyAccessibilitySettings();
       renderSoundButton();
     });
   }
@@ -1143,6 +1180,7 @@
       if (button.dataset.magneticBound) return;
       button.dataset.magneticBound = "1";
       button.addEventListener("mousemove", (event) => {
+        if (motionReduced()) { button.style.transform = ""; return; }
         const rect = button.getBoundingClientRect();
         const x = (event.clientX - rect.left - rect.width / 2) * 0.08;
         const y = (event.clientY - rect.top - rect.height / 2) * 0.08;
@@ -1156,6 +1194,7 @@
   }
 
   function boot() {
+    safe(applyAccessibilitySettings, "applyAccessibilitySettings");
     safe(initNavigation, "initNavigation");
     safe(initProfile, "initProfile");
     safe(initDifficulty, "initDifficulty");

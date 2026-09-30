@@ -7,10 +7,11 @@
   <meta name="theme-color" content="#fff8e8">
   <title>Chispora · Juega. Piensa. Descubre.</title>
   <link rel="icon" href="assets/img/chispora-symbol.svg?v=2026090703" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css?v=2026093007">
+  <link rel="stylesheet" href="styles.css?v=2026093008">
   <script defer src="lib/gsap.min.js?v=2026090706"></script>
   <script defer src="lib/ScrollTrigger.min.js?v=2026090706"></script>
-  <script defer src="lib/manifest.js?v=2026090706"></script>
+  <script defer src="lib/manifest.js?v=2026093008"></script>
+  <script defer src="lib/accessibility-engine.js?v=2026093008"></script>
   <script defer src="lib/memory-engine.js?v=2026090706"></script>
   <script defer src="lib/operation-engine.js?v=2026090706"></script>
   <script defer src="lib/word-engine.js?v=2026090706"></script>
@@ -25,7 +26,7 @@
   <script defer src="lib/science-engine.js?v=2026093003"></script>
   <script defer src="lib/mission-map-engine.js?v=2026093001"></script>
   <script defer src="lib/tutorial-engine.js?v=2026093001"></script>
-  <script defer src="main.js?v=2026093003"></script>
+  <script defer src="main.js?v=2026093008"></script>
   <script defer src="sequence-game.js?v=2026090706"></script>
   <script defer src="maze-game.js?v=2026090706"></script>
   <script defer src="reading-game.js?v=2026092901"></script>
@@ -293,7 +294,7 @@
           <span class="sr-only" id="operation-game-title">Partida de Operación misteriosa</span>
           <strong>Desafío <span data-operation-round>1</span>/<span data-operation-total>6</span></strong>
           <span>Aciertos <strong data-operation-score>0</strong></span>
-          <span>Tiempo <strong data-operation-time>0:00</strong></span>
+          <span class="game-time">Tiempo <strong data-operation-time>0:00</strong></span>
         </div>
         <button class="button button-small button-secondary" type="button" data-action="pause-game">Pausa</button>
       </div>
@@ -354,7 +355,7 @@
           <span class="sr-only" id="word-game-title">Partida de Palabra desordenada</span>
           <strong>Palabra <span data-word-round>1</span>/<span data-word-total>5</span></strong>
           <span>Aciertos <strong data-word-score>0</strong></span>
-          <span>Tiempo <strong data-word-time>0:00</strong></span>
+          <span class="game-time">Tiempo <strong data-word-time>0:00</strong></span>
         </div>
         <button class="button button-small button-secondary" type="button" data-action="pause-game">Pausa</button>
       </div>
@@ -419,7 +420,7 @@
           <span class="sr-only" id="sequence-game-title">Partida de Secuencia lógica</span>
           <strong>Patrón <span data-sequence-round>1</span>/<span data-sequence-total>6</span></strong>
           <span>Aciertos <strong data-sequence-score>0</strong></span>
-          <span>Tiempo <strong data-sequence-time>0:00</strong></span>
+          <span class="game-time">Tiempo <strong data-sequence-time>0:00</strong></span>
         </div>
         <button class="button button-small button-secondary" type="button" data-sequence-pause>Pausa</button>
       </div>
@@ -483,7 +484,7 @@
           <span class="sr-only" id="maze-game-title">Partida de Laberintos</span>
           <strong>Laberinto <span data-maze-round>1</span>/<span data-maze-total>2</span></strong>
           <span>Movimientos <strong data-maze-moves>0</strong></span>
-          <span>Tiempo <strong data-maze-time>0:00</strong></span>
+          <span class="game-time">Tiempo <strong data-maze-time>0:00</strong></span>
         </div>
         <button class="button button-small button-secondary" type="button" data-maze-pause>Pausa</button>
       </div>
@@ -548,7 +549,7 @@
           <span class="sr-only" id="reading-game-title">Partida de Comprensión lectora</span>
           <strong>Texto <span data-reading-round>1</span>/<span data-reading-total>4</span></strong>
           <span>Comprendidos <strong data-reading-score>0</strong></span>
-          <span>Tiempo <strong data-reading-time>0:00</strong></span>
+          <span class="game-time">Tiempo <strong data-reading-time>0:00</strong></span>
         </div>
         <button class="button button-small button-secondary" type="button" data-reading-pause>Pausa</button>
       </div>
@@ -596,7 +597,7 @@
     </section>
 
     <section id="partida-fracciones" class="app-screen game-screen" data-screen="partida-fracciones" aria-labelledby="fraction-game-title">
-      <div class="game-toolbar"><button class="text-button" type="button" data-fraction-exit>Salir</button><div class="game-stats"><span class="sr-only" id="fraction-game-title">Partida de Fracciones en acción</span><strong>Desafío <span data-fraction-round>1</span>/<span data-fraction-total>5</span></strong><span>Aciertos <strong data-fraction-score>0</strong></span><span>Tiempo <strong data-fraction-time>0:00</strong></span></div><button class="button button-small button-secondary" type="button" data-fraction-pause>Pausa</button></div>
+      <div class="game-toolbar"><button class="text-button" type="button" data-fraction-exit>Salir</button><div class="game-stats"><span class="sr-only" id="fraction-game-title">Partida de Fracciones en acción</span><strong>Desafío <span data-fraction-round>1</span>/<span data-fraction-total>5</span></strong><span>Aciertos <strong data-fraction-score>0</strong></span><span class="game-time">Tiempo <strong data-fraction-time>0:00</strong></span></div><button class="button button-small button-secondary" type="button" data-fraction-pause>Pausa</button></div>
       <div class="fraction-card" data-fraction-card><p class="eyebrow">Mira las partes iguales</p><h2 data-fraction-prompt>¿Qué fracción está coloreada?</h2><div class="fraction-visual" data-fraction-visual></div><div class="fraction-options" data-fraction-options aria-label="Opciones de respuesta"></div><p class="fraction-explanation" data-fraction-explanation aria-live="polite" hidden></p><button class="button button-primary" type="button" data-fraction-continue hidden>Siguiente desafío</button></div>
       <div class="game-help"><p data-fraction-message aria-live="polite">Observa las partes antes de responder.</p><button class="text-button" type="button" data-restart-fraction>Comenzar una partida nueva</button></div>
     </section>
@@ -609,7 +610,7 @@
     </section>
 
     <section id="partida-robot" class="app-screen game-screen" data-screen="partida-robot" aria-labelledby="robot-game-title">
-      <div class="game-toolbar"><button class="text-button" type="button" data-robot-exit>Salir</button><div class="game-stats"><span class="sr-only" id="robot-game-title">Partida de Programa al robot</span><strong>Ruta <span data-robot-round>1</span>/<span data-robot-total>4</span></strong><span>Resueltas <strong data-robot-score>0</strong></span><span>Tiempo <strong data-robot-time>0:00</strong></span></div><button class="button button-small button-secondary" type="button" data-robot-pause>Pausa</button></div>
+      <div class="game-toolbar"><button class="text-button" type="button" data-robot-exit>Salir</button><div class="game-stats"><span class="sr-only" id="robot-game-title">Partida de Programa al robot</span><strong>Ruta <span data-robot-round>1</span>/<span data-robot-total>4</span></strong><span>Resueltas <strong data-robot-score>0</strong></span><span class="game-time">Tiempo <strong data-robot-time>0:00</strong></span></div><button class="button button-small button-secondary" type="button" data-robot-pause>Pausa</button></div>
       <div class="robot-stage" data-robot-stage><div class="robot-board" data-robot-board aria-label="Tablero del robot"></div><div class="robot-builder"><p>Programa: máximo <strong data-robot-limit>3</strong> comandos</p><div class="robot-program" data-robot-program aria-live="polite"><em>Tu programa aparecerá aquí</em></div><div class="robot-controls" data-robot-controls aria-label="Comandos disponibles"><button type="button" data-robot-command="up" aria-label="Agregar arriba">↑</button><button type="button" data-robot-command="right" aria-label="Agregar derecha">→</button><button type="button" data-robot-command="down" aria-label="Agregar abajo">↓</button><button type="button" data-robot-command="left" aria-label="Agregar izquierda">←</button></div><div class="robot-tools"><button class="button button-small button-secondary" type="button" data-robot-undo>Quitar último</button><button class="text-button" type="button" data-robot-clear>Limpiar</button><button class="text-button" type="button" data-robot-hint>Ver una pista</button></div><p class="robot-hint" data-robot-hint-text hidden></p><button class="button button-primary" type="button" data-robot-run>Ejecutar programa</button><button class="button button-primary" type="button" data-robot-continue hidden>Corregir programa</button></div></div>
       <div class="game-help"><p data-robot-message aria-live="polite">Agrega comandos y ejecuta el programa.</p><button class="text-button" type="button" data-restart-robot>Crear rutas nuevas</button></div>
     </section>
@@ -617,11 +618,11 @@
     <section id="resultado-robot" class="app-screen result-screen" data-screen="resultado-robot" aria-labelledby="robot-result-title"><div class="result-spark" aria-hidden="true">⌘</div><p class="eyebrow">Misión completa</p><h2 id="robot-result-title">¡Programa completado!</h2><p class="lead">Resolviste <strong data-robot-result-rounds>4 rutas</strong> con <strong data-robot-result-attempts>0 correcciones</strong>.</p><div class="reward-card"><span aria-hidden="true">🤖</span><div><strong>Un comando para tu constelación</strong><p>Nivel <span data-robot-result-level>Explorador</span> · <span data-robot-result-time>0:00</span> · <span data-robot-result-hints>0 pistas</span>.</p></div></div><div class="action-group action-group-centered"><button class="button button-primary" type="button" data-replay-robot>Jugar otra vez</button><button class="text-button" type="button" data-go="misiones">Volver al mapa</button><button class="text-button" type="button" data-go="pausa">Terminar sesión</button></div></section>
 
     <section id="introduccion-reloj" class="app-screen panel-screen" data-screen="introduccion-reloj" aria-labelledby="clock-intro-title"><div class="screen-heading"><button class="back-button" type="button" data-go="misiones">← Mapa de misiones</button><p class="eyebrow">Misión 09 · Tiempo y duración</p><h2 id="clock-intro-title">Reloj de aventuras</h2><p>Mira las manecillas. Elige la hora correcta.</p></div><div class="form-card"><label class="field-label" for="clock-difficulty">Dificultad</label><select id="clock-difficulty" data-clock-difficulty><option value="explorador">Explorador</option><option value="aventurero">Aventurero</option><option value="maestro">Maestro del tiempo</option></select><div class="difficulty-summary" data-clock-difficulty-summary aria-live="polite"><strong>5 relojes</strong><span>Horas exactas y medias horas</span><span>Relojes analógicos</span></div><button class="button button-primary button-full" type="button" data-clock-start>Jugar</button></div></section>
-    <section id="partida-reloj" class="app-screen game-screen" data-screen="partida-reloj" aria-labelledby="clock-game-title"><div class="game-toolbar"><button class="text-button" type="button" data-clock-exit>Salir</button><div class="game-stats"><span class="sr-only" id="clock-game-title">Partida de Reloj de aventuras</span><strong>Reloj <span data-clock-round>1</span>/<span data-clock-total>5</span></strong><span>Aciertos <strong data-clock-score>0</strong></span><span>Tiempo <strong data-clock-time>0:00</strong></span></div><button class="button button-small button-secondary" type="button" data-clock-pause>Pausa</button></div><div class="choice-card clock-card" data-clock-card><h2 data-clock-prompt>¿Qué hora muestra el reloj?</h2><div class="clock-visual" data-clock-visual></div><div class="choice-options" data-clock-options></div><p class="choice-explanation" data-clock-explanation hidden></p><button class="button button-primary" type="button" data-clock-continue hidden>Siguiente reloj</button></div><div class="game-help"><p data-clock-message aria-live="polite">Observa las dos manecillas antes de responder.</p><button class="text-button" type="button" data-clock-restart>Comenzar una partida nueva</button></div></section>
+    <section id="partida-reloj" class="app-screen game-screen" data-screen="partida-reloj" aria-labelledby="clock-game-title"><div class="game-toolbar"><button class="text-button" type="button" data-clock-exit>Salir</button><div class="game-stats"><span class="sr-only" id="clock-game-title">Partida de Reloj de aventuras</span><strong>Reloj <span data-clock-round>1</span>/<span data-clock-total>5</span></strong><span>Aciertos <strong data-clock-score>0</strong></span><span class="game-time">Tiempo <strong data-clock-time>0:00</strong></span></div><button class="button button-small button-secondary" type="button" data-clock-pause>Pausa</button></div><div class="choice-card clock-card" data-clock-card><h2 data-clock-prompt>¿Qué hora muestra el reloj?</h2><div class="clock-visual" data-clock-visual></div><div class="choice-options" data-clock-options></div><p class="choice-explanation" data-clock-explanation hidden></p><button class="button button-primary" type="button" data-clock-continue hidden>Siguiente reloj</button></div><div class="game-help"><p data-clock-message aria-live="polite">Observa las dos manecillas antes de responder.</p><button class="text-button" type="button" data-clock-restart>Comenzar una partida nueva</button></div></section>
     <section id="resultado-reloj" class="app-screen result-screen" data-screen="resultado-reloj" aria-labelledby="clock-result-title"><div class="result-spark" aria-hidden="true">◷</div><p class="eyebrow">Misión completa</p><h2 id="clock-result-title">¡Aventura a tiempo!</h2><p class="lead">Resolviste <strong data-clock-result-rounds>5 relojes</strong> con <strong data-clock-result-attempts>0 intentos extra</strong>.</p><div class="reward-card"><span aria-hidden="true">⏰</span><div><strong>Un momento para tu constelación</strong><p>Nivel <span data-clock-result-level>Explorador</span> · <span data-clock-result-time>0:00</span>.</p></div></div><div class="action-group action-group-centered"><button class="button button-primary" type="button" data-clock-replay>Jugar otra vez</button><button class="text-button" type="button" data-go="misiones">Volver al mapa</button></div></section>
 
     <section id="introduccion-ciencia" class="app-screen panel-screen" data-screen="introduccion-ciencia" aria-labelledby="science-intro-title"><div class="screen-heading"><button class="back-button" type="button" data-go="misiones">← Mapa de misiones</button><p class="eyebrow">Misión 10 · Investigación científica</p><h2 id="science-intro-title">Laboratorio curioso</h2><p>Lee las notas. Elige la conclusión con evidencia.</p></div><div class="form-card"><label class="field-label" for="science-difficulty">Dificultad</label><select id="science-difficulty" data-science-difficulty><option value="explorador">Explorador</option><option value="aventurero">Aventurero</option><option value="maestro">Maestro del laboratorio</option></select><div class="difficulty-summary" data-science-difficulty-summary aria-live="polite"><strong>5 experimentos</strong><span>Observar y clasificar con pistas visibles</span><span>Pistas antes de responder</span></div><button class="button button-primary button-full" type="button" data-science-start>Jugar</button></div></section>
-    <section id="partida-ciencia" class="app-screen game-screen" data-screen="partida-ciencia" aria-labelledby="science-game-title"><div class="game-toolbar"><button class="text-button" type="button" data-science-exit>Salir</button><div class="game-stats"><span class="sr-only" id="science-game-title">Partida de Laboratorio curioso</span><strong>Observación <span data-science-round>1</span>/<span data-science-total>5</span></strong><span>Aciertos <strong data-science-score>0</strong></span><span>Tiempo <strong data-science-time>0:00</strong></span></div><button class="button button-small button-secondary" type="button" data-science-pause>Pausa</button></div><div class="choice-card science-card" data-science-card><div class="science-visual" data-science-visual></div><h2 data-science-prompt>¿Qué conclusión coincide con las notas?</h2><div class="choice-options" data-science-options></div><p class="choice-explanation" data-science-explanation hidden></p><button class="button button-primary" type="button" data-science-continue hidden>Siguiente observación</button></div><div class="game-help"><p data-science-message aria-live="polite">Lee la observación y busca la evidencia.</p><button class="text-button" type="button" data-science-restart>Comenzar una partida nueva</button></div></section>
+    <section id="partida-ciencia" class="app-screen game-screen" data-screen="partida-ciencia" aria-labelledby="science-game-title"><div class="game-toolbar"><button class="text-button" type="button" data-science-exit>Salir</button><div class="game-stats"><span class="sr-only" id="science-game-title">Partida de Laboratorio curioso</span><strong>Observación <span data-science-round>1</span>/<span data-science-total>5</span></strong><span>Aciertos <strong data-science-score>0</strong></span><span class="game-time">Tiempo <strong data-science-time>0:00</strong></span></div><button class="button button-small button-secondary" type="button" data-science-pause>Pausa</button></div><div class="choice-card science-card" data-science-card><div class="science-visual" data-science-visual></div><h2 data-science-prompt>¿Qué conclusión coincide con las notas?</h2><div class="choice-options" data-science-options></div><p class="choice-explanation" data-science-explanation hidden></p><button class="button button-primary" type="button" data-science-continue hidden>Siguiente observación</button></div><div class="game-help"><p data-science-message aria-live="polite">Lee la observación y busca la evidencia.</p><button class="text-button" type="button" data-science-restart>Comenzar una partida nueva</button></div></section>
     <section id="resultado-ciencia" class="app-screen result-screen" data-screen="resultado-ciencia" aria-labelledby="science-result-title"><div class="result-spark" aria-hidden="true">⚗</div><p class="eyebrow">Misión completa</p><h2 id="science-result-title">¡Evidencia encontrada!</h2><p class="lead">Resolviste <strong data-science-result-rounds>5 experimentos</strong> con <strong data-science-result-attempts>0 intentos extra</strong>.</p><div class="reward-card"><span aria-hidden="true">🔬</span><div><strong>Un descubrimiento para tu constelación</strong><p>Nivel <span data-science-result-level>Explorador</span> · <span data-science-result-time>0:00</span>.</p></div></div><div class="action-group action-group-centered"><button class="button button-primary" type="button" data-science-replay>Jugar otra vez</button><button class="text-button" type="button" data-go="misiones">Volver al mapa</button></div></section>
 
     <section id="introduccion-memoria" class="app-screen panel-screen" data-screen="introduccion-memoria" aria-labelledby="memory-intro-title">
@@ -655,7 +656,7 @@
           <span class="sr-only" id="game-title">Partida de Memorama</span>
           <strong>Parejas <span data-pairs-count>0</span>/<span data-pairs-total>6</span></strong>
           <span>Movimientos <strong data-moves-count>0</strong></span>
-          <span>Tiempo <strong data-time-count>0:00</strong></span>
+          <span class="game-time">Tiempo <strong data-time-count>0:00</strong></span>
         </div>
         <div class="game-toolbar-actions">
           <button class="sound-button" type="button" data-sound-toggle aria-pressed="true" aria-label="Silenciar sonidos">Sonido</button>
@@ -754,6 +755,34 @@
               <option value="auto">Automática</option>
               <option value="explorador">Explorador</option>
               <option value="aventurero">Aventurero</option>
+            </select>
+          </div>
+          <div class="setting-row">
+            <label for="text-size"><strong>Tamaño del texto</strong><span>Aumenta texto, tarjetas y controles.</span></label>
+            <select id="text-size" name="textSize">
+              <option value="normal">Normal</option>
+              <option value="large">Grande</option>
+            </select>
+          </div>
+          <div class="setting-row">
+            <label for="high-contrast"><strong>Contraste</strong><span>Refuerza bordes y diferencia entre fondo y texto.</span></label>
+            <select id="high-contrast" name="highContrast">
+              <option value="false">Estándar</option>
+              <option value="true">Alto</option>
+            </select>
+          </div>
+          <div class="setting-row">
+            <label for="reduced-motion"><strong>Movimiento</strong><span>Reduce transiciones además de respetar el dispositivo.</span></label>
+            <select id="reduced-motion" name="reducedMotion">
+              <option value="false">Según el dispositivo</option>
+              <option value="true">Reducido</option>
+            </select>
+          </div>
+          <div class="setting-row">
+            <label for="hide-timers"><strong>Cronómetros</strong><span>El tiempo puede ocultarse durante las partidas.</span></label>
+            <select id="hide-timers" name="hideTimers">
+              <option value="false">Mostrar</option>
+              <option value="true">Ocultar</option>
             </select>
           </div>
           <button class="button button-primary" type="submit">Guardar configuración</button>

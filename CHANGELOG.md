@@ -56,3 +56,5 @@ Los cambios importantes de Chispora se registran aquí. El proyecto utiliza un e
 - Motor probado para filtrar áreas y recuperar la vista completa ante valores desconocidos.
 - Tutoriales repetibles de tres pasos para los diez juegos, sin modificar progreso ni recompensas.
 - Diálogos de tutorial, pausa y salida centrados correctamente después del reinicio global de estilos.
+- Preferencias familiares persistentes para texto grande, contraste alto, movimiento reducido y cronómetros ocultos.
+- Recuperación segura de ajustes antiguos y motor probado para normalizar la presentación accesible.

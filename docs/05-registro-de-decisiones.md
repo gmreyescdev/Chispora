@@ -196,6 +196,15 @@ Este archivo conserva las decisiones importantes y sus motivos. Se actualizará 
 - **Consecuencia:** completar o abandonar una guía no cambia niveles ni recompensas; los botones solo aparecen cuando JavaScript está disponible.
 - **Estado:** aceptada e implementada.
 
+## D-026 — Preferencias visuales globales y locales
+
+- **Fecha:** 30 de septiembre de 2026.
+- **Decisión:** guardar cuatro preferencias familiares dentro de `settings` y representarlas mediante atributos globales de HTML y reglas CSS.
+- **Motivo:** permite adaptar todas las pantallas de forma consistente sin duplicar componentes ni mezclar presentación con las reglas educativas.
+- **Alternativas consideradas:** ajustes por juego, controles flotantes en el área infantil y depender únicamente de preferencias del sistema.
+- **Consecuencia:** texto, contraste, movimiento y cronómetros se configuran en un solo lugar; los datos antiguos recuperan valores seguros y la reducción del sistema siempre se respeta.
+- **Estado:** aceptada e implementada.
+
 ## Plantilla para próximas decisiones
 
 - **Fecha:**

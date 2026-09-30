@@ -35,7 +35,8 @@
 - Compactar la interfaz y simplificar instrucciones. **Completado y auditado.**
 - Organizar el mapa por áreas. **Completado y auditado.**
 - Añadir tutoriales breves por juego. **Completado y auditado.**
-- Añadir accesibilidad y funcionamiento sin conexión.
+- Añadir accesibilidad ampliada. **Completado y auditado.**
+- Añadir funcionamiento sin conexión.
 - Publicar una beta gratuita.
 
 ## Fase 3 — Validación
