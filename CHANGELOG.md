@@ -36,3 +36,7 @@ Los cambios importantes de Chispora se registran aquí. El proyecto utiliza un e
 - Laberintos generados localmente con rutas siempre solucionables y tres tamaños de dificultad.
 - Controles táctiles y de teclado, pausa, movimientos, tiempo y progreso local para Laberintos.
 - Pruebas automáticas de conectividad, paredes, movimiento, avance y finalización de Laberintos.
+- Especificación educativa, funcional y técnica de Comprensión lectora.
+- Motor de Comprensión lectora con 18 relatos locales, tres dificultades, pistas, reintentos y pruebas automáticas.
+- Interfaz completa de Comprensión lectora con avance manual, explicación, pausa, salida, resultado y progreso local.
+- Sexta misión disponible en el mapa y resumen familiar ampliado a seis juegos.

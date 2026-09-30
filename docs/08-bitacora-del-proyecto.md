@@ -165,3 +165,45 @@ Separar las reglas de un juego de su representación visual permite comprobar ca
 ### Próximo paso
 
 Construir Comprensión lectora, el sexto juego del catálogo inicial.
+
+## 29 de septiembre de 2026 — Diseño de Comprensión lectora
+
+### Objetivo
+
+Definir las reglas educativas y técnicas del sexto juego antes de comenzar su implementación.
+
+### Trabajo realizado
+
+- Se definieron tres dificultades con extensión y habilidades graduales.
+- Se diseñó el flujo de lectura, pregunta, reintento, pista y explicación.
+- Se establecieron el modelo de contenido, el estado del motor y el progreso local.
+- Se escribieron criterios funcionales, de contenido, accesibilidad y pruebas.
+- Se creó `AGENTS.md` con las reglas de trabajo y calidad del repositorio.
+- Se creó un banco local de 18 relatos con preguntas, opciones, pistas y explicaciones.
+- Se implementó `lib/reading-engine.js` con selección aleatoria, reintentos, pistas y finalización.
+- Se añadieron pruebas automáticas para contenido, entradas inválidas, bloqueo, avance y cierre exacto.
+- Se integraron la tarjeta de misión y las pantallas de introducción, partida y resultado.
+- Se creó `reading-game.js` para tiempo, foco, pausa, salida, sonido y progreso local.
+- Se añadieron estilos de lectura, respuestas, pista, explicación y adaptación a pantallas estrechas.
+
+### Decisiones
+
+- Valorar comprensión y relectura en lugar de velocidad.
+- Mantener el cronómetro como información de sesión sin guardar mejores tiempos.
+- Usar textos locales revisados, sin generación ni servicios externos.
+- No guardar respuestas o errores concretos del niño.
+
+### Verificación
+
+- Se comprobó que la especificación respeta la arquitectura estática y el modelo local de privacidad.
+- Se contrastaron los criterios con la definición de terminado de los juegos existentes.
+- Los 18 relatos cumplen los rangos de extensión establecidos para sus niveles.
+- Las seis suites automáticas del proyecto finalizaron correctamente.
+- La sintaxis del motor y sus pruebas se comprobó con Node.js.
+- Una partida Explorador completa verificó error, reintento, pista, explicación, pausa, salida y resultado.
+- La salida de una partida incompleta no modificó el progreso ya guardado.
+- El progreso de lectura se reflejó en el mapa y la consola del navegador quedó limpia.
+
+### Próximo paso
+
+Crear recompensas visuales y un resumen por habilidad, y luego ampliar accesibilidad y funcionamiento sin conexión.

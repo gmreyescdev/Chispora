@@ -133,6 +133,15 @@ Este archivo conserva las decisiones importantes y sus motivos. Se actualizará 
 - **Consecuencia:** la variedad visual es amplia, pero esta primera versión no incluye llaves, obstáculos ni rutas alternativas cíclicas.
 - **Estado:** aceptada para el MVP.
 
+## D-019 — Comprensión antes que velocidad de lectura
+
+- **Fecha:** 29 de septiembre de 2026.
+- **Decisión:** Comprensión lectora mostrará el tiempo de sesión por coherencia con el catálogo, pero no guardará ni premiará un “mejor tiempo”.
+- **Motivo:** leer con atención, releer y encontrar evidencia son los objetivos educativos; convertir la velocidad en recompensa puede producir presión y desalentar estrategias útiles.
+- **Alternativas consideradas:** guardar mejores tiempos como en otros juegos u ocultar completamente el cronómetro.
+- **Consecuencia:** el resultado puede informar cuánto duró la sesión, mientras el progreso se concentra en niveles completados, intentos extra, pistas y textos comprendidos.
+- **Estado:** aceptada para el MVP.
+
 ## Plantilla para próximas decisiones
 
 - **Fecha:**

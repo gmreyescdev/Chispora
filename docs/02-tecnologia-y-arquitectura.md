@@ -21,8 +21,9 @@ El prototipo actual utiliza:
 - `index.html` para las pantallas y todo el contenido esencial.
 - `styles.css` para identidad, componentes y adaptación a distintos tamaños.
 - `main.js` para navegación, formularios, almacenamiento y los tres primeros juegos.
-- `sequence-game.js` y `maze-game.js` para aislar la interfaz de los incrementos más recientes.
+- `sequence-game.js`, `maze-game.js` y `reading-game.js` para aislar la interfaz de los incrementos más recientes.
 - Motores independientes en `lib/*-engine.js` para separar reglas comprobables de la interfaz.
+- `lib/reading-engine.js` contiene el banco local y las reglas probadas de Comprensión lectora.
 - `lib/manifest.js` como configuración central de marca y valores iniciales.
 - GSAP como mejora visual opcional para transiciones.
 - `localStorage` para perfil y ajustes del navegador.
@@ -48,6 +49,7 @@ WebDidactico/
 │   ├── word-engine.js
 │   ├── sequence-engine.js
 │   ├── maze-engine.js
+│   ├── reading-engine.js
 │   ├── gsap.min.js
 │   └── ScrollTrigger.min.js
 ├── docs/

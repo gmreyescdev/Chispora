@@ -26,7 +26,7 @@
 - Añadir Palabra desordenada. **Completado y auditado.**
 - Añadir Secuencia lógica. **Completado y auditado.**
 - Añadir Laberintos. **Completado y auditado.**
-- Añadir Comprensión lectora.
+- Añadir Comprensión lectora. **Completado y auditado.**
 - Crear recompensas visuales y resumen por habilidad.
 - Añadir accesibilidad y funcionamiento sin conexión.
 - Publicar una beta gratuita.

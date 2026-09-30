@@ -7,7 +7,7 @@
   <meta name="theme-color" content="#fff8e8">
   <title>Chispora · Juega. Piensa. Descubre.</title>
   <link rel="icon" href="assets/img/chispora-symbol.svg?v=2026090703" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css?v=2026090706">
+  <link rel="stylesheet" href="styles.css?v=2026092901">
   <script defer src="lib/gsap.min.js?v=2026090706"></script>
   <script defer src="lib/ScrollTrigger.min.js?v=2026090706"></script>
   <script defer src="lib/manifest.js?v=2026090706"></script>
@@ -16,9 +16,11 @@
   <script defer src="lib/word-engine.js?v=2026090706"></script>
   <script defer src="lib/sequence-engine.js?v=2026090706"></script>
   <script defer src="lib/maze-engine.js?v=2026090706"></script>
-  <script defer src="main.js?v=2026090706"></script>
+  <script defer src="lib/reading-engine.js?v=2026092901"></script>
+  <script defer src="main.js?v=2026092901"></script>
   <script defer src="sequence-game.js?v=2026090706"></script>
   <script defer src="maze-game.js?v=2026090706"></script>
+  <script defer src="reading-game.js?v=2026092901"></script>
 </head>
 <body>
   <a class="skip-link" href="#main-content">Saltar al contenido principal</a>
@@ -178,6 +180,20 @@
             <div class="progress-track" role="progressbar" aria-label="Progreso de Laberintos" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" data-maze-progress><span></span></div>
           </div>
           <button class="button button-primary" type="button" data-go="introduccion-laberinto">Ver misión</button>
+        </article>
+
+        <article class="mission-card mission-card-active">
+          <div class="mission-icon" aria-hidden="true">≡</div>
+          <div>
+            <span class="mission-status">Disponible</span>
+            <h3>Comprensión lectora</h3>
+            <p>Lee relatos breves y encuentra las pistas para responder.</p>
+          </div>
+          <div class="mission-progress">
+            <span data-reading-progress-label>Listo para jugar</span>
+            <div class="progress-track" role="progressbar" aria-label="Progreso de Comprensión lectora" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" data-reading-progress><span></span></div>
+          </div>
+          <button class="button button-primary" type="button" data-go="introduccion-lectura">Ver misión</button>
         </article>
       </div>
     </section>
@@ -436,6 +452,77 @@
       </div>
     </section>
 
+    <section id="introduccion-lectura" class="app-screen panel-screen" data-screen="introduccion-lectura" aria-labelledby="reading-intro-title">
+      <div class="screen-heading">
+        <button class="back-button" type="button" data-go="misiones">← Mapa de misiones</button>
+        <p class="eyebrow">Misión 06 · Comprensión lectora</p>
+        <h2 id="reading-intro-title">Comprensión lectora</h2>
+        <p>Lee cada relato con calma, busca pistas y elige la respuesta que mejor explica el texto.</p>
+      </div>
+      <div class="form-card">
+        <label class="field-label" for="reading-difficulty">Dificultad</label>
+        <select id="reading-difficulty" data-reading-difficulty>
+          <option value="explorador">Explorador</option>
+          <option value="aventurero">Aventurero</option>
+          <option value="maestro">Maestro lector</option>
+        </select>
+        <div class="difficulty-summary" data-reading-difficulty-summary aria-live="polite">
+          <strong>4 textos</strong><span>35 a 55 palabras</span><span>Información que aparece en el texto</span>
+        </div>
+        <p class="privacy-note">Puedes releer y usar una pista. El tiempo no se usa para medir qué tan bien lees.</p>
+        <button class="button button-primary button-full" type="button" data-start-reading>Comenzar</button>
+      </div>
+    </section>
+
+    <section id="partida-lectura" class="app-screen game-screen reading-game-screen" data-screen="partida-lectura" aria-labelledby="reading-game-title">
+      <div class="game-toolbar">
+        <button class="text-button" type="button" data-reading-exit>Salir</button>
+        <div class="game-stats">
+          <span class="sr-only" id="reading-game-title">Partida de Comprensión lectora</span>
+          <strong>Texto <span data-reading-round>1</span>/<span data-reading-total>4</span></strong>
+          <span>Comprendidos <strong data-reading-score>0</strong></span>
+          <span>Tiempo <strong data-reading-time>0:00</strong></span>
+        </div>
+        <button class="button button-small button-secondary" type="button" data-reading-pause>Pausa</button>
+      </div>
+      <article class="reading-card" data-reading-card>
+        <div class="reading-passage">
+          <p class="eyebrow">Lee con calma</p>
+          <h2 data-reading-title tabindex="-1">Una visita al huerto</h2>
+          <div class="reading-paragraphs" data-reading-paragraphs></div>
+        </div>
+        <div class="reading-question-zone" aria-labelledby="reading-question-title">
+          <p class="reading-question-label">Busca una pista en el relato</p>
+          <h3 id="reading-question-title" data-reading-question>¿Qué ocurrió en el relato?</h3>
+          <div class="reading-options" data-reading-options aria-label="Opciones de respuesta"></div>
+          <button class="text-button reading-hint-button" type="button" data-reading-hint>Ver una pista</button>
+          <p class="reading-hint" data-reading-hint-text aria-live="polite" hidden></p>
+          <div class="reading-explanation" data-reading-explanation aria-live="polite" hidden></div>
+          <button class="button button-primary reading-continue" type="button" data-reading-continue hidden>Siguiente texto</button>
+        </div>
+      </article>
+      <div class="game-help">
+        <p data-reading-message aria-live="polite">Lee el relato y elige una respuesta.</p>
+        <button class="text-button" type="button" data-restart-reading>Comenzar una partida nueva</button>
+      </div>
+    </section>
+
+    <section id="resultado-lectura" class="app-screen result-screen" data-screen="resultado-lectura" aria-labelledby="reading-result-title">
+      <div class="result-spark" aria-hidden="true">≡</div>
+      <p class="eyebrow">Misión completa</p>
+      <h2 id="reading-result-title">¡Encontraste las pistas!</h2>
+      <p class="lead">Comprendiste <strong data-reading-result-rounds>4 textos</strong> con <strong data-reading-result-attempts>0 intentos extra</strong>.</p>
+      <div class="reward-card">
+        <span aria-hidden="true">📚</span>
+        <div><strong>Una historia para tu mapa</strong><p>Nivel <span data-reading-result-level>Explorador</span> · <span data-reading-result-time>0:00</span> · <span data-reading-result-hints>0 pistas</span>.</p></div>
+      </div>
+      <div class="action-group action-group-centered">
+        <button class="button button-primary" type="button" data-replay-reading>Jugar otra vez</button>
+        <button class="text-button" type="button" data-go="misiones">Volver al mapa</button>
+        <button class="text-button" type="button" data-go="pausa">Terminar sesión</button>
+      </div>
+    </section>
+
     <section id="introduccion-memoria" class="app-screen panel-screen" data-screen="introduccion-memoria" aria-labelledby="memory-intro-title">
       <div class="screen-heading">
         <button class="back-button" type="button" data-go="misiones">← Mapa de misiones</button>
@@ -576,13 +663,14 @@
           <span class="mission-status">Solo en este equipo</span>
           <h3 id="local-progress-title">Progreso local</h3>
           <dl class="progress-list">
-            <div><dt>Juegos disponibles</dt><dd>5</dd></div>
+            <div><dt>Juegos disponibles</dt><dd>6</dd></div>
             <div><dt>Partidas terminadas</dt><dd data-completed-games>0</dd></div>
             <div><dt>Niveles de Memorama</dt><dd data-memory-levels>0/3</dd></div>
             <div><dt>Niveles de cálculo</dt><dd data-operation-levels>0/3</dd></div>
             <div><dt>Niveles de palabras</dt><dd data-word-levels>0/3</dd></div>
             <div><dt>Niveles de secuencias</dt><dd data-sequence-levels>0/3</dd></div>
             <div><dt>Niveles de laberintos</dt><dd data-maze-levels>0/3</dd></div>
+            <div><dt>Niveles de lectura</dt><dd data-reading-levels>0/3</dd></div>
           </dl>
           <p>No mostramos diagnósticos ni comparaciones con otros niños.</p>
           <button class="button button-secondary button-full" type="button" data-go="misiones">Ir a las misiones</button>
@@ -655,6 +743,27 @@
       <div class="dialog-actions">
         <button class="button button-secondary" value="cancel">Seguir jugando</button>
         <button class="button button-primary" type="button" data-maze-confirm-exit>Volver al mapa</button>
+      </div>
+    </form>
+  </dialog>
+
+  <dialog class="app-dialog" data-reading-pause-dialog aria-labelledby="reading-pause-dialog-title">
+    <form method="dialog">
+      <p class="eyebrow">Partida en pausa</p>
+      <h2 id="reading-pause-dialog-title">Descansa la vista.</h2>
+      <p>El tiempo se detendrá y el relato se ocultará hasta que continúes.</p>
+      <button class="button button-primary button-full" value="continue">Continuar</button>
+    </form>
+  </dialog>
+
+  <dialog class="app-dialog" data-reading-exit-dialog aria-labelledby="reading-exit-dialog-title">
+    <form method="dialog">
+      <p class="eyebrow">Salir de la misión</p>
+      <h2 id="reading-exit-dialog-title">¿Volvemos al mapa?</h2>
+      <p>Las partidas incompletas no se guardan.</p>
+      <div class="dialog-actions">
+        <button class="button button-secondary" value="cancel">Seguir leyendo</button>
+        <button class="button button-primary" type="button" data-reading-confirm-exit>Volver al mapa</button>
       </div>
     </form>
   </dialog>
