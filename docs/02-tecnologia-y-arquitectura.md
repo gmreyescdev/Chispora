@@ -24,6 +24,8 @@ El prototipo actual utiliza:
 - `sequence-game.js`, `maze-game.js` y `reading-game.js` para aislar la interfaz de los incrementos más recientes.
 - Motores independientes en `lib/*-engine.js` para separar reglas comprobables de la interfaz.
 - `lib/reading-engine.js` contiene el banco local y las reglas probadas de Comprensión lectora.
+- `lib/progress-engine.js` deriva el resumen de habilidades sin modificar el estado guardado.
+- `progress-summary.js` representa recompensas y mantiene sincronizadas sus vistas.
 - `lib/manifest.js` como configuración central de marca y valores iniciales.
 - GSAP como mejora visual opcional para transiciones.
 - `localStorage` para perfil y ajustes del navegador.
@@ -50,6 +52,7 @@ WebDidactico/
 │   ├── sequence-engine.js
 │   ├── maze-engine.js
 │   ├── reading-engine.js
+│   ├── progress-engine.js
 │   ├── gsap.min.js
 │   └── ScrollTrigger.min.js
 ├── docs/

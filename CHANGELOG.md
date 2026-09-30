@@ -40,3 +40,5 @@ Los cambios importantes de Chispora se registran aquí. El proyecto utiliza un e
 - Motor de Comprensión lectora con 18 relatos locales, tres dificultades, pistas, reintentos y pruebas automáticas.
 - Interfaz completa de Comprensión lectora con avance manual, explicación, pausa, salida, resultado y progreso local.
 - Sexta misión disponible en el mapa y resumen familiar ampliado a seis juegos.
+- Constelación de habilidades con recompensas visuales por nivel, progreso total y actualización inmediata.
+- Motor probado para derivar el resumen de progreso sin puntos, rachas ni comparaciones.

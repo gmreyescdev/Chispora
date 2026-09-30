@@ -50,11 +50,12 @@ Cada juego tendrá tres niveles de dificultad y sesiones sugeridas de entre 5 y 
 - [Implementación y auditoría de Laberintos](docs/20-implementacion-y-auditoria-laberintos.md)
 - [Especificación de Comprensión lectora](docs/21-especificacion-comprension-lectora.md)
 - [Implementación y auditoría de Comprensión lectora](docs/22-implementacion-y-auditoria-comprension-lectora.md)
+- [Implementación y auditoría de recompensas y habilidades](docs/23-implementacion-recompensas-y-habilidades.md)
 - [Historial de versiones](CHANGELOG.md)
 
 ## Estado
 
-Fase 0 completada. Fase 1 técnica completada; el catálogo inicial de la Fase 2 ya tiene seis juegos funcionales: Memorama, Operación misteriosa, Palabra desordenada, Secuencia lógica, Laberintos y Comprensión lectora.
+Fase 0 completada. Fase 1 técnica completada; el catálogo inicial de la Fase 2 ya tiene seis juegos funcionales, recompensas visuales y un resumen local por habilidad.
 
 - **Dominio:** `chispora.cl` adquirido por el propietario del proyecto.
 - **Marca CHISPORA:** disponibilidad preliminar informada; todavía no solicitada ni registrada en INAPI.

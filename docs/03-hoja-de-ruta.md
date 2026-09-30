@@ -27,7 +27,7 @@
 - Añadir Secuencia lógica. **Completado y auditado.**
 - Añadir Laberintos. **Completado y auditado.**
 - Añadir Comprensión lectora. **Completado y auditado.**
-- Crear recompensas visuales y resumen por habilidad.
+- Crear recompensas visuales y resumen por habilidad. **Completado y auditado.**
 - Añadir accesibilidad y funcionamiento sin conexión.
 - Publicar una beta gratuita.
 

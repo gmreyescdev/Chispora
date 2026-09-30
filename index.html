@@ -17,10 +17,12 @@
   <script defer src="lib/sequence-engine.js?v=2026090706"></script>
   <script defer src="lib/maze-engine.js?v=2026090706"></script>
   <script defer src="lib/reading-engine.js?v=2026092901"></script>
-  <script defer src="main.js?v=2026092901"></script>
+  <script defer src="lib/progress-engine.js?v=2026092902"></script>
+  <script defer src="main.js?v=2026092902"></script>
   <script defer src="sequence-game.js?v=2026090706"></script>
   <script defer src="maze-game.js?v=2026090706"></script>
   <script defer src="reading-game.js?v=2026092901"></script>
+  <script defer src="progress-summary.js?v=2026092902"></script>
 </head>
 <body>
   <a class="skip-link" href="#main-content">Saltar al contenido principal</a>
@@ -196,6 +198,27 @@
           <button class="button button-primary" type="button" data-go="introduccion-lectura">Ver misión</button>
         </article>
       </div>
+
+      <section class="skill-constellation" aria-labelledby="skill-constellation-title">
+        <div class="skill-constellation-heading">
+          <div>
+            <p class="eyebrow">Tu constelación</p>
+            <h3 id="skill-constellation-title">Cada ruta deja una chispa</h3>
+            <p data-overall-message>Tu mapa está listo para la primera misión.</p>
+          </div>
+          <strong class="overall-level-count" data-overall-levels aria-label="Niveles recorridos">0/18</strong>
+        </div>
+        <div class="progress-track overall-progress" role="progressbar" aria-label="Progreso total de habilidades" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" data-overall-progress><span></span></div>
+        <div class="skill-grid">
+          <article class="skill-card" data-skill-card="memory"><span class="skill-icon" aria-hidden="true">◇</span><div><h4>Memoria visual</h4><p data-skill-label>Lista para explorar</p></div><div class="skill-sparks" data-skill-sparks aria-label="0 de 3 niveles recorridos"></div><strong data-skill-count>0/3</strong></article>
+          <article class="skill-card" data-skill-card="operation"><span class="skill-icon" aria-hidden="true">＋</span><div><h4>Cálculo mental</h4><p data-skill-label>Lista para explorar</p></div><div class="skill-sparks" data-skill-sparks aria-label="0 de 3 niveles recorridos"></div><strong data-skill-count>0/3</strong></article>
+          <article class="skill-card" data-skill-card="word"><span class="skill-icon" aria-hidden="true">Aa</span><div><h4>Lectura y vocabulario</h4><p data-skill-label>Lista para explorar</p></div><div class="skill-sparks" data-skill-sparks aria-label="0 de 3 niveles recorridos"></div><strong data-skill-count>0/3</strong></article>
+          <article class="skill-card" data-skill-card="sequence"><span class="skill-icon" aria-hidden="true">◌</span><div><h4>Lógica y atención</h4><p data-skill-label>Lista para explorar</p></div><div class="skill-sparks" data-skill-sparks aria-label="0 de 3 niveles recorridos"></div><strong data-skill-count>0/3</strong></article>
+          <article class="skill-card" data-skill-card="maze"><span class="skill-icon" aria-hidden="true">⌁</span><div><h4>Orientación espacial</h4><p data-skill-label>Lista para explorar</p></div><div class="skill-sparks" data-skill-sparks aria-label="0 de 3 niveles recorridos"></div><strong data-skill-count>0/3</strong></article>
+          <article class="skill-card" data-skill-card="reading"><span class="skill-icon" aria-hidden="true">≡</span><div><h4>Comprensión lectora</h4><p data-skill-label>Lista para explorar</p></div><div class="skill-sparks" data-skill-sparks aria-label="0 de 3 niveles recorridos"></div><strong data-skill-count>0/3</strong></article>
+        </div>
+        <p class="skill-note">Las chispas muestran caminos recorridos. No son puntos ni comparan a un niño con otro.</p>
+      </section>
     </section>
 
     <section id="introduccion-operacion" class="app-screen panel-screen" data-screen="introduccion-operacion" aria-labelledby="operation-intro-title">
@@ -665,6 +688,7 @@
           <dl class="progress-list">
             <div><dt>Juegos disponibles</dt><dd>6</dd></div>
             <div><dt>Partidas terminadas</dt><dd data-completed-games>0</dd></div>
+            <div><dt>Niveles recorridos</dt><dd data-overall-levels>0/18</dd></div>
             <div><dt>Niveles de Memorama</dt><dd data-memory-levels>0/3</dd></div>
             <div><dt>Niveles de cálculo</dt><dd data-operation-levels>0/3</dd></div>
             <div><dt>Niveles de palabras</dt><dd data-word-levels>0/3</dd></div>
@@ -672,6 +696,8 @@
             <div><dt>Niveles de laberintos</dt><dd data-maze-levels>0/3</dd></div>
             <div><dt>Niveles de lectura</dt><dd data-reading-levels>0/3</dd></div>
           </dl>
+          <div class="progress-track" role="progressbar" aria-label="Progreso total de habilidades" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" data-overall-progress><span></span></div>
+          <p data-overall-message>Tu mapa está listo para la primera misión.</p>
           <p>No mostramos diagnósticos ni comparaciones con otros niños.</p>
           <button class="button button-secondary button-full" type="button" data-go="misiones">Ir a las misiones</button>
         </aside>

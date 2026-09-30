@@ -207,3 +207,34 @@ Definir las reglas educativas y técnicas del sexto juego antes de comenzar su i
 ### Próximo paso
 
 Crear recompensas visuales y un resumen por habilidad, y luego ampliar accesibilidad y funcionamiento sin conexión.
+
+## 29 de septiembre de 2026 — Constelación de habilidades
+
+### Objetivo
+
+Reconocer el progreso del catálogo sin introducir puntos, rachas o comparaciones.
+
+### Trabajo realizado
+
+- Se definieron seis habilidades asociadas a los juegos disponibles.
+- Se creó un motor puro que deriva niveles, estados y progreso total desde los datos locales.
+- Se añadió una constelación con tres chispas por habilidad al mapa de misiones.
+- Se amplió el panel familiar con niveles recorridos y progreso general.
+- Se sincronizaron las vistas mediante un evento local después de guardar cambios.
+
+### Decisiones
+
+- Representar variedad de niveles en vez de cantidad de partidas.
+- Utilizar descripciones neutrales y evitar diagnósticos sobre capacidad.
+- Calcular el resumen en cada lectura sin duplicarlo en `localStorage`.
+
+### Verificación
+
+- Las pruebas cubren estado vacío, datos desconocidos, cuatro etapas y catálogo completo.
+- La constelación reflejó el progreso existente y se actualizó sin recargar.
+- El contenido visual tiene cantidades y nombres accesibles.
+- Las siete suites automáticas finalizaron correctamente y la consola permaneció limpia.
+
+### Próximo paso
+
+Ampliar accesibilidad y preparar funcionamiento sin conexión.

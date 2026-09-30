@@ -142,6 +142,15 @@ Este archivo conserva las decisiones importantes y sus motivos. Se actualizará 
 - **Consecuencia:** el resultado puede informar cuánto duró la sesión, mientras el progreso se concentra en niveles completados, intentos extra, pistas y textos comprendidos.
 - **Estado:** aceptada para el MVP.
 
+## D-020 — Recompensas por exploración sin rachas ni puntos
+
+- **Fecha:** 29 de septiembre de 2026.
+- **Decisión:** representar cada nivel completado mediante una chispa permanente dentro de su habilidad, sin puntos acumulables, rachas, premios aleatorios o clasificaciones.
+- **Motivo:** permite reconocer variedad y constancia sin generar presión por conectarse, competir o repetir mecánicamente una actividad.
+- **Alternativas consideradas:** puntos por partida, insignias por velocidad y rachas diarias.
+- **Consecuencia:** repetir un nivel conserva valor educativo, pero no aumenta artificialmente la recompensa visual.
+- **Estado:** aceptada para el MVP.
+
 ## Plantilla para próximas decisiones
 
 - **Fecha:**

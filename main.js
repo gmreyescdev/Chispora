@@ -99,6 +99,7 @@
   function saveState() {
     try {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(appState));
+      window.dispatchEvent(new CustomEvent("chispora:state-updated", { detail: appState }));
       return true;
     } catch (error) {
       console.warn("[storage] No se pudo guardar el progreso local:", error);
