@@ -214,6 +214,15 @@ Este archivo conserva las decisiones importantes y sus motivos. Se actualizará 
 - **Consecuencia:** cada publicación debe incrementar el nombre del caché y mantener su lista de recursos; el caché anterior se elimina únicamente después de activar correctamente el nuevo.
 - **Estado:** aceptada e implementada.
 
+## D-028 — Observación manual, anónima y centrada en el producto
+
+- **Fecha:** 30 de septiembre de 2026.
+- **Decisión:** realizar sesiones de hasta 20 minutos con consentimiento del adulto, asentimiento del niño y fichas manuales identificadas solo por un código no reutilizable.
+- **Motivo:** permite descubrir problemas de comprensión y comodidad sin incorporar vigilancia, analítica ni perfiles infantiles al producto.
+- **Alternativas consideradas:** grabar sesiones, instalar analítica de comportamiento, medir velocidad individual y solicitar formularios identificables.
+- **Consecuencia:** la síntesis requiere trabajo manual y una muestra pequeña no permite conclusiones estadísticas, pero protege la privacidad y mantiene el foco en mejorar la interfaz.
+- **Estado:** aceptada; protocolo preparado y ejecución pendiente.
+
 ## Plantilla para próximas decisiones
 
 - **Fecha:**

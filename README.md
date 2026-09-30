@@ -63,11 +63,14 @@ Cada juego tendrá tres niveles de dificultad y sesiones sugeridas de entre 5 y 
 - [Tutoriales breves para los diez juegos](docs/29-tutoriales-breves.md)
 - [Accesibilidad ampliada](docs/30-accesibilidad-ampliada.md)
 - [Funcionamiento sin conexión e instalación](docs/31-funcionamiento-sin-conexion-e-instalacion.md)
+- [Protocolo de pruebas supervisadas](docs/32-protocolo-pruebas-supervisadas.md)
+- [Ficha anónima de observación](docs/33-ficha-observacion-anonima.md)
+- [Guía para sintetizar pruebas](docs/34-guia-sintesis-pruebas.md)
 - [Historial de versiones](CHANGELOG.md)
 
 ## Estado
 
-Fase 0 completada. Fase 1 técnica completada; la Fase 2 tiene diez juegos funcionales, recompensas visuales, accesibilidad ampliada e instalación opcional con funcionamiento sin conexión.
+Fase 0 completada. Fase 1 técnica completada; la Fase 2 tiene diez juegos funcionales, recompensas visuales, accesibilidad ampliada e instalación opcional con funcionamiento sin conexión. El protocolo para pruebas supervisadas está preparado; las sesiones reales siguen pendientes.
 
 - **Dominio:** `chispora.cl` adquirido por el propietario del proyecto.
 - **Marca CHISPORA:** disponibilidad preliminar informada; todavía no solicitada ni registrada en INAPI.

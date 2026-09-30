@@ -19,7 +19,8 @@
 - Construir Memorama. **Completado y auditado.**
 - Construir Operación misteriosa. **Completado y auditado.**
 - Incorporar control de sonido, dificultad y tiempo. **Completado en los juegos disponibles.**
-- Probar con adultos y luego en sesiones breves supervisadas.
+- Preparar pruebas con adultos y sesiones breves supervisadas. **Protocolo y materiales completados.**
+- Ejecutar y sintetizar sesiones reales. **Pendiente.**
 
 ## Fase 2 — Catálogo inicial
 
@@ -40,6 +41,8 @@
 - Publicar una beta gratuita.
 
 ## Fase 3 — Validación
+
+- Ejecutar al menos cinco sesiones breves con consentimiento y registros anónimos. **Pendiente.**
 
 - Observar qué instrucciones generan confusión.
 - Evaluar si la dificultad aumenta correctamente.

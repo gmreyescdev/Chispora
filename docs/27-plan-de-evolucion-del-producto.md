@@ -111,4 +111,4 @@ Mostrar habilidades exploradas, niveles recorridos y sugerencias de actividades 
 
 ## Estado
 
-Los puntos 1 a 4 están completados y auditados. El punto 5, pruebas supervisadas, es el siguiente incremento. Los puntos 5 y 6 completan la ruta principal; los puntos 7 a 10 quedan documentados para incrementos posteriores.
+Los puntos 1 a 4 están completados y auditados. El protocolo y las fichas del punto 5 están preparados, pero las sesiones reales siguen pendientes. Después de ejecutarlas y resolver hallazgos críticos, el punto 6 completará la ruta principal. Los puntos 7 a 10 quedan documentados para incrementos posteriores.

@@ -446,3 +446,28 @@ Guardar la aplicación completa en el dispositivo y ofrecer instalación opciona
 ### Próximo paso
 
 Preparar el protocolo y los materiales para pruebas supervisadas breves.
+
+## 30 de septiembre de 2026 — Preparación de pruebas supervisadas
+
+### Objetivo
+
+Dejar listas sesiones breves que permitan observar el producto sin evaluar ni identificar al niño.
+
+### Trabajo realizado
+
+- Se redactaron guiones de consentimiento adulto y asentimiento infantil.
+- Se fijaron límites de 20 minutos, criterios de pausa y detención.
+- Se creó una matriz que cubre los diez juegos, tres tamaños de dispositivo y tres métodos de entrada.
+- Se preparó una ficha anónima por sesión sin nombres, contactos, escuela, ubicación ni grabaciones.
+- Se definió una guía para agregar hallazgos y priorizar correcciones antes de la beta.
+
+### Verificación
+
+- Los primeros cinco códigos cubren cada juego una vez y los diez códigos los cubren dos veces.
+- La ficha distingue observación independiente, indicio neutral, ayuda de interfaz, ayuda directa y detención.
+- Los criterios de síntesis prohíben diagnósticos, comparaciones y perfiles infantiles.
+- Se documentó claramente que todavía no existen resultados de sesiones reales.
+
+### Próximo paso
+
+Realizar primero un piloto adulto y después al menos cinco sesiones infantiles supervisadas. Registrar únicamente resultados agregados antes de decidir cambios y preparar la beta.

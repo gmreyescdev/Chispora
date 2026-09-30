@@ -61,3 +61,5 @@ Los cambios importantes de Chispora se registran aquí. El proyecto utiliza un e
 - Aplicación web instalable con manifiesto, iconos adaptables y acceso directo a las misiones.
 - Caché local completo para abrir los diez juegos sin conexión después de la primera carga.
 - Actualizaciones controladas por el adulto, sin mezclar versiones ni borrar el progreso local.
+- Protocolo de pruebas supervisadas con consentimiento, asentimiento y criterios de detención.
+- Ficha anónima por sesión, matriz de cobertura para los diez juegos y guía de síntesis sin perfiles infantiles.
