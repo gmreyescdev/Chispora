@@ -205,6 +205,15 @@ Este archivo conserva las decisiones importantes y sus motivos. Se actualizará 
 - **Consecuencia:** texto, contraste, movimiento y cronómetros se configuran en un solo lugar; los datos antiguos recuperan valores seguros y la reducción del sistema siempre se respeta.
 - **Estado:** aceptada e implementada.
 
+## D-027 — Caché completo con activación controlada
+
+- **Fecha:** 30 de septiembre de 2026.
+- **Decisión:** precargar una versión completa de la aplicación y mantener las actualizaciones en espera hasta que el adulto las acepte.
+- **Motivo:** evita que una partida combine HTML, estilos y motores de versiones distintas, sin depender de un servidor para jugar.
+- **Alternativas consideradas:** caché dinámico recurso por recurso, actualización automática inmediata y conservar todos los cachés indefinidamente.
+- **Consecuencia:** cada publicación debe incrementar el nombre del caché y mantener su lista de recursos; el caché anterior se elimina únicamente después de activar correctamente el nuevo.
+- **Estado:** aceptada e implementada.
+
 ## Plantilla para próximas decisiones
 
 - **Fecha:**

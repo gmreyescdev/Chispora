@@ -5,13 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Chispora es un espacio de juegos didácticos breves, tranquilos y seguros para niños de 7 a 9 años.">
   <meta name="theme-color" content="#fff8e8">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Chispora">
   <title>Chispora · Juega. Piensa. Descubre.</title>
   <link rel="icon" href="assets/img/chispora-symbol.svg?v=2026090703" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css?v=2026093008">
+  <link rel="apple-touch-icon" href="assets/icons/chispora-192.png">
+  <link rel="manifest" href="app.webmanifest?v=2026093001">
+  <link rel="stylesheet" href="styles.css?v=2026093009">
   <script defer src="lib/gsap.min.js?v=2026090706"></script>
   <script defer src="lib/ScrollTrigger.min.js?v=2026090706"></script>
   <script defer src="lib/manifest.js?v=2026093008"></script>
   <script defer src="lib/accessibility-engine.js?v=2026093008"></script>
+  <script defer src="lib/pwa-engine.js?v=2026093001"></script>
   <script defer src="lib/memory-engine.js?v=2026090706"></script>
   <script defer src="lib/operation-engine.js?v=2026090706"></script>
   <script defer src="lib/word-engine.js?v=2026090706"></script>
@@ -37,6 +43,7 @@
   <script defer src="clock-game.js?v=2026093003"></script>
   <script defer src="science-game.js?v=2026093003"></script>
   <script defer src="tutorials.js?v=2026093001"></script>
+  <script defer src="pwa.js?v=2026093001"></script>
 </head>
 <body>
   <a class="skip-link" href="#main-content">Saltar al contenido principal</a>
@@ -813,6 +820,14 @@
           <button class="button button-secondary button-full" type="button" data-go="misiones">Ir a las misiones</button>
         </aside>
       </div>
+      <section class="pwa-card" aria-labelledby="pwa-title">
+        <div class="pwa-copy">
+          <span class="connection-status" data-pwa-connection data-state="checking" role="status" aria-live="polite">Comprobando disponibilidad</span>
+          <h3 id="pwa-title">Chispora en este equipo</h3>
+          <p data-pwa-message>Abre Chispora una vez con conexión para preparar todos los juegos.</p>
+        </div>
+        <button class="button button-secondary" type="button" data-pwa-action hidden></button>
+      </section>
     </section>
   </main>
 

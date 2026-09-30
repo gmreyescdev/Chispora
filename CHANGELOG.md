@@ -58,3 +58,6 @@ Los cambios importantes de Chispora se registran aquí. El proyecto utiliza un e
 - Diálogos de tutorial, pausa y salida centrados correctamente después del reinicio global de estilos.
 - Preferencias familiares persistentes para texto grande, contraste alto, movimiento reducido y cronómetros ocultos.
 - Recuperación segura de ajustes antiguos y motor probado para normalizar la presentación accesible.
+- Aplicación web instalable con manifiesto, iconos adaptables y acceso directo a las misiones.
+- Caché local completo para abrir los diez juegos sin conexión después de la primera carga.
+- Actualizaciones controladas por el adulto, sin mezclar versiones ni borrar el progreso local.

@@ -24,6 +24,7 @@
   ExpiresByType application/javascript "access plus 1 hours"
   ExpiresByType text/javascript "access plus 1 hours"
   ExpiresByType application/json "access plus 1 hours"
+  ExpiresByType application/manifest+json "access plus 0 seconds"
 
   # Media — cache long (use cache-busting filename if you change them)
   ExpiresByType image/webp "access plus 1 month"
@@ -48,7 +49,7 @@
   </FilesMatch>
 
   # JS / CSS / JSON: revalidate every visit
-  <FilesMatch "\.(css|js|mjs|json)$">
+  <FilesMatch "\.(css|js|mjs|json|webmanifest)$">
     Header set Cache-Control "no-cache, must-revalidate"
   </FilesMatch>
 
@@ -70,6 +71,7 @@
   AddType application/javascript .mjs
   AddType text/css .css
   AddType application/json .json
+  AddType application/manifest+json .webmanifest
   AddType font/woff2 .woff2
   AddType font/woff .woff
   AddType image/svg+xml .svg

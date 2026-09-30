@@ -402,7 +402,7 @@ h3 {
   margin-inline: auto;
 }
 
-.form-card, .settings-card, .progress-card, .reward-card {
+.form-card, .settings-card, .progress-card, .reward-card, .pwa-card {
   border: 1px solid rgba(255, 255, 255, 0.72);
   border-radius: var(--radius-large);
   background: rgba(255, 255, 255, 0.88);
@@ -410,7 +410,7 @@ h3 {
 }
 
 @supports (backdrop-filter: blur(22px)) {
-  .form-card, .settings-card, .progress-card, .reward-card {
+  .form-card, .settings-card, .progress-card, .reward-card, .pwa-card {
     background: rgba(255, 255, 255, 0.62);
     backdrop-filter: blur(22px) saturate(155%);
     -webkit-backdrop-filter: blur(22px) saturate(155%);
@@ -1701,6 +1701,43 @@ input:focus, select:focus {
 
 .progress-list dd {
   font-weight: 800;
+}
+
+.pwa-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1.3rem;
+  padding: clamp(1rem, 3vw, 1.4rem);
+}
+
+.pwa-copy {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.connection-status {
+  width: fit-content;
+  border: 2px solid var(--ink);
+  border-radius: 999px;
+  background: var(--paper-deep);
+  padding: 0.25rem 0.65rem;
+  font-size: 0.82rem;
+  font-weight: 900;
+}
+
+.connection-status[data-state="ready"] {
+  background: #d8f5ef;
+}
+
+.connection-status[data-state="offline"] {
+  background: var(--yellow);
+}
+
+.connection-status[data-state="unavailable"] {
+  background: #f1f1f1;
 }
 
 .app-dialog {

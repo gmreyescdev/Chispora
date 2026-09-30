@@ -419,3 +419,30 @@ Dar a cada familia opciones sencillas para adaptar la presentación sin cambiar 
 ### Próximo paso
 
 Preparar el funcionamiento sin conexión y la instalación opcional de Chispora.
+
+## 30 de septiembre de 2026 — Funcionamiento sin conexión e instalación
+
+### Objetivo
+
+Guardar la aplicación completa en el dispositivo y ofrecer instalación opcional sin cuentas ni servicios externos.
+
+### Trabajo realizado
+
+- Se creó un manifiesto con iconos adaptables de 192 y 512 píxeles.
+- Se precargaron 39 recursos locales mediante un service worker.
+- El panel familiar muestra preparación, disponibilidad, desconexión e instalación.
+- Las versiones nuevas permanecen en espera hasta que el adulto decide actualizar.
+- `.htaccess` reconoce el manifiesto y revalida los archivos que controlan versiones.
+
+### Verificación
+
+- La aplicación recargó y abrió una partida con el servidor detenido.
+- Los diez accesos de juego estaban presentes en modo sin conexión.
+- La oferta de instalación apareció solo al ser habilitada por el navegador.
+- Una versión nueva quedó en espera y reemplazó a la anterior solo después de pulsar Actualizar.
+- Perfil, ajustes y progreso permanecieron intactos.
+- El panel obtuvo 100 en Lighthouse y no mostró desbordamiento ni errores de consola.
+
+### Próximo paso
+
+Preparar el protocolo y los materiales para pruebas supervisadas breves.

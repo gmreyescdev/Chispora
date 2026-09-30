@@ -34,6 +34,7 @@ El prototipo actual utiliza:
 - `lib/mission-map-engine.js` define las áreas y reglas puras del filtro; `mission-map.js` actualiza el mapa sin modificar progreso.
 - `lib/tutorial-engine.js` contiene las guías y su avance; `tutorials.js` reutiliza un diálogo y registra únicamente tutoriales completados.
 - `lib/accessibility-engine.js` normaliza las preferencias visuales; `main.js` las aplica mediante atributos en el documento sin alterar los juegos.
+- `app.webmanifest`, `sw.js`, `lib/pwa-engine.js` y `pwa.js` permiten instalación opcional, caché completo y actualización controlada.
 - `lib/manifest.js` como configuración central de marca y valores iniciales.
 - GSAP como mejora visual opcional para transiciones.
 - `localStorage` para perfil y ajustes del navegador.
@@ -47,9 +48,13 @@ WebDidactico/
 ├── index.html
 ├── styles.css
 ├── main.js
+├── pwa.js
+├── sw.js
+├── app.webmanifest
 ├── .htaccess
 ├── assets/
 │   ├── brand/
+│   ├── icons/
 │   ├── img/
 │   └── photos/source/
 ├── lib/
@@ -69,6 +74,7 @@ WebDidactico/
 │   ├── mission-map-engine.js
 │   ├── tutorial-engine.js
 │   ├── accessibility-engine.js
+│   ├── pwa-engine.js
 │   ├── gsap.min.js
 │   └── ScrollTrigger.min.js
 ├── docs/

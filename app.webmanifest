@@ -1,0 +1,35 @@
+{
+  "id": "./",
+  "name": "Chispora · Juegos educativos",
+  "short_name": "Chispora",
+  "description": "Juegos educativos breves, tranquilos y seguros para niños de 7 a 9 años.",
+  "lang": "es",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#fff8e8",
+  "theme_color": "#fff8e8",
+  "categories": ["education", "games", "kids"],
+  "icons": [
+    {
+      "src": "assets/icons/chispora-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/icons/chispora-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Abrir misiones",
+      "short_name": "Misiones",
+      "url": "./#misiones",
+      "icons": [{ "src": "assets/icons/chispora-192.png", "sizes": "192x192" }]
+    }
+  ]
+}

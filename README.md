@@ -62,11 +62,12 @@ Cada juego tendrá tres niveles de dificultad y sesiones sugeridas de entre 5 y 
 - [Organización del mapa por áreas](docs/28-organizacion-del-mapa-por-areas.md)
 - [Tutoriales breves para los diez juegos](docs/29-tutoriales-breves.md)
 - [Accesibilidad ampliada](docs/30-accesibilidad-ampliada.md)
+- [Funcionamiento sin conexión e instalación](docs/31-funcionamiento-sin-conexion-e-instalacion.md)
 - [Historial de versiones](CHANGELOG.md)
 
 ## Estado
 
-Fase 0 completada. Fase 1 técnica completada; la Fase 2 tiene diez juegos funcionales, recompensas visuales, resumen local por habilidad y preferencias ampliadas de accesibilidad.
+Fase 0 completada. Fase 1 técnica completada; la Fase 2 tiene diez juegos funcionales, recompensas visuales, accesibilidad ampliada e instalación opcional con funcionamiento sin conexión.
 
 - **Dominio:** `chispora.cl` adquirido por el propietario del proyecto.
 - **Marca CHISPORA:** disponibilidad preliminar informada; todavía no solicitada ni registrada en INAPI.
