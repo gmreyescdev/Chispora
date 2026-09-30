@@ -18,8 +18,8 @@
   --shadow: 0 24px 70px rgba(23, 50, 77, 0.13);
   --shadow-small: 0 12px 30px rgba(23, 50, 77, 0.1);
   --radius-small: 14px;
-  --radius-medium: 22px;
-  --radius-large: 34px;
+  --radius-medium: 18px;
+  --radius-large: 26px;
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-in: cubic-bezier(0.7, 0, 0.84, 0);
   --ease-soft: cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -86,15 +86,15 @@ h1, h2, h3 {
 
 h1 {
   max-width: 9ch;
-  font-size: clamp(3.4rem, 14vw, 7.8rem);
+  font-size: clamp(2.8rem, 10vw, 6.4rem);
 }
 
 h2 {
-  font-size: clamp(2.25rem, 8vw, 4.7rem);
+  font-size: clamp(1.7rem, 4.5vw, 2.8rem);
 }
 
 h3 {
-  font-size: clamp(1.35rem, 4vw, 2rem);
+  font-size: clamp(1.2rem, 3vw, 1.6rem);
 }
 
 ::selection {
@@ -273,7 +273,7 @@ h3 {
   width: min(100% - 1.5rem, 1180px);
   min-height: calc(100svh - 10rem);
   margin: 0 auto;
-  padding: clamp(2.4rem, 8vw, 6rem) 0;
+  padding: clamp(1.4rem, 4vw, 3.2rem) 0;
 }
 
 .app-screen {
@@ -308,10 +308,10 @@ h3 {
    6. Buttons, fields & shared components
    ============================================================= */
 .button {
-  min-height: 48px;
+  min-height: 46px;
   border: 2px solid var(--ink);
   border-radius: 15px;
-  padding: 0.8rem 1.15rem;
+  padding: 0.55rem 1rem;
   font-weight: 800;
   transition: transform 0.24s var(--ease-out), box-shadow 0.24s var(--ease-out), background-color 0.24s var(--ease-out);
 }
@@ -372,6 +372,7 @@ h3 {
 
 .eyebrow {
   color: var(--ink-soft);
+  font-size: 0.82rem;
   font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -380,14 +381,14 @@ h3 {
 .lead {
   max-width: 42rem;
   color: var(--ink-soft);
-  font-size: clamp(1.08rem, 2vw, 1.35rem);
+  font-size: clamp(1rem, 1.6vw, 1.18rem);
 }
 
 .screen-heading {
   display: grid;
-  gap: 0.9rem;
+  gap: 0.55rem;
   max-width: 44rem;
-  margin: 0 auto 2rem;
+  margin: 0 auto 1.25rem;
 }
 
 .screen-heading-wide {
@@ -396,7 +397,7 @@ h3 {
 }
 
 .panel-screen {
-  max-width: 52rem;
+  max-width: 58rem;
   margin-inline: auto;
 }
 
@@ -417,10 +418,10 @@ h3 {
 
 .form-card {
   display: grid;
-  gap: 1rem;
+  gap: 0.7rem;
   max-width: 40rem;
   margin: 0 auto;
-  padding: clamp(1.2rem, 5vw, 2.25rem);
+  padding: clamp(1rem, 3vw, 1.5rem);
 }
 
 .field-label, legend {
@@ -429,7 +430,7 @@ h3 {
 
 input, select {
   width: 100%;
-  min-height: 50px;
+  min-height: 46px;
   border: 2px solid var(--line);
   border-radius: 12px;
   background: var(--surface-solid);
@@ -488,14 +489,14 @@ input:focus, select:focus {
    ============================================================= */
 .welcome-screen {
   display: grid;
-  gap: 3rem;
+  gap: 2rem;
   align-items: center;
   min-height: calc(100svh - 10rem);
 }
 
 .welcome-copy {
   display: grid;
-  gap: 1.5rem;
+  gap: 1rem;
 }
 
 .welcome-copy h1 span {
@@ -524,7 +525,7 @@ input:focus, select:focus {
   position: relative;
   display: grid;
   place-items: center;
-  min-height: 22rem;
+  min-height: 18rem;
 }
 
 .welcome-visual > img {
@@ -573,20 +574,25 @@ input:focus, select:focus {
    ============================================================= */
 .mission-grid {
   display: grid;
-  gap: 1.2rem;
+  gap: 0.9rem;
 }
 
 .mission-card {
   display: grid;
-  gap: 1.2rem;
+  grid-template-columns: 3.25rem minmax(0, 1fr);
+  gap: 0.8rem;
   align-content: start;
-  min-height: 19rem;
+  min-height: 13rem;
   border: 1px solid rgba(255, 255, 255, 0.72);
   border-radius: var(--radius-large);
   background: rgba(255, 255, 255, 0.84);
   box-shadow: var(--shadow-small);
-  padding: 1.4rem;
+  padding: 1.05rem;
 }
+
+.mission-card > div:nth-child(2) { grid-column: 2; }
+.mission-card > .mission-progress,
+.mission-card > .button { grid-column: 1 / -1; }
 
 @supports (backdrop-filter: blur(18px)) {
   .mission-card {
@@ -608,17 +614,17 @@ input:focus, select:focus {
 .mission-icon {
   display: grid;
   place-items: center;
-  width: 4rem;
-  height: 4rem;
-  border-radius: 18px;
+  width: 3.25rem;
+  height: 3.25rem;
+  border-radius: 14px;
   background: var(--yellow);
   font-family: var(--font-display);
-  font-size: 1.8rem;
+  font-size: 1.45rem;
   font-weight: 800;
 }
 
 .mission-card h3 {
-  margin: 0.6rem 0;
+  margin: 0.35rem 0;
 }
 
 .mission-progress {
@@ -644,10 +650,10 @@ input:focus, select:focus {
 
 .difficulty-summary {
   display: grid;
-  gap: 0.55rem;
+  gap: 0.3rem;
   border-radius: var(--radius-small);
   background: #eefaf8;
-  padding: 1rem;
+  padding: 0.75rem;
 }
 
 /* =============================================================
@@ -655,8 +661,8 @@ input:focus, select:focus {
    ============================================================= */
 .game-screen {
   display: grid;
-  gap: 1.5rem;
-  max-width: 48rem;
+  gap: 1rem;
+  max-width: 44rem;
   margin: 0 auto;
 }
 
@@ -696,6 +702,8 @@ input:focus, select:focus {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 0.65rem;
+  width: min(100%, 28rem);
+  margin-inline: auto;
 }
 
 .memory-board[data-pair-count="8"],
@@ -747,20 +755,20 @@ input:focus, select:focus {
 
 .game-help {
   display: grid;
-  gap: 1rem;
+  gap: 0.35rem;
   justify-items: center;
   text-align: center;
 }
 
 .operation-card {
   display: grid;
-  gap: clamp(1.4rem, 5vw, 2.4rem);
+  gap: clamp(1rem, 3vw, 1.5rem);
   justify-items: center;
   border: 2px solid var(--ink);
   border-radius: var(--radius-large);
   background: rgba(255, 255, 255, 0.9);
   box-shadow: 0 9px 0 var(--ink), var(--shadow-small);
-  padding: clamp(1.4rem, 6vw, 3rem);
+  padding: clamp(1.1rem, 4vw, 2rem);
   text-align: center;
 }
 
@@ -770,7 +778,7 @@ input:focus, select:focus {
   justify-content: center;
   gap: clamp(0.35rem, 2vw, 1rem);
   font-family: var(--font-display);
-  font-size: clamp(2.1rem, 12vw, 5rem);
+  font-size: clamp(1.9rem, 9vw, 3.8rem);
   font-weight: 900;
   line-height: 1;
 }
@@ -795,14 +803,14 @@ input:focus, select:focus {
 .operation-option {
   display: grid;
   place-items: center;
-  width: clamp(4rem, 20vw, 6rem);
+  width: clamp(3.5rem, 16vw, 5rem);
   aspect-ratio: 1;
   border: 2px solid var(--ink);
   border-radius: var(--radius-medium);
   background: var(--sky);
   box-shadow: 0 6px 0 var(--ink);
   font-family: var(--font-display);
-  font-size: clamp(2rem, 8vw, 3.4rem);
+  font-size: clamp(1.6rem, 6vw, 2.6rem);
   font-weight: 900;
   transition: transform 0.25s var(--ease-out), background-color 0.25s var(--ease-out), opacity 0.25s var(--ease-out);
 }
@@ -824,13 +832,13 @@ input:focus, select:focus {
 
 .word-card {
   display: grid;
-  gap: 1.4rem;
+  gap: 1rem;
   justify-items: center;
   border: 2px solid var(--ink);
   border-radius: var(--radius-large);
   background: rgba(255, 255, 255, 0.9);
   box-shadow: 0 9px 0 var(--ink), var(--shadow-small);
-  padding: clamp(1.2rem, 5vw, 2.5rem);
+  padding: clamp(1rem, 3vw, 1.7rem);
   text-align: center;
 }
 
@@ -918,8 +926,8 @@ input:focus, select:focus {
 
 .sequence-puzzle {
   display: grid;
-  gap: 1.4rem;
-  padding: clamp(1.5rem, 5vw, 3rem) clamp(1.25rem, 4vw, 2rem);
+  gap: 1rem;
+  padding: clamp(1rem, 3vw, 1.7rem);
 }
 
 .sequence-items {
@@ -932,8 +940,8 @@ input:focus, select:focus {
 .sequence-items span {
   display: grid;
   place-items: center;
-  min-width: clamp(3rem, 12vw, 4.5rem);
-  min-height: clamp(3rem, 12vw, 4.5rem);
+  min-width: clamp(2.8rem, 9vw, 3.8rem);
+  min-height: clamp(2.8rem, 9vw, 3.8rem);
   border: 2px solid var(--ink);
   border-radius: 18px;
   background: var(--white);
@@ -950,10 +958,10 @@ input:focus, select:focus {
 
 .sequence-answer-zone {
   display: grid;
-  gap: 1rem;
+  gap: 0.7rem;
   border-top: 2px solid var(--ink);
   background: #eefaf8;
-  padding: clamp(1.25rem, 4vw, 2rem);
+  padding: clamp(0.9rem, 3vw, 1.4rem);
 }
 
 .sequence-answer-title {
@@ -1010,12 +1018,12 @@ input:focus, select:focus {
 .maze-stage {
   display: grid;
   justify-items: center;
-  gap: 1rem;
+  gap: 0.7rem;
   border: 2px solid var(--ink);
   border-radius: var(--radius-large);
   background: rgba(255, 255, 255, 0.9);
   box-shadow: var(--shadow-medium);
-  padding: clamp(1rem, 4vw, 1.75rem);
+  padding: clamp(0.7rem, 2vw, 1rem);
 }
 
 .maze-legend {
@@ -1036,7 +1044,7 @@ input:focus, select:focus {
 .maze-board {
   display: grid;
   grid-template-columns: repeat(var(--maze-size), 1fr);
-  width: min(100%, 31rem);
+  width: min(100%, 17rem);
   aspect-ratio: 1;
   border: 3px solid var(--ink);
   background: #eefaf8;
@@ -1122,13 +1130,13 @@ input:focus, select:focus {
 
 .skill-constellation {
   display: grid;
-  gap: 1.2rem;
-  margin-top: clamp(2rem, 6vw, 4rem);
+  gap: 0.9rem;
+  margin-top: clamp(1.2rem, 3vw, 2rem);
   border: 2px solid var(--ink);
   border-radius: var(--radius-large);
   background: rgba(255, 255, 255, 0.86);
   box-shadow: var(--shadow-medium);
-  padding: clamp(1.2rem, 5vw, 2.4rem);
+  padding: clamp(1rem, 3vw, 1.5rem);
 }
 
 .skill-constellation-heading {
@@ -1236,8 +1244,8 @@ input:focus, select:focus {
 .reading-passage,
 .reading-question-zone {
   display: grid;
-  gap: 1rem;
-  padding: clamp(1.25rem, 5vw, 2.5rem);
+  gap: 0.75rem;
+  padding: clamp(1rem, 3vw, 1.6rem);
 }
 
 .reading-passage h2,
@@ -1251,10 +1259,10 @@ input:focus, select:focus {
 
 .reading-paragraphs {
   display: grid;
-  gap: 1rem;
+  gap: 0.7rem;
   max-width: 42rem;
-  font-size: clamp(1.05rem, 2.6vw, 1.2rem);
-  line-height: 1.75;
+  font-size: clamp(1rem, 2vw, 1.12rem);
+  line-height: 1.62;
 }
 
 .reading-paragraphs p {
@@ -1361,18 +1369,18 @@ input:focus, select:focus {
 .fraction-card,
 .robot-stage {
   display: grid;
-  gap: 1.25rem;
+  gap: 0.9rem;
   border: 2px solid var(--ink);
   border-radius: var(--radius-large);
   background: rgba(255, 255, 255, 0.94);
   box-shadow: var(--shadow-medium);
-  padding: clamp(1.2rem, 5vw, 2.4rem);
+  padding: clamp(1rem, 3vw, 1.6rem);
   text-align: center;
 }
 
 .fraction-card h2 { margin: 0; }
 .fraction-visual { display: flex; align-items: center; justify-content: center; gap: clamp(0.7rem, 4vw, 1.5rem); flex-wrap: wrap; }
-.fraction-model { display: grid; grid-template-columns: repeat(var(--parts, 1), 1fr); width: min(100%, 17rem); min-width: 12rem; height: 5rem; overflow: hidden; border: 3px solid var(--ink); border-radius: 18px; }
+.fraction-model { display: grid; grid-template-columns: repeat(var(--parts, 1), 1fr); width: min(100%, 15rem); min-width: 11rem; height: 4rem; overflow: hidden; border: 3px solid var(--ink); border-radius: 16px; }
 .fraction-model span { border-right: 2px solid var(--ink); background: var(--white); }
 .fraction-model span:last-child { border-right: 0; }
 .fraction-model span.is-filled { background: var(--yellow); }
@@ -1389,7 +1397,7 @@ input:focus, select:focus {
 .fraction-card.is-paused > * { visibility: hidden; }
 
 .robot-stage { justify-items: center; text-align: left; }
-.robot-board { display: grid; grid-template-columns: repeat(var(--robot-size), 1fr); width: min(100%, 27rem); aspect-ratio: 1; border: 3px solid var(--ink); background: #eefaf8; }
+.robot-board { display: grid; grid-template-columns: repeat(var(--robot-size), 1fr); width: min(100%, 22rem); aspect-ratio: 1; border: 3px solid var(--ink); background: #eefaf8; }
 .robot-cell { position: relative; display: grid; place-items: center; border: 1px solid rgba(23, 50, 77, 0.25); font-size: clamp(1rem, 5vw, 2rem); }
 .robot-cell.is-obstacle::after { content: "◆"; color: var(--ink-soft); font-size: 1.1em; }
 .robot-player,.robot-goal { position: absolute; z-index: 2; }
@@ -1407,12 +1415,12 @@ input:focus, select:focus {
 .choice-card {
   display: grid;
   justify-items: center;
-  gap: 1.25rem;
+  gap: 0.9rem;
   border: 2px solid var(--ink);
   border-radius: var(--radius-large);
   background: rgba(255, 255, 255, 0.94);
   box-shadow: var(--shadow-medium);
-  padding: clamp(1.2rem, 5vw, 2.4rem);
+  padding: clamp(1rem, 3vw, 1.6rem);
   text-align: center;
 }
 
@@ -1427,7 +1435,7 @@ input:focus, select:focus {
 
 .clock-visual { display: flex; align-items: center; justify-content: center; gap: clamp(0.65rem, 3vw, 1.4rem); width: 100%; flex-wrap: wrap; }
 .clock-wrap { display: grid; justify-items: center; gap: 0.45rem; }
-.analog-clock { position: relative; width: clamp(9rem, 42vw, 13rem); aspect-ratio: 1; border: 4px solid var(--ink); border-radius: 50%; background: var(--paper); box-shadow: inset 0 0 0 5px var(--white); }
+.analog-clock { position: relative; width: clamp(8.5rem, 34vw, 11rem); aspect-ratio: 1; border: 4px solid var(--ink); border-radius: 50%; background: var(--paper); box-shadow: inset 0 0 0 5px var(--white); }
 .clock-number { position: absolute; z-index: 1; color: var(--ink); font-size: clamp(0.65rem, 2.8vw, 0.9rem); font-weight: 900; line-height: 1; transform: translate(-50%, -50%); }
 .clock-hand { position: absolute; left: 50%; bottom: 50%; z-index: 2; width: 4px; border-radius: 4px; background: var(--ink); transform: translateX(-50%) rotate(var(--angle)); transform-origin: 50% 100%; }
 .clock-hand.hour { height: 27%; width: 6px; }
@@ -1435,9 +1443,9 @@ input:focus, select:focus {
 .clock-center { position: absolute; left: 50%; top: 50%; z-index: 3; width: 0.9rem; height: 0.9rem; border: 3px solid var(--ink); border-radius: 50%; background: var(--yellow); transform: translate(-50%, -50%); }
 .clock-arrow { font-size: 2rem; font-weight: 900; }
 
-.science-visual { display: flex; align-items: center; gap: 1rem; width: 100%; border: 2px dashed var(--ink); border-radius: 18px; background: #eefaf8; padding: clamp(1rem, 4vw, 1.4rem); text-align: left; }
+.science-visual { display: flex; align-items: center; gap: 0.8rem; width: 100%; border: 2px dashed var(--ink); border-radius: 16px; background: #eefaf8; padding: clamp(0.8rem, 2.5vw, 1rem); text-align: left; }
 .science-visual p { margin: 0.35rem 0 0; }
-.science-icon { flex: 0 0 auto; font-size: clamp(2.4rem, 10vw, 4rem); }
+.science-icon { flex: 0 0 auto; font-size: clamp(2rem, 7vw, 3rem); }
 
 @keyframes maze-pop {
   from { transform: scale(0.65); }
@@ -1450,16 +1458,16 @@ input:focus, select:focus {
 .result-screen, .pause-screen {
   display: grid;
   place-items: center;
-  gap: 1.4rem;
+  gap: 0.9rem;
   max-width: 46rem;
-  min-height: 62svh;
+  min-height: 48svh;
   margin: 0 auto;
   text-align: center;
 }
 
 .result-spark {
   color: var(--coral-deep);
-  font-size: 5rem;
+  font-size: 3.5rem;
   line-height: 1;
 }
 
@@ -1683,7 +1691,12 @@ input:focus, select:focus {
   }
 
   .memory-card {
-    min-height: 100px;
+    min-height: 76px;
+  }
+
+  .maze-controls {
+    grid-template-columns: repeat(4, 3.2rem);
+    grid-template-areas: "left up down right";
   }
 }
 
@@ -1722,12 +1735,40 @@ input:focus, select:focus {
     align-items: center;
   }
 
+  .panel-screen[data-screen^="introduccion-"] {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(18rem, 0.85fr);
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .panel-screen[data-screen^="introduccion-"] .screen-heading,
+  .panel-screen[data-screen^="introduccion-"] .form-card {
+    width: 100%;
+    margin: 0;
+  }
+
+  .difficulty-summary {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: center;
+    font-size: 0.88rem;
+  }
+
   .skill-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .reading-options {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: 1fr;
+  }
+
+  .reading-card {
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  }
+
+  .reading-question-zone {
+    border-top: 0;
+    border-left: 2px solid var(--ink);
   }
 
   .fraction-options { grid-template-columns: repeat(3, minmax(0, 1fr)); }
@@ -1749,7 +1790,7 @@ input:focus, select:focus {
 
 @media (min-width: 1280px) {
   .welcome-visual {
-    min-height: 34rem;
+    min-height: 26rem;
   }
 }
 

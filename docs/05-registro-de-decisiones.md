@@ -169,6 +169,15 @@ Este archivo conserva las decisiones importantes y sus motivos. Se actualizará 
 - **Consecuencia:** la constelación pasa de ocho a diez habilidades y de 24 a 30 niveles; ambos juegos comparten un controlador de interfaz, pero conservan motores independientes.
 - **Estado:** aceptada e implementada.
 
+## D-023 — Densidad compacta sin reducir legibilidad
+
+- **Fecha:** 30 de septiembre de 2026.
+- **Decisión:** reducir espacios, títulos y tableros, y usar dos columnas en introducciones y lectura cuando el ancho sea suficiente.
+- **Motivo:** el crecimiento a diez juegos hizo que la escala inicial exigiera demasiado desplazamiento antes de jugar.
+- **Alternativas consideradas:** reducir todo mediante `zoom`, ocultar información o saltar directamente a la partida.
+- **Consecuencia:** el contenido aparece antes sin modificar la escala base del texto, el orden semántico ni el tamaño mínimo de los controles esenciales.
+- **Estado:** aceptada e implementada.
+
 ## Plantilla para próximas decisiones
 
 - **Fecha:**

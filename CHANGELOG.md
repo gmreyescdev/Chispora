@@ -50,3 +50,5 @@ Los cambios importantes de Chispora se registran aquí. El proyecto utiliza un e
 - Laboratorio curioso con observación, predicción, variables, pruebas justas y tres niveles.
 - Controlador reutilizable para juegos de opciones con pausa, salida, progreso y recuperación segura.
 - Catálogo, panel familiar y constelación ampliados de ocho a diez juegos y de 24 a 30 niveles.
+- Interfaz general más compacta, con introducciones en dos columnas y juegos visibles con menos desplazamiento.
+- Instrucciones iniciales reescritas como acciones breves y botones “Jugar”.

@@ -57,6 +57,7 @@ Cada juego tendrá tres niveles de dificultad y sesiones sugeridas de entre 5 y 
 - [Implementación y auditoría de recompensas y habilidades](docs/23-implementacion-recompensas-y-habilidades.md)
 - [Implementación y auditoría de Fracciones y Robot](docs/24-implementacion-fracciones-y-robot.md)
 - [Implementación y auditoría de Reloj y Laboratorio](docs/25-implementacion-reloj-y-laboratorio.md)
+- [Compactación visual e instrucciones](docs/26-compactacion-visual-e-instrucciones.md)
 - [Historial de versiones](CHANGELOG.md)
 
 ## Estado

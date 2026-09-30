@@ -32,6 +32,7 @@
 - Añadir Programa al robot. **Completado y auditado.**
 - Añadir Reloj de aventuras. **Completado y auditado.**
 - Añadir Laboratorio curioso. **Completado y auditado.**
+- Compactar la interfaz y simplificar instrucciones. **Completado y auditado.**
 - Añadir accesibilidad y funcionamiento sin conexión.
 - Publicar una beta gratuita.
 

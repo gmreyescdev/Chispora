@@ -311,3 +311,30 @@ Completar los dos candidatos restantes con práctica cotidiana y razonamiento ba
 ### Próximo paso
 
 Realizar pruebas supervisadas de los diez juegos y continuar con accesibilidad ampliada y funcionamiento sin conexión.
+
+## 30 de septiembre de 2026 — Interfaz compacta
+
+### Objetivo
+
+Mostrar antes las acciones importantes y simplificar las instrucciones de todos los juegos.
+
+### Trabajo realizado
+
+- Se redujeron títulos, espacios, radios y tarjetas sin cambiar el texto base.
+- Las introducciones usan dos columnas desde 720 píxeles.
+- Las diez instrucciones se reescribieron con acciones breves.
+- El botón inicial ahora dice “Jugar”.
+- Se compactaron tableros y controles de los diez juegos.
+- Memorama, Laberintos y Comprensión lectora recibieron ajustes específicos para pantallas de poca altura.
+
+### Verificación
+
+- Se midieron las diez introducciones y los diez juegos en una ventana de 800 × 526 píxeles.
+- No apareció desbordamiento horizontal.
+- Los tableros principales redujeron su altura y las acciones iniciales quedaron visibles antes.
+- La consola permaneció limpia.
+- Se conservaron foco, orden semántico y controles táctiles cómodos.
+
+### Próximo paso
+
+Observar la interfaz en teléfonos físicos y validar las instrucciones con niños y adultos responsables.
