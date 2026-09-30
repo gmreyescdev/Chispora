@@ -364,3 +364,30 @@ Ayudar a elegir entre diez juegos sin añadir una pantalla intermedia.
 ### Próximo paso
 
 Crear el patrón común para tutoriales breves que puedan repetirse sin modificar progreso.
+
+## 30 de septiembre de 2026 — Tutoriales breves
+
+### Objetivo
+
+Enseñar las acciones principales antes de jugar sin convertir la guía en una partida obligatoria.
+
+### Trabajo realizado
+
+- Se escribieron tres pasos y ejemplos para cada uno de los diez juegos.
+- Se creó un motor común y un diálogo reutilizable.
+- Cada introducción ofrece “Cómo se juega” junto a “Jugar”.
+- Se añadió avance, retroceso, cierre libre y finalización explícita.
+- La finalización se guarda fuera del progreso y la guía puede repetirse.
+
+### Verificación
+
+- Los diez tutoriales abrieron con contenido e indicadores correctos.
+- Se comprobó teclado, Enter, Escape, Anterior, Siguiente y Entendido.
+- Cerrar temprano no marca la guía; terminarla sí.
+- El progreso permaneció idéntico después de completar una guía.
+- Se corrigió el centrado de todos los diálogos.
+- La consola permaneció limpia.
+
+### Próximo paso
+
+Implementar accesibilidad ampliada con preferencias locales y valores predeterminados seguros.

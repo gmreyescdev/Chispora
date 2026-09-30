@@ -54,3 +54,5 @@ Los cambios importantes de Chispora se registran aquí. El proyecto utiliza un e
 - Instrucciones iniciales reescritas como acciones breves y botones “Jugar”.
 - Mapa de misiones organizado mediante filtros accesibles para Palabras, Números, Lógica y Exploración.
 - Motor probado para filtrar áreas y recuperar la vista completa ante valores desconocidos.
+- Tutoriales repetibles de tres pasos para los diez juegos, sin modificar progreso ni recompensas.
+- Diálogos de tutorial, pausa y salida centrados correctamente después del reinicio global de estilos.

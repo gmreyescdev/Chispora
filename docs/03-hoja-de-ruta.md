@@ -34,7 +34,7 @@
 - Añadir Laboratorio curioso. **Completado y auditado.**
 - Compactar la interfaz y simplificar instrucciones. **Completado y auditado.**
 - Organizar el mapa por áreas. **Completado y auditado.**
-- Añadir tutoriales breves por juego.
+- Añadir tutoriales breves por juego. **Completado y auditado.**
 - Añadir accesibilidad y funcionamiento sin conexión.
 - Publicar una beta gratuita.
 

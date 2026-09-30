@@ -60,6 +60,7 @@ Cada juego tendrá tres niveles de dificultad y sesiones sugeridas de entre 5 y 
 - [Compactación visual e instrucciones](docs/26-compactacion-visual-e-instrucciones.md)
 - [Plan de evolución del producto](docs/27-plan-de-evolucion-del-producto.md)
 - [Organización del mapa por áreas](docs/28-organizacion-del-mapa-por-areas.md)
+- [Tutoriales breves para los diez juegos](docs/29-tutoriales-breves.md)
 - [Historial de versiones](CHANGELOG.md)
 
 ## Estado

@@ -187,6 +187,15 @@ Este archivo conserva las decisiones importantes y sus motivos. Se actualizará 
 - **Consecuencia:** todas las misiones siguen visibles por defecto y sin JavaScript; el filtro no se almacena como progreso.
 - **Estado:** aceptada e implementada.
 
+## D-025 — Tutorial único, repetible y separado del progreso
+
+- **Fecha:** 30 de septiembre de 2026.
+- **Decisión:** usar un diálogo compartido con tres pasos específicos por juego y registrar su finalización fuera del progreso.
+- **Motivo:** mantiene instrucciones consistentes, evita diez implementaciones duplicadas y permite consultar la ayuda sin iniciar una partida.
+- **Alternativas consideradas:** tutorial dentro de la primera partida, videos, recorridos automáticos y diez diálogos independientes.
+- **Consecuencia:** completar o abandonar una guía no cambia niveles ni recompensas; los botones solo aparecen cuando JavaScript está disponible.
+- **Estado:** aceptada e implementada.
+
 ## Plantilla para próximas decisiones
 
 - **Fecha:**

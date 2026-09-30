@@ -1174,6 +1174,85 @@ input:focus, select:focus {
   max-width: 56rem;
 }
 
+.intro-actions {
+  display: flex;
+  gap: 0.6rem;
+}
+
+.intro-actions .button {
+  flex: 1 1 0;
+}
+
+.tutorial-dialog {
+  max-width: 30rem;
+}
+
+.tutorial-heading,
+.tutorial-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+}
+
+.tutorial-content {
+  display: grid;
+  justify-items: center;
+  gap: 0.8rem;
+  margin-block: 0.8rem 1.2rem;
+  text-align: center;
+}
+
+.tutorial-content h2 {
+  font-size: clamp(1.6rem, 5vw, 2.35rem);
+}
+
+.tutorial-content h2:focus {
+  outline: none;
+}
+
+.tutorial-visual {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  min-height: 6rem;
+  border: 2px dashed var(--ink);
+  border-radius: var(--radius-medium);
+  background: #eefaf8;
+  padding: 1rem;
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-size: clamp(1.35rem, 7vw, 2.2rem);
+  font-weight: 900;
+  letter-spacing: 0.08em;
+}
+
+.tutorial-dots {
+  display: flex;
+  gap: 0.45rem;
+}
+
+.tutorial-dot {
+  width: 0.65rem;
+  height: 0.65rem;
+  border: 2px solid var(--ink);
+  border-radius: 50%;
+  background: var(--white);
+}
+
+.tutorial-dot.is-active {
+  background: var(--yellow);
+}
+
+.tutorial-actions .button {
+  min-width: 7rem;
+}
+
+.tutorial-actions button:disabled {
+  cursor: default;
+  opacity: 0.4;
+}
+
 .skill-constellation {
   display: grid;
   gap: 0.9rem;
@@ -1625,6 +1704,7 @@ input:focus, select:focus {
 
 .app-dialog {
   width: min(100% - 2rem, 32rem);
+  margin: auto;
   border: 0;
   border-radius: var(--radius-large);
   background: var(--surface-solid);

@@ -7,7 +7,7 @@
   <meta name="theme-color" content="#fff8e8">
   <title>Chispora · Juega. Piensa. Descubre.</title>
   <link rel="icon" href="assets/img/chispora-symbol.svg?v=2026090703" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css?v=2026093005">
+  <link rel="stylesheet" href="styles.css?v=2026093007">
   <script defer src="lib/gsap.min.js?v=2026090706"></script>
   <script defer src="lib/ScrollTrigger.min.js?v=2026090706"></script>
   <script defer src="lib/manifest.js?v=2026090706"></script>
@@ -24,6 +24,7 @@
   <script defer src="lib/clock-engine.js?v=2026093003"></script>
   <script defer src="lib/science-engine.js?v=2026093003"></script>
   <script defer src="lib/mission-map-engine.js?v=2026093001"></script>
+  <script defer src="lib/tutorial-engine.js?v=2026093001"></script>
   <script defer src="main.js?v=2026093003"></script>
   <script defer src="sequence-game.js?v=2026090706"></script>
   <script defer src="maze-game.js?v=2026090706"></script>
@@ -34,6 +35,7 @@
   <script defer src="robot-game.js?v=2026093001"></script>
   <script defer src="clock-game.js?v=2026093003"></script>
   <script defer src="science-game.js?v=2026093003"></script>
+  <script defer src="tutorials.js?v=2026093001"></script>
 </head>
 <body>
   <a class="skip-link" href="#main-content">Saltar al contenido principal</a>
@@ -882,5 +884,21 @@
   <dialog class="app-dialog" data-clock-exit-dialog aria-labelledby="clock-exit-title"><form method="dialog"><p class="eyebrow">Salir de la misión</p><h2 id="clock-exit-title">¿Volvemos al mapa?</h2><p>Los relojes incompletos no se guardan.</p><div class="dialog-actions"><button class="button button-secondary" value="cancel">Seguir jugando</button><button class="button button-primary" type="button" data-clock-confirm-exit>Volver al mapa</button></div></form></dialog>
   <dialog class="app-dialog" data-science-pause-dialog aria-labelledby="science-pause-title"><form method="dialog"><p class="eyebrow">Partida en pausa</p><h2 id="science-pause-title">El laboratorio descansa.</h2><p>Las notas se ocultarán hasta que continúes.</p><button class="button button-primary button-full" value="continue">Continuar</button></form></dialog>
   <dialog class="app-dialog" data-science-exit-dialog aria-labelledby="science-exit-title"><form method="dialog"><p class="eyebrow">Salir de la misión</p><h2 id="science-exit-title">¿Volvemos al mapa?</h2><p>Las observaciones incompletas no se guardan.</p><div class="dialog-actions"><button class="button button-secondary" value="cancel">Seguir investigando</button><button class="button button-primary" type="button" data-science-confirm-exit>Volver al mapa</button></div></form></dialog>
+  <dialog class="app-dialog tutorial-dialog" data-tutorial-dialog aria-labelledby="tutorial-title">
+    <div class="tutorial-heading">
+      <p class="eyebrow" data-tutorial-step>Paso 1 de 3</p>
+      <button class="text-button" type="button" data-tutorial-close>Cerrar</button>
+    </div>
+    <div class="tutorial-content" aria-live="polite">
+      <div class="tutorial-visual" data-tutorial-visual aria-hidden="true"></div>
+      <h2 id="tutorial-title" data-tutorial-title tabindex="-1">Cómo se juega</h2>
+      <p data-tutorial-text></p>
+      <div class="tutorial-dots" data-tutorial-dots aria-label="Paso 1 de 3"></div>
+    </div>
+    <div class="tutorial-actions">
+      <button class="button button-secondary" type="button" data-tutorial-previous>Anterior</button>
+      <button class="button button-primary" type="button" data-tutorial-next>Siguiente</button>
+    </div>
+  </dialog>
 </body>
 </html>

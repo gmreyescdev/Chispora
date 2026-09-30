@@ -111,4 +111,4 @@ Mostrar habilidades exploradas, niveles recorridos y sugerencias de actividades 
 
 ## Estado
 
-El punto 1 está completado y auditado. El punto 2, tutoriales breves, es el siguiente incremento. Los puntos 2 a 6 forman la ruta principal; los puntos 7 a 10 quedan documentados para incrementos posteriores.
+Los puntos 1 y 2 están completados y auditados. El punto 3, accesibilidad ampliada, es el siguiente incremento. Los puntos 3 a 6 forman la ruta principal; los puntos 7 a 10 quedan documentados para incrementos posteriores.
