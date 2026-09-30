@@ -2,15 +2,15 @@
 
 ## Resultado
 
-El mapa de misiones incluye una constelación que resume las seis habilidades del catálogo. Cada nivel completado ilumina una chispa y actualiza una descripción neutral del recorrido.
+El mapa de misiones incluye una constelación que resume las ocho habilidades actuales del catálogo. Cada nivel completado ilumina una chispa y actualiza una descripción neutral del recorrido.
 
 La recompensa representa contenido explorado. No utiliza puntos, rachas, premios aleatorios, clasificaciones ni comparaciones entre niños.
 
 ## Qué ve el jugador
 
-- Un resumen total de niveles recorridos sobre 18 disponibles.
+- Un resumen total de niveles recorridos sobre 24 disponibles.
 - Una barra de progreso general.
-- Seis tarjetas: memoria visual, cálculo mental, lectura y vocabulario, lógica y atención, orientación espacial y comprensión lectora.
+- Ocho tarjetas, incluidas Fracciones visuales y Pensamiento computacional.
 - Tres chispas por habilidad, correspondientes a las dificultades Explorador, Aventurero y Maestro.
 - Descripciones graduales: “Lista para explorar”, “Primer recorrido”, “Camino avanzado” y “Tres niveles recorridos”.
 
@@ -18,7 +18,7 @@ El panel familiar muestra también los niveles recorridos y el progreso total, a
 
 ## Cómo funciona
 
-`lib/progress-engine.js` transforma el progreso local en un resumen derivado. Reconoce únicamente las tres dificultades válidas, limita cada habilidad a tres niveles y calcula un porcentaje sobre 18.
+`lib/progress-engine.js` transforma el progreso local en un resumen derivado. Reconoce únicamente las tres dificultades válidas, limita cada habilidad a tres niveles y calcula un porcentaje sobre 24.
 
 `progress-summary.js` representa ese resumen en el mapa y el panel familiar. Escucha el evento `chispora:state-updated` para actualizar la vista después de guardar una partida sin recargar la página. También escucha cambios de almacenamiento producidos en otras pestañas.
 
@@ -53,16 +53,16 @@ node --check progress-summary.js
 
 Se verificó:
 
-- Estado vacío con seis habilidades, 0 de 18 niveles y recuperación segura.
+- Estado vacío con ocho habilidades, 0 de 24 niveles y recuperación segura.
 - Conteo exclusivo de dificultades reconocidas.
 - Estados descriptivos para cero, uno, dos y tres niveles.
-- Cálculo de 100 % al recorrer los 18 niveles.
+- Cálculo de 100 % al recorrer los 24 niveles.
 - Lectura correcta del progreso ya guardado de Comprensión lectora.
 - Actualización inmediata al cambiar el progreso y emitir el evento de la aplicación.
 - Restauración correcta del estado después de la prueba dinámica.
 - Resumen accesible mediante nombres y cantidades, sin depender de las chispas visuales.
 - Ausencia de errores y advertencias en la consola.
-- Siete suites automáticas aprobadas después de la integración.
+- Siete suites automáticas aprobadas en la integración inicial y nueve después de ampliar el catálogo.
 
 ## Riesgos y próximos ajustes
 

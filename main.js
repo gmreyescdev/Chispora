@@ -142,7 +142,7 @@
       screen.hidden = screen !== target;
       screen.setAttribute("aria-hidden", String(screen !== target));
     });
-    if (appHeader) appHeader.hidden = ["partida-memoria", "partida-operacion", "partida-palabras", "partida-secuencia", "partida-laberinto", "partida-lectura"].includes(targetId);
+    if (appHeader) appHeader.hidden = ["partida-memoria", "partida-operacion", "partida-palabras", "partida-secuencia", "partida-laberinto", "partida-lectura", "partida-fracciones", "partida-robot"].includes(targetId);
 
     if (window.gsap) {
       window.gsap.fromTo(target, { opacity: 0, y: reduced ? 0 : 14 }, { opacity: 1, y: 0, duration: 0.45, ease: "power3.out", clearProps: "opacity,transform" });

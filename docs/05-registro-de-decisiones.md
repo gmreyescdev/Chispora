@@ -151,6 +151,15 @@ Este archivo conserva las decisiones importantes y sus motivos. Se actualizará 
 - **Consecuencia:** repetir un nivel conserva valor educativo, pero no aumenta artificialmente la recompensa visual.
 - **Estado:** aceptada para el MVP.
 
+## D-021 — Ampliación con fracciones y programación
+
+- **Fecha:** 30 de septiembre de 2026.
+- **Decisión:** ampliar el catálogo con Fracciones en acción y Programa al robot, dejando Reloj de aventuras y Laboratorio curioso como candidatos posteriores.
+- **Motivo:** incorporan razonamiento matemático visual y pensamiento computacional, habilidades que no estaban representadas directamente en los seis juegos iniciales.
+- **Alternativas consideradas:** lectura del reloj, dinero, clasificación científica y construir los cuatro juegos simultáneamente.
+- **Consecuencia:** la constelación pasa de seis a ocho habilidades y de 18 a 24 niveles disponibles.
+- **Estado:** aceptada e implementada.
+
 ## Plantilla para próximas decisiones
 
 - **Fecha:**

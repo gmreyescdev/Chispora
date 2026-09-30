@@ -26,6 +26,8 @@ El prototipo actual utiliza:
 - `lib/reading-engine.js` contiene el banco local y las reglas probadas de Comprensión lectora.
 - `lib/progress-engine.js` deriva el resumen de habilidades sin modificar el estado guardado.
 - `progress-summary.js` representa recompensas y mantiene sincronizadas sus vistas.
+- `fraction-game.js` y `robot-game.js` aíslan las interfaces de los juegos séptimo y octavo.
+- `lib/fraction-engine.js` y `lib/robot-engine.js` contienen modelos, comandos y reglas comprobables.
 - `lib/manifest.js` como configuración central de marca y valores iniciales.
 - GSAP como mejora visual opcional para transiciones.
 - `localStorage` para perfil y ajustes del navegador.
@@ -53,6 +55,8 @@ WebDidactico/
 │   ├── maze-engine.js
 │   ├── reading-engine.js
 │   ├── progress-engine.js
+│   ├── fraction-engine.js
+│   ├── robot-engine.js
 │   ├── gsap.min.js
 │   └── ScrollTrigger.min.js
 ├── docs/

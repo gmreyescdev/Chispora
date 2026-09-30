@@ -42,3 +42,6 @@ Los cambios importantes de Chispora se registran aquí. El proyecto utiliza un e
 - Sexta misión disponible en el mapa y resumen familiar ampliado a seis juegos.
 - Constelación de habilidades con recompensas visuales por nivel, progreso total y actualización inmediata.
 - Motor probado para derivar el resumen de progreso sin puntos, rachas ni comparaciones.
+- Fracciones en acción con modelos visuales, comparación, equivalencias, tres niveles y pruebas.
+- Programa al robot con secuencias de comandos, obstáculos, depuración, tres niveles y pruebas de todos los mapas.
+- Catálogo, panel familiar y constelación ampliados de seis a ocho juegos y de 18 a 24 niveles.

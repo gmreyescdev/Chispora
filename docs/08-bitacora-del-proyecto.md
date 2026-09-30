@@ -238,3 +238,35 @@ Reconocer el progreso del catálogo sin introducir puntos, rachas o comparacione
 ### Próximo paso
 
 Ampliar accesibilidad y preparar funcionamiento sin conexión.
+
+## 30 de septiembre de 2026 — Fracciones y programación
+
+### Objetivo
+
+Agregar dos juegos entretenidos que amplíen las habilidades del catálogo.
+
+### Trabajo realizado
+
+- Se investigaron propuestas de NCTM, Code.org y Education Endowment Foundation.
+- Se construyó Fracciones en acción con identificación, comparación y equivalencias visuales.
+- Se construyó Programa al robot con rutas, obstáculos, comandos y corrección de programas.
+- Se añadieron seis pantallas, cuatro diálogos, progreso local y dos habilidades a la constelación.
+- Se ampliaron el panel familiar y el catálogo a ocho juegos y 24 niveles.
+
+### Decisiones
+
+- Comenzar con tiras de fracciones por su lectura visual clara.
+- Usar direcciones absolutas y programas completos para centrar Robot en secuencia y depuración.
+- Aceptar rutas alternativas que lleguen a la meta.
+- Dejar Reloj de aventuras y Laboratorio curioso como candidatos futuros.
+
+### Verificación
+
+- Todos los mapas de Robot tienen una solución automática comprobada.
+- Los motores cubren entradas inválidas, errores, corrección, avance y finalización.
+- Se completó una partida Explorador de cada juego en navegador.
+- Las nueve suites automáticas pasaron y la consola permaneció limpia.
+
+### Próximo paso
+
+Realizar pruebas supervisadas y retomar accesibilidad ampliada y funcionamiento sin conexión.

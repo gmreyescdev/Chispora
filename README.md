@@ -14,7 +14,7 @@ Plataforma de juegos educativos clásicos para niños de aproximadamente 8 años
 
 ## Primera versión propuesta
 
-La versión inicial incluirá seis juegos:
+El catálogo actual incluye ocho juegos:
 
 1. Memorama.
 2. Operación misteriosa.
@@ -22,6 +22,8 @@ La versión inicial incluirá seis juegos:
 4. Secuencia lógica.
 5. Laberintos.
 6. Comprensión lectora.
+7. Fracciones en acción.
+8. Programa al robot.
 
 Cada juego tendrá tres niveles de dificultad y sesiones sugeridas de entre 5 y 10 minutos.
 
@@ -51,11 +53,12 @@ Cada juego tendrá tres niveles de dificultad y sesiones sugeridas de entre 5 y 
 - [Especificación de Comprensión lectora](docs/21-especificacion-comprension-lectora.md)
 - [Implementación y auditoría de Comprensión lectora](docs/22-implementacion-y-auditoria-comprension-lectora.md)
 - [Implementación y auditoría de recompensas y habilidades](docs/23-implementacion-recompensas-y-habilidades.md)
+- [Implementación y auditoría de Fracciones y Robot](docs/24-implementacion-fracciones-y-robot.md)
 - [Historial de versiones](CHANGELOG.md)
 
 ## Estado
 
-Fase 0 completada. Fase 1 técnica completada; el catálogo inicial de la Fase 2 ya tiene seis juegos funcionales, recompensas visuales y un resumen local por habilidad.
+Fase 0 completada. Fase 1 técnica completada; la Fase 2 tiene ocho juegos funcionales, recompensas visuales y un resumen local por habilidad.
 
 - **Dominio:** `chispora.cl` adquirido por el propietario del proyecto.
 - **Marca CHISPORA:** disponibilidad preliminar informada; todavía no solicitada ni registrada en INAPI.

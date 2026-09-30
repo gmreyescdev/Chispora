@@ -28,6 +28,8 @@
 - Añadir Laberintos. **Completado y auditado.**
 - Añadir Comprensión lectora. **Completado y auditado.**
 - Crear recompensas visuales y resumen por habilidad. **Completado y auditado.**
+- Añadir Fracciones en acción. **Completado y auditado.**
+- Añadir Programa al robot. **Completado y auditado.**
 - Añadir accesibilidad y funcionamiento sin conexión.
 - Publicar una beta gratuita.
 

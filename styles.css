@@ -1358,6 +1358,52 @@ input:focus, select:focus {
   visibility: hidden;
 }
 
+.fraction-card,
+.robot-stage {
+  display: grid;
+  gap: 1.25rem;
+  border: 2px solid var(--ink);
+  border-radius: var(--radius-large);
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: var(--shadow-medium);
+  padding: clamp(1.2rem, 5vw, 2.4rem);
+  text-align: center;
+}
+
+.fraction-card h2 { margin: 0; }
+.fraction-visual { display: flex; align-items: center; justify-content: center; gap: clamp(0.7rem, 4vw, 1.5rem); flex-wrap: wrap; }
+.fraction-model { display: grid; grid-template-columns: repeat(var(--parts, 1), 1fr); width: min(100%, 17rem); min-width: 12rem; height: 5rem; overflow: hidden; border: 3px solid var(--ink); border-radius: 18px; }
+.fraction-model span { border-right: 2px solid var(--ink); background: var(--white); }
+.fraction-model span:last-child { border-right: 0; }
+.fraction-model span.is-filled { background: var(--yellow); }
+.fraction-label { font-family: var(--font-display); font-size: 1.25rem; }
+.fraction-relation { font-family: var(--font-display); font-size: 2.3rem; font-weight: 900; }
+.fraction-options { display: grid; gap: 0.75rem; }
+.fraction-option { display: grid; place-items: center; gap: 0.35rem; min-height: 3.6rem; border: 2px solid var(--ink); border-radius: 16px; background: var(--white); box-shadow: 0 4px 0 var(--ink); padding: 0.75rem; font-size: 1.2rem; }
+.fraction-option:disabled { cursor: default; }
+.fraction-option.is-rejected { opacity: 0.38; text-decoration: line-through; box-shadow: none; }
+.fraction-option.is-correct { background: #bcf1e9; }
+.fraction-model-small { width: 8rem; min-width: 8rem; height: 2.2rem; border-width: 2px; border-radius: 9px; }
+.fraction-model-small span { border-right-width: 1px; }
+.fraction-explanation { margin: 0; border-radius: var(--radius-small); background: #dff8f4; padding: 0.9rem; font-weight: 700; }
+.fraction-card.is-paused > * { visibility: hidden; }
+
+.robot-stage { justify-items: center; text-align: left; }
+.robot-board { display: grid; grid-template-columns: repeat(var(--robot-size), 1fr); width: min(100%, 27rem); aspect-ratio: 1; border: 3px solid var(--ink); background: #eefaf8; }
+.robot-cell { position: relative; display: grid; place-items: center; border: 1px solid rgba(23, 50, 77, 0.25); font-size: clamp(1rem, 5vw, 2rem); }
+.robot-cell.is-obstacle::after { content: "◆"; color: var(--ink-soft); font-size: 1.1em; }
+.robot-player,.robot-goal { position: absolute; z-index: 2; }
+.robot-goal { color: #e59600; }
+.robot-builder { display: grid; gap: 0.9rem; width: min(100%, 32rem); justify-items: center; text-align: center; }
+.robot-program { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.4rem; width: 100%; min-height: 3.5rem; border: 2px dashed var(--ink); border-radius: 14px; background: var(--paper); padding: 0.55rem; }
+.robot-program span { display: grid; place-items: center; width: 2.4rem; height: 2.4rem; border-radius: 9px; background: var(--yellow); font-size: 1.35rem; font-weight: 900; }
+.robot-program em { align-self: center; color: var(--ink-muted); }
+.robot-controls,.robot-tools { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.6rem; }
+.robot-controls button { width: 3.3rem; height: 3.3rem; border: 2px solid var(--ink); border-radius: 12px; background: var(--sky); box-shadow: 0 3px 0 var(--ink); font-size: 1.5rem; font-weight: 900; }
+.robot-controls button:disabled,.robot-tools button:disabled,[data-robot-run]:disabled,[data-robot-hint]:disabled { cursor: default; opacity: 0.4; }
+.robot-hint { margin: 0; border-radius: var(--radius-small); background: #fff3b8; padding: 0.8rem; }
+.robot-stage.is-paused > * { visibility: hidden; }
+
 @keyframes maze-pop {
   from { transform: scale(0.65); }
   to { transform: scale(1); }
@@ -1579,6 +1625,9 @@ input:focus, select:focus {
   .reading-option:not(:disabled):hover {
     transform: translateY(-3px);
   }
+
+  .fraction-option:not(:disabled):hover,
+  .robot-controls button:not(:disabled):hover { transform: translateY(-3px); }
 }
 
 /* =============================================================
@@ -1644,6 +1693,10 @@ input:focus, select:focus {
   .reading-options {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
+
+  .fraction-options { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+  .robot-stage { grid-template-columns: minmax(16rem, 1fr) minmax(16rem, 0.85fr); align-items: center; }
 }
 
 @media (min-width: 960px) {

@@ -105,6 +105,6 @@ No declares una tarea terminada solo porque se vea bien. Debe cumplir sus criter
 
 ## Estado y siguiente prioridad
 
-Los seis juegos del catálogo inicial están implementados: Memorama, Operación misteriosa, Palabra desordenada, Secuencia lógica, Laberintos y Comprensión lectora.
+Hay ocho juegos implementados: Memorama, Operación misteriosa, Palabra desordenada, Secuencia lógica, Laberintos, Comprensión lectora, Fracciones en acción y Programa al robot.
 
 Las recompensas visuales y el resumen por habilidad están implementados. Las siguientes prioridades son accesibilidad ampliada, funcionamiento sin conexión y publicación de una beta gratuita.

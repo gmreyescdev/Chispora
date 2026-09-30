@@ -7,7 +7,7 @@
   <meta name="theme-color" content="#fff8e8">
   <title>Chispora · Juega. Piensa. Descubre.</title>
   <link rel="icon" href="assets/img/chispora-symbol.svg?v=2026090703" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css?v=2026092901">
+  <link rel="stylesheet" href="styles.css?v=2026093001">
   <script defer src="lib/gsap.min.js?v=2026090706"></script>
   <script defer src="lib/ScrollTrigger.min.js?v=2026090706"></script>
   <script defer src="lib/manifest.js?v=2026090706"></script>
@@ -17,12 +17,16 @@
   <script defer src="lib/sequence-engine.js?v=2026090706"></script>
   <script defer src="lib/maze-engine.js?v=2026090706"></script>
   <script defer src="lib/reading-engine.js?v=2026092901"></script>
-  <script defer src="lib/progress-engine.js?v=2026092902"></script>
-  <script defer src="main.js?v=2026092902"></script>
+  <script defer src="lib/progress-engine.js?v=2026093001"></script>
+  <script defer src="lib/fraction-engine.js?v=2026093001"></script>
+  <script defer src="lib/robot-engine.js?v=2026093001"></script>
+  <script defer src="main.js?v=2026093001"></script>
   <script defer src="sequence-game.js?v=2026090706"></script>
   <script defer src="maze-game.js?v=2026090706"></script>
   <script defer src="reading-game.js?v=2026092901"></script>
   <script defer src="progress-summary.js?v=2026092902"></script>
+  <script defer src="fraction-game.js?v=2026093001"></script>
+  <script defer src="robot-game.js?v=2026093001"></script>
 </head>
 <body>
   <a class="skip-link" href="#main-content">Saltar al contenido principal</a>
@@ -197,6 +201,18 @@
           </div>
           <button class="button button-primary" type="button" data-go="introduccion-lectura">Ver misión</button>
         </article>
+
+        <article class="mission-card mission-card-active">
+          <div class="mission-icon" aria-hidden="true">½</div><div><span class="mission-status">Disponible</span><h3>Fracciones en acción</h3><p>Compara partes y descubre distintas formas de representar una cantidad.</p></div>
+          <div class="mission-progress"><span data-fraction-progress-label>Listo para jugar</span><div class="progress-track" role="progressbar" aria-label="Progreso de Fracciones en acción" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" data-fraction-progress><span></span></div></div>
+          <button class="button button-primary" type="button" data-go="introduccion-fracciones">Ver misión</button>
+        </article>
+
+        <article class="mission-card mission-card-active">
+          <div class="mission-icon" aria-hidden="true">⌘</div><div><span class="mission-status">Disponible</span><h3>Programa al robot</h3><p>Ordena comandos, prueba tu plan y corrige el recorrido.</p></div>
+          <div class="mission-progress"><span data-robot-progress-label>Listo para jugar</span><div class="progress-track" role="progressbar" aria-label="Progreso de Programa al robot" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" data-robot-progress><span></span></div></div>
+          <button class="button button-primary" type="button" data-go="introduccion-robot">Ver misión</button>
+        </article>
       </div>
 
       <section class="skill-constellation" aria-labelledby="skill-constellation-title">
@@ -206,7 +222,7 @@
             <h3 id="skill-constellation-title">Cada ruta deja una chispa</h3>
             <p data-overall-message>Tu mapa está listo para la primera misión.</p>
           </div>
-          <strong class="overall-level-count" data-overall-levels aria-label="Niveles recorridos">0/18</strong>
+          <strong class="overall-level-count" data-overall-levels aria-label="Niveles recorridos">0/24</strong>
         </div>
         <div class="progress-track overall-progress" role="progressbar" aria-label="Progreso total de habilidades" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" data-overall-progress><span></span></div>
         <div class="skill-grid">
@@ -216,6 +232,8 @@
           <article class="skill-card" data-skill-card="sequence"><span class="skill-icon" aria-hidden="true">◌</span><div><h4>Lógica y atención</h4><p data-skill-label>Lista para explorar</p></div><div class="skill-sparks" data-skill-sparks aria-label="0 de 3 niveles recorridos"></div><strong data-skill-count>0/3</strong></article>
           <article class="skill-card" data-skill-card="maze"><span class="skill-icon" aria-hidden="true">⌁</span><div><h4>Orientación espacial</h4><p data-skill-label>Lista para explorar</p></div><div class="skill-sparks" data-skill-sparks aria-label="0 de 3 niveles recorridos"></div><strong data-skill-count>0/3</strong></article>
           <article class="skill-card" data-skill-card="reading"><span class="skill-icon" aria-hidden="true">≡</span><div><h4>Comprensión lectora</h4><p data-skill-label>Lista para explorar</p></div><div class="skill-sparks" data-skill-sparks aria-label="0 de 3 niveles recorridos"></div><strong data-skill-count>0/3</strong></article>
+          <article class="skill-card" data-skill-card="fraction"><span class="skill-icon" aria-hidden="true">½</span><div><h4>Fracciones visuales</h4><p data-skill-label>Lista para explorar</p></div><div class="skill-sparks" data-skill-sparks aria-label="0 de 3 niveles recorridos"></div><strong data-skill-count>0/3</strong></article>
+          <article class="skill-card" data-skill-card="robot"><span class="skill-icon" aria-hidden="true">⌘</span><div><h4>Pensamiento computacional</h4><p data-skill-label>Lista para explorar</p></div><div class="skill-sparks" data-skill-sparks aria-label="0 de 3 niveles recorridos"></div><strong data-skill-count>0/3</strong></article>
         </div>
         <p class="skill-note">Las chispas muestran caminos recorridos. No son puntos ni comparan a un niño con otro.</p>
       </section>
@@ -546,6 +564,32 @@
       </div>
     </section>
 
+    <section id="introduccion-fracciones" class="app-screen panel-screen" data-screen="introduccion-fracciones" aria-labelledby="fraction-intro-title">
+      <div class="screen-heading"><button class="back-button" type="button" data-go="misiones">← Mapa de misiones</button><p class="eyebrow">Misión 07 · Fracciones visuales</p><h2 id="fraction-intro-title">Fracciones en acción</h2><p>Observa partes iguales, compara cantidades y descubre equivalencias.</p></div>
+      <div class="form-card"><label class="field-label" for="fraction-difficulty">Dificultad</label><select id="fraction-difficulty" data-fraction-difficulty><option value="explorador">Explorador</option><option value="aventurero">Aventurero</option><option value="maestro">Maestro de fracciones</option></select><div class="difficulty-summary" data-fraction-difficulty-summary aria-live="polite"><strong>5 desafíos</strong><span>Reconocer partes de un entero</span><span>Modelos visuales de partes iguales</span></div><button class="button button-primary button-full" type="button" data-start-fraction>Comenzar</button></div>
+    </section>
+
+    <section id="partida-fracciones" class="app-screen game-screen" data-screen="partida-fracciones" aria-labelledby="fraction-game-title">
+      <div class="game-toolbar"><button class="text-button" type="button" data-fraction-exit>Salir</button><div class="game-stats"><span class="sr-only" id="fraction-game-title">Partida de Fracciones en acción</span><strong>Desafío <span data-fraction-round>1</span>/<span data-fraction-total>5</span></strong><span>Aciertos <strong data-fraction-score>0</strong></span><span>Tiempo <strong data-fraction-time>0:00</strong></span></div><button class="button button-small button-secondary" type="button" data-fraction-pause>Pausa</button></div>
+      <div class="fraction-card" data-fraction-card><p class="eyebrow">Mira las partes iguales</p><h2 data-fraction-prompt>¿Qué fracción está coloreada?</h2><div class="fraction-visual" data-fraction-visual></div><div class="fraction-options" data-fraction-options aria-label="Opciones de respuesta"></div><p class="fraction-explanation" data-fraction-explanation aria-live="polite" hidden></p><button class="button button-primary" type="button" data-fraction-continue hidden>Siguiente desafío</button></div>
+      <div class="game-help"><p data-fraction-message aria-live="polite">Observa las partes antes de responder.</p><button class="text-button" type="button" data-restart-fraction>Comenzar una partida nueva</button></div>
+    </section>
+
+    <section id="resultado-fracciones" class="app-screen result-screen" data-screen="resultado-fracciones" aria-labelledby="fraction-result-title"><div class="result-spark" aria-hidden="true">½</div><p class="eyebrow">Misión completa</p><h2 id="fraction-result-title">¡Las partes encajan!</h2><p class="lead">Resolviste <strong data-fraction-result-rounds>5 desafíos</strong> con <strong data-fraction-result-attempts>0 intentos extra</strong>.</p><div class="reward-card"><span aria-hidden="true">🍰</span><div><strong>Una pieza para tu constelación</strong><p>Nivel <span data-fraction-result-level>Explorador</span> · <span data-fraction-result-time>0:00</span>.</p></div></div><div class="action-group action-group-centered"><button class="button button-primary" type="button" data-replay-fraction>Jugar otra vez</button><button class="text-button" type="button" data-go="misiones">Volver al mapa</button><button class="text-button" type="button" data-go="pausa">Terminar sesión</button></div></section>
+
+    <section id="introduccion-robot" class="app-screen panel-screen" data-screen="introduccion-robot" aria-labelledby="robot-intro-title">
+      <div class="screen-heading"><button class="back-button" type="button" data-go="misiones">← Mapa de misiones</button><p class="eyebrow">Misión 08 · Pensamiento computacional</p><h2 id="robot-intro-title">Programa al robot</h2><p>Construye una lista de comandos, ejecútala y corrige el plan si hace falta.</p></div>
+      <div class="form-card"><label class="field-label" for="robot-difficulty">Dificultad</label><select id="robot-difficulty" data-robot-difficulty><option value="explorador">Explorador</option><option value="aventurero">Aventurero</option><option value="maestro">Maestro del código</option></select><div class="difficulty-summary" data-robot-difficulty-summary aria-live="polite"><strong>4 rutas</strong><span>4 × 4 casillas</span><span>Rutas directas y comandos básicos</span></div><button class="button button-primary button-full" type="button" data-start-robot>Comenzar</button></div>
+    </section>
+
+    <section id="partida-robot" class="app-screen game-screen" data-screen="partida-robot" aria-labelledby="robot-game-title">
+      <div class="game-toolbar"><button class="text-button" type="button" data-robot-exit>Salir</button><div class="game-stats"><span class="sr-only" id="robot-game-title">Partida de Programa al robot</span><strong>Ruta <span data-robot-round>1</span>/<span data-robot-total>4</span></strong><span>Resueltas <strong data-robot-score>0</strong></span><span>Tiempo <strong data-robot-time>0:00</strong></span></div><button class="button button-small button-secondary" type="button" data-robot-pause>Pausa</button></div>
+      <div class="robot-stage" data-robot-stage><div class="robot-board" data-robot-board aria-label="Tablero del robot"></div><div class="robot-builder"><p>Programa: máximo <strong data-robot-limit>3</strong> comandos</p><div class="robot-program" data-robot-program aria-live="polite"><em>Tu programa aparecerá aquí</em></div><div class="robot-controls" data-robot-controls aria-label="Comandos disponibles"><button type="button" data-robot-command="up" aria-label="Agregar arriba">↑</button><button type="button" data-robot-command="right" aria-label="Agregar derecha">→</button><button type="button" data-robot-command="down" aria-label="Agregar abajo">↓</button><button type="button" data-robot-command="left" aria-label="Agregar izquierda">←</button></div><div class="robot-tools"><button class="button button-small button-secondary" type="button" data-robot-undo>Quitar último</button><button class="text-button" type="button" data-robot-clear>Limpiar</button><button class="text-button" type="button" data-robot-hint>Ver una pista</button></div><p class="robot-hint" data-robot-hint-text hidden></p><button class="button button-primary" type="button" data-robot-run>Ejecutar programa</button><button class="button button-primary" type="button" data-robot-continue hidden>Corregir programa</button></div></div>
+      <div class="game-help"><p data-robot-message aria-live="polite">Agrega comandos y ejecuta el programa.</p><button class="text-button" type="button" data-restart-robot>Crear rutas nuevas</button></div>
+    </section>
+
+    <section id="resultado-robot" class="app-screen result-screen" data-screen="resultado-robot" aria-labelledby="robot-result-title"><div class="result-spark" aria-hidden="true">⌘</div><p class="eyebrow">Misión completa</p><h2 id="robot-result-title">¡Programa completado!</h2><p class="lead">Resolviste <strong data-robot-result-rounds>4 rutas</strong> con <strong data-robot-result-attempts>0 correcciones</strong>.</p><div class="reward-card"><span aria-hidden="true">🤖</span><div><strong>Un comando para tu constelación</strong><p>Nivel <span data-robot-result-level>Explorador</span> · <span data-robot-result-time>0:00</span> · <span data-robot-result-hints>0 pistas</span>.</p></div></div><div class="action-group action-group-centered"><button class="button button-primary" type="button" data-replay-robot>Jugar otra vez</button><button class="text-button" type="button" data-go="misiones">Volver al mapa</button><button class="text-button" type="button" data-go="pausa">Terminar sesión</button></div></section>
+
     <section id="introduccion-memoria" class="app-screen panel-screen" data-screen="introduccion-memoria" aria-labelledby="memory-intro-title">
       <div class="screen-heading">
         <button class="back-button" type="button" data-go="misiones">← Mapa de misiones</button>
@@ -686,15 +730,17 @@
           <span class="mission-status">Solo en este equipo</span>
           <h3 id="local-progress-title">Progreso local</h3>
           <dl class="progress-list">
-            <div><dt>Juegos disponibles</dt><dd>6</dd></div>
+            <div><dt>Juegos disponibles</dt><dd>8</dd></div>
             <div><dt>Partidas terminadas</dt><dd data-completed-games>0</dd></div>
-            <div><dt>Niveles recorridos</dt><dd data-overall-levels>0/18</dd></div>
+            <div><dt>Niveles recorridos</dt><dd data-overall-levels>0/24</dd></div>
             <div><dt>Niveles de Memorama</dt><dd data-memory-levels>0/3</dd></div>
             <div><dt>Niveles de cálculo</dt><dd data-operation-levels>0/3</dd></div>
             <div><dt>Niveles de palabras</dt><dd data-word-levels>0/3</dd></div>
             <div><dt>Niveles de secuencias</dt><dd data-sequence-levels>0/3</dd></div>
             <div><dt>Niveles de laberintos</dt><dd data-maze-levels>0/3</dd></div>
             <div><dt>Niveles de lectura</dt><dd data-reading-levels>0/3</dd></div>
+            <div><dt>Niveles de fracciones</dt><dd data-fraction-levels>0/3</dd></div>
+            <div><dt>Niveles de programación</dt><dd data-robot-levels>0/3</dd></div>
           </dl>
           <div class="progress-track" role="progressbar" aria-label="Progreso total de habilidades" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" data-overall-progress><span></span></div>
           <p data-overall-message>Tu mapa está listo para la primera misión.</p>
@@ -793,5 +839,10 @@
       </div>
     </form>
   </dialog>
+
+  <dialog class="app-dialog" data-fraction-pause-dialog aria-labelledby="fraction-pause-title"><form method="dialog"><p class="eyebrow">Partida en pausa</p><h2 id="fraction-pause-title">Respira cuando quieras.</h2><p>El tiempo y los modelos se detendrán.</p><button class="button button-primary button-full" value="continue">Continuar</button></form></dialog>
+  <dialog class="app-dialog" data-fraction-exit-dialog aria-labelledby="fraction-exit-title"><form method="dialog"><p class="eyebrow">Salir de la misión</p><h2 id="fraction-exit-title">¿Volvemos al mapa?</h2><p>Las partidas incompletas no se guardan.</p><div class="dialog-actions"><button class="button button-secondary" value="cancel">Seguir jugando</button><button class="button button-primary" type="button" data-fraction-confirm-exit>Volver al mapa</button></div></form></dialog>
+  <dialog class="app-dialog" data-robot-pause-dialog aria-labelledby="robot-pause-title"><form method="dialog"><p class="eyebrow">Partida en pausa</p><h2 id="robot-pause-title">El robot también descansa.</h2><p>El tiempo y el programa se detendrán.</p><button class="button button-primary button-full" value="continue">Continuar</button></form></dialog>
+  <dialog class="app-dialog" data-robot-exit-dialog aria-labelledby="robot-exit-title"><form method="dialog"><p class="eyebrow">Salir de la misión</p><h2 id="robot-exit-title">¿Volvemos al mapa?</h2><p>Las rutas incompletas no se guardan.</p><div class="dialog-actions"><button class="button button-secondary" value="cancel">Seguir programando</button><button class="button button-primary" type="button" data-robot-confirm-exit>Volver al mapa</button></div></form></dialog>
 </body>
 </html>
