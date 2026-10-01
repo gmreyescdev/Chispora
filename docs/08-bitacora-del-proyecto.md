@@ -498,3 +498,12 @@ Guardar propuestas de adultos e ideas infantiles revisadas por un adulto para ev
 ### Próximo paso
 
 Comprobar la recepción, revisar ideas semanalmente y continuar las sesiones supervisadas pendientes.
+
+## 30 de septiembre de 2026 — Sugerencias visibles al entrar
+
+- **Motivo:** el usuario señaló que el buzón al final del panel familiar pasaba desapercibido.
+- **Cambio:** tarjeta justo debajo del encabezado, antes de ajustes y progreso; botón principal, fondo diferenciado y borde visible. Se conservaron los avisos de privacidad y salida externa con texto más breve.
+- **Decisión:** mejorar ubicación y jerarquía en lugar de añadir botones flotantes o enlaces de Google al área infantil.
+- **Pruebas:** suite completa aprobada (20 comprobaciones); navegador a 320, 375, 768 y 1280 px sin desbordamiento, enlace enfocable y tarjeta antes de los ajustes. El botón queda dentro de una vista de 800 px de alto en los cuatro tamaños.
+- **Actualización:** nueva versión de CSS y caché; las instalaciones existentes deben aceptar la actualización desde el panel familiar.
+- **Pendiente:** se mantiene la comprobación de recepción del formulario y las sesiones supervisadas reales.

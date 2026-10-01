@@ -4,6 +4,8 @@
 
 El panel familiar ofrece **Enviar una sugerencia**. Un adulto puede compartir su propuesta o transmitir una idea de un niño, sin nombres, contactos, escuela ni otros datos personales.
 
+La tarjeta aparece justo debajo de «Para familias», antes de los ajustes y el progreso, con fondo diferenciado y botón principal. Esta ubicación evita que el buzón quede oculto al final de una pantalla larga, sin llevarlo al área infantil.
+
 El enlace abre Google Forms en otra pestaña. No hay formulario incrustado, scripts de Google ni solicitudes automáticas a Google desde Chispora. El enlace tampoco incluye perfil, progreso ni parámetros precargados.
 
 El formulario requiere conexión; los juegos siguen funcionando sin red. Chispora no guarda borradores de sugerencias ni confirma envíos: la confirmación corresponde a Google Forms.

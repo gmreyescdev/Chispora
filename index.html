@@ -12,7 +12,7 @@
   <link rel="icon" href="assets/img/chispora-symbol.svg?v=2026090703" type="image/svg+xml">
   <link rel="apple-touch-icon" href="assets/icons/chispora-192.png">
   <link rel="manifest" href="app.webmanifest?v=2026093001">
-  <link rel="stylesheet" href="styles.css?v=2026093010">
+  <link rel="stylesheet" href="styles.css?v=2026093011">
   <script defer src="lib/gsap.min.js?v=2026090706"></script>
   <script defer src="lib/ScrollTrigger.min.js?v=2026090706"></script>
   <script defer src="lib/manifest.js?v=2026093008"></script>
@@ -739,6 +739,16 @@
         <p>Estas opciones se guardan únicamente en este navegador.</p>
       </div>
 
+      <section class="suggestions-card" aria-labelledby="suggestions-title">
+        <div class="suggestions-copy">
+          <p class="eyebrow">Ideas de familias</p>
+          <h3 id="suggestions-title">¿Tienes una idea para Chispora?</h3>
+          <p>Un adulto debe revisarla y enviarla sin nombres, correos, escuela ni otros datos personales.</p>
+          <p id="suggestions-external-note" class="field-help">Google Forms · Abre otra pestaña y requiere conexión. Las respuestas son privadas: no se publican. No enviamos tu perfil ni progreso.</p>
+        </div>
+        <a class="button button-primary" data-suggestions-link href="https://docs.google.com/forms/d/e/1FAIpQLSdNQjfuve6K-9SO5aMy9PHookGjut4CpKrGaD_E1Bu2HxHTjQ/viewform" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer" aria-describedby="suggestions-external-note">Enviar una sugerencia<span class="sr-only"> (Google Forms, abre otra pestaña)</span></a>
+      </section>
+
       <div class="family-layout">
         <form class="settings-card" data-settings-form novalidate>
           <div class="setting-row">
@@ -827,15 +837,6 @@
           <p data-pwa-message>Abre Chispora una vez con conexión para preparar todos los juegos.</p>
         </div>
         <button class="button button-secondary" type="button" data-pwa-action hidden></button>
-      </section>
-      <section class="suggestions-card" aria-labelledby="suggestions-title">
-        <div class="suggestions-copy">
-          <p class="eyebrow">Ideas de familias</p>
-          <h3 id="suggestions-title">Ayúdanos a mejorar Chispora</h3>
-          <p>Puedes compartir tu sugerencia o una idea de un niño. Un adulto debe revisarla y enviarla sin nombres, correos, escuela ni otros datos personales.</p>
-          <p id="suggestions-external-note" class="field-help">Abre Google Forms en otra pestaña y requiere conexión. Las respuestas se guardan de forma privada en Google; no se publican. No enviamos tu perfil ni progreso.</p>
-        </div>
-        <a class="button button-secondary" data-suggestions-link href="https://docs.google.com/forms/d/e/1FAIpQLSdNQjfuve6K-9SO5aMy9PHookGjut4CpKrGaD_E1Bu2HxHTjQ/viewform" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer" aria-describedby="suggestions-external-note">Enviar una sugerencia<span class="sr-only"> (Google Forms, abre otra pestaña)</span></a>
       </section>
     </section>
   </main>

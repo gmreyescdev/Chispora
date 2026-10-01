@@ -1718,6 +1718,13 @@ input:focus, select:focus {
   gap: 0.35rem;
 }
 
+.suggestions-card {
+  margin: 0 0 1.3rem;
+  border: 2px solid var(--ink);
+  border-left: 6px solid var(--turquoise);
+  background: var(--paper-deep);
+}
+
 .suggestions-copy {
   flex: 1 1 25rem;
   min-width: 0;

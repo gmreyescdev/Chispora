@@ -31,6 +31,13 @@ test("avisa de privacidad, salida externa y necesidad de conexión", () => {
   assert.match(section, /No enviamos tu perfil ni progreso/);
 });
 
+test("destaca el buzón antes de los ajustes y el progreso", () => {
+  const card = html.indexOf('<section class="suggestions-card"');
+  const settings = html.indexOf('<div class="family-layout">');
+  assert.ok(card > html.indexOf('id="family-title"') && card < settings);
+  assert.match(html.slice(card, settings), /class="button button-primary" data-suggestions-link/);
+});
+
 test("Google Forms no se incrusta ni se precarga en el área infantil", () => {
   assert.doesNotMatch(html, /<(?:iframe|script|link|img)\b[^>]*(?:docs\.google|forms\.gle)/);
   const worker = fs.readFileSync(path.join(root, "sw.js"), "utf8");
