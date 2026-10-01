@@ -67,9 +67,9 @@ El enlace usa `noopener noreferrer`, `referrerpolicy="no-referrer"` y un aviso a
 - `node --test tests/*.test.js`: 19 comprobaciones aprobadas en 17 archivos, sin fallos.
 - `node --check sw.js`, `node --check tests/suggestions.test.js` y `git diff --check`: sin errores.
 - Panel familiar comprobado en navegador y en marcos de 320, 375 y 768 px, sin desbordamiento horizontal; el enlace acepta foco y la consola no registra errores ni advertencias.
-- No se envió una sugerencia real. La comprobación de una respuesta completa hasta la fila de Sheets queda pendiente de un envío de prueba por el propietario.
+- El 30 de septiembre de 2026 el propietario confirmó que las respuestas enviadas desde el formulario llegan a Google Sheets. Verificación de recepción confirmada por el propietario, no observada directamente por el agente.
 
-Para esa comprobación, enviar “PRUEBA TÉCNICA — no evaluar como sugerencia”, verificar la fila y eliminar la respuesta de Forms y Sheets. Nunca usar datos infantiles reales para probar.
+Para futuras comprobaciones, enviar “PRUEBA TÉCNICA — no evaluar como sugerencia”, verificar la fila y eliminar la respuesta de Forms y Sheets. Nunca usar datos infantiles reales para probar.
 
 ## Explicación sencilla
 

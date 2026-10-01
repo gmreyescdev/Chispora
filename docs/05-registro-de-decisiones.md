@@ -230,7 +230,7 @@ Este archivo conserva las decisiones importantes y sus motivos. Se actualizará 
 - **Motivo:** el propietario eligió conservar propuestas para evaluarlas sin construir un backend ni pedir cuentas a las familias.
 - **Alternativas consideradas:** enlace de correo, formulario incrustado y backend propio.
 - **Consecuencia:** requiere conexión y tratamiento externo de Google; no se envían perfil ni progreso, no se solicitan correos y las sugerencias nunca se publican automáticamente.
-- **Estado:** aceptada e implementada; verificación de envío completo pendiente del propietario.
+- **Estado:** aceptada e implementada; recepción en Sheets confirmada por el propietario el 30 de septiembre de 2026.
 
 ## Plantilla para próximas decisiones
 

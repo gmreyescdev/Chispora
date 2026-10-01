@@ -507,3 +507,11 @@ Comprobar la recepción, revisar ideas semanalmente y continuar las sesiones sup
 - **Pruebas:** suite completa aprobada (20 comprobaciones); navegador a 320, 375, 768 y 1280 px sin desbordamiento, enlace enfocable y tarjeta antes de los ajustes. El botón queda dentro de una vista de 800 px de alto en los cuatro tamaños.
 - **Actualización:** nueva versión de CSS y caché; las instalaciones existentes deben aceptar la actualización desde el panel familiar.
 - **Pendiente:** se mantiene la comprobación de recepción del formulario y las sesiones supervisadas reales.
+
+## 30 de septiembre de 2026 — Recepción confirmada y sesión prevista
+
+- El propietario confirmó que las respuestas del formulario llegan a Google Sheets. Se cierra la comprobación pendiente del buzón con confirmación del propietario, sin atribuirla a una observación directa del agente.
+- Se prevé una primera sesión infantil supervisada para el 2 de octubre de 2026. No se han comunicado observaciones ni resultados; la validación supervisada sigue pendiente.
+- Preparación recomendada: revisar el protocolo, usar uno o dos juegos en Explorador, limitar la actividad a 20 minutos y permitir detenerla en cualquier momento.
+- No se incorporan datos personales de participantes ni fichas individuales al repositorio.
+- Verificación: revisión de coherencia de la documentación; no se modificó código ni se requieren nuevas pruebas de motores.
