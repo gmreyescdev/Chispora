@@ -66,6 +66,7 @@ Cada juego tendrá tres niveles de dificultad y sesiones sugeridas de entre 5 y 
 - [Protocolo de pruebas supervisadas](docs/32-protocolo-pruebas-supervisadas.md)
 - [Ficha anónima de observación](docs/33-ficha-observacion-anonima.md)
 - [Guía para sintetizar pruebas](docs/34-guia-sintesis-pruebas.md)
+- [Buzón privado de sugerencias](docs/35-buzon-de-sugerencias.md)
 - [Historial de versiones](CHANGELOG.md)
 
 ## Estado

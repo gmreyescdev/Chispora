@@ -63,3 +63,4 @@ Los cambios importantes de Chispora se registran aquí. El proyecto utiliza un e
 - Actualizaciones controladas por el adulto, sin mezclar versiones ni borrar el progreso local.
 - Protocolo de pruebas supervisadas con consentimiento, asentimiento y criterios de detención.
 - Ficha anónima por sesión, matriz de cobertura para los diez juegos y guía de síntesis sin perfiles infantiles.
+- Buzón de sugerencias mediante Google Forms y hoja privada de respuestas, accesible solo desde el panel familiar sin incrustaciones ni envío de progreso.

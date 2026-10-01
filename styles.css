@@ -402,7 +402,7 @@ h3 {
   margin-inline: auto;
 }
 
-.form-card, .settings-card, .progress-card, .reward-card, .pwa-card {
+.form-card, .settings-card, .progress-card, .reward-card, .pwa-card, .suggestions-card {
   border: 1px solid rgba(255, 255, 255, 0.72);
   border-radius: var(--radius-large);
   background: rgba(255, 255, 255, 0.88);
@@ -410,7 +410,7 @@ h3 {
 }
 
 @supports (backdrop-filter: blur(22px)) {
-  .form-card, .settings-card, .progress-card, .reward-card, .pwa-card {
+  .form-card, .settings-card, .progress-card, .reward-card, .pwa-card, .suggestions-card {
     background: rgba(255, 255, 255, 0.62);
     backdrop-filter: blur(22px) saturate(155%);
     -webkit-backdrop-filter: blur(22px) saturate(155%);
@@ -1703,7 +1703,7 @@ input:focus, select:focus {
   font-weight: 800;
 }
 
-.pwa-card {
+.pwa-card, .suggestions-card {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -1713,9 +1713,20 @@ input:focus, select:focus {
   padding: clamp(1rem, 3vw, 1.4rem);
 }
 
-.pwa-copy {
+.pwa-copy, .suggestions-copy {
   display: grid;
   gap: 0.35rem;
+}
+
+.suggestions-copy {
+  flex: 1 1 25rem;
+  min-width: 0;
+}
+
+.suggestions-card a {
+  max-width: 100%;
+  text-decoration: none;
+  text-align: center;
 }
 
 .connection-status {

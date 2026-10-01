@@ -47,6 +47,7 @@
 - Observar qué instrucciones generan confusión.
 - Evaluar si la dificultad aumenta correctamente.
 - Recoger comentarios únicamente de adultos responsables.
+- Preparar buzón privado de sugerencias para adultos. **Formulario y enlace implementados; comprobación de recepción de una respuesta pendiente.**
 - Medir finalización, errores y uso de pistas sin perfilar publicitariamente al niño.
 
 ## Fase 4 — Producto sostenible

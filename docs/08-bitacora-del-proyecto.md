@@ -471,3 +471,30 @@ Dejar listas sesiones breves que permitan observar el producto sin evaluar ni id
 ### Próximo paso
 
 Realizar primero un piloto adulto y después al menos cinco sesiones infantiles supervisadas. Registrar únicamente resultados agregados antes de decidir cambios y preparar la beta.
+
+## 30 de septiembre de 2026 — Buzón de sugerencias
+
+### Objetivo
+
+Guardar propuestas de adultos e ideas infantiles revisadas por un adulto para evaluarlas posteriormente.
+
+### Trabajo realizado
+
+- Se creó y publicó Google Forms con juego opcional, categoría y sugerencia obligatorios.
+- Se vinculó una hoja privada de Google Sheets.
+- Se desactivaron recopilación de correos, obligación de iniciar sesión, resumen público y guardado automático de borradores.
+- Se añadió una tarjeta en el panel familiar con aviso de salida externa y conexión necesaria.
+- Se versionó el caché sin incorporar recursos externos al área infantil.
+
+### Verificación
+
+- Acceso sin credenciales al formulario y acceso anónimo rechazado a la hoja.
+- Campos, categorías y privacidad comprobados; no se enviaron sugerencias reales.
+- Pruebas de integración estática para ubicación, avisos y seguridad del enlace.
+- Suite completa: 19 comprobaciones aprobadas en 17 archivos. Sintaxis de los dos JavaScript afectados y diff sin errores.
+- Navegador: panel familiar y anchos de 320, 375 y 768 px sin desbordamiento; enlace enfocable y consola sin errores ni advertencias.
+- Pendiente del propietario: enviar una prueba identificada y comprobar su fila en Sheets.
+
+### Próximo paso
+
+Comprobar la recepción, revisar ideas semanalmente y continuar las sesiones supervisadas pendientes.

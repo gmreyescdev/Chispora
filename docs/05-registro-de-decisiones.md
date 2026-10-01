@@ -223,6 +223,15 @@ Este archivo conserva las decisiones importantes y sus motivos. Se actualizará 
 - **Consecuencia:** la síntesis requiere trabajo manual y una muestra pequeña no permite conclusiones estadísticas, pero protege la privacidad y mantiene el foco en mejorar la interfaz.
 - **Estado:** aceptada; protocolo preparado y ejecución pendiente.
 
+## D-029 — Sugerencias externas revisadas por adultos
+
+- **Fecha:** 30 de septiembre de 2026.
+- **Decisión:** usar Google Forms con respuestas vinculadas a una hoja privada, mediante un enlace explícito solo desde el panel familiar.
+- **Motivo:** el propietario eligió conservar propuestas para evaluarlas sin construir un backend ni pedir cuentas a las familias.
+- **Alternativas consideradas:** enlace de correo, formulario incrustado y backend propio.
+- **Consecuencia:** requiere conexión y tratamiento externo de Google; no se envían perfil ni progreso, no se solicitan correos y las sugerencias nunca se publican automáticamente.
+- **Estado:** aceptada e implementada; verificación de envío completo pendiente del propietario.
+
 ## Plantilla para próximas decisiones
 
 - **Fecha:**

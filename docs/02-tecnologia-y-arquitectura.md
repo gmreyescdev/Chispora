@@ -38,6 +38,7 @@ El prototipo actual utiliza:
 - `lib/manifest.js` como configuración central de marca y valores iniciales.
 - GSAP como mejora visual opcional para transiciones.
 - `localStorage` para perfil y ajustes del navegador.
+- Enlace externo voluntario a Google Forms solo en el panel familiar; sus respuestas se guardan en Google Sheets, no en la aplicación. No se cargan scripts ni marcos de Google en Chispora.
 
 No utiliza frameworks, compilación, servidor de aplicaciones ni base de datos. La carpeta de librerías conserva Lenis como recurso disponible del kit, pero `index.html` no lo carga ni lo ejecuta.
 

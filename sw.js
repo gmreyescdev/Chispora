@@ -1,12 +1,12 @@
 "use strict";
 
 const CACHE_PREFIX = "chispora-shell-";
-const CACHE_NAME = CACHE_PREFIX + "2026093002";
+const CACHE_NAME = CACHE_PREFIX + "2026093003";
 const SHELL_FILES = [
   "./",
   "./index.html",
   "./app.webmanifest?v=2026093001",
-  "./styles.css?v=2026093009",
+  "./styles.css?v=2026093010",
   "./assets/img/chispora-symbol.svg?v=2026090703",
   "./assets/img/chispora-symbol.svg",
   "./assets/icons/chispora-192.png",
