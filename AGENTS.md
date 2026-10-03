@@ -105,6 +105,6 @@ No declares una tarea terminada solo porque se vea bien. Debe cumplir sus criter
 
 ## Estado y siguiente prioridad
 
-Hay once juegos implementados: Memorama, Operación misteriosa, Palabra desordenada, Secuencia lógica, Laberintos, Comprensión lectora, Fracciones en acción, Programa al robot, Reloj de aventuras, Laboratorio curioso y Tangram. `tangram-game.js` controla la interfaz de piezas y `lib/tangram-engine.js` comprueba su geometría sin depender del DOM.
+Hay trece juegos implementados: Memorama, Operación misteriosa, Palabra desordenada, Secuencia lógica, Laberintos, Comprensión lectora, Fracciones en acción, Programa al robot, Reloj de aventuras, Laboratorio curioso, Tangram, Sudoku de figuras y Busca las diferencias. Los tres últimos tienen motores puros y controladores independientes. `lib/puzzle-game.js` comparte solo el ciclo de partida de Sudoku y Diferencias, sin mezclar sus reglas.
 
 Las recompensas visuales, el resumen por habilidad, el mapa por áreas, los tutoriales, la accesibilidad ampliada y el funcionamiento sin conexión están implementados. El protocolo de pruebas supervisadas está preparado, pero las sesiones reales siguen pendientes; después corresponde resolver sus hallazgos y publicar una beta gratuita.

@@ -241,6 +241,15 @@ Este archivo conserva las decisiones importantes y sus motivos. Se actualizará 
 - **Consecuencia:** primera versión guiada, no editor libre. Se aceptan simetrías e intercambio de triángulos iguales. Los modelos geométricos son cuadrado, triángulo y rombo; ampliar siluetas dependerá de observaciones. No hay sonido, cronómetro ni transiciones pendientes. El progreso pasa de 30 a 33 niveles sin borrar avances anteriores.
 - **Estado:** implementada y comprobada técnicamente; validación infantil específica pendiente.
 
+## D-031 — Sudoku pequeño único y diferencias por zonas amplias
+
+- **Fecha:** 3 de octubre de 2026.
+- **Decisión:** añadir Sudoku de figuras de 4 × 4 con una única solución y Busca las diferencias con escenas SVG locales, cambios de forma/cantidad y nueve zonas seleccionables mediante botones.
+- **Motivo:** el usuario pidió los dos juegos propuestos después de Tangram. Se priorizan partidas cortas, deducción, observación y uso sin precisión motriz ni recursos externos.
+- **Alternativas consideradas:** Sudoku de 9 × 9, tableros sin comprobar unicidad, detección por coordenadas precisas y fotos externas.
+- **Consecuencia:** el Sudoku acepta únicamente la figura de su solución única y conserva la casilla vacía ante errores; Diferencias permite comparar descripciones de texto como alternativa a observar dibujos. Ninguno tiene reloj ni penalizaciones. Se comparten solo navegación, pausa y persistencia mediante `lib/puzzle-game.js`.
+- **Estado:** implementada y comprobada técnicamente; observación infantil específica pendiente.
+
 ## Plantilla para próximas decisiones
 
 - **Fecha:**

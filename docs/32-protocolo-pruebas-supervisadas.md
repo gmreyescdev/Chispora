@@ -50,8 +50,8 @@ No debe usarse el dispositivo personal del niño si contiene notificaciones o in
 Antes de considerar completada esta etapa deben existir:
 
 - una prueba piloto con un adulto;
-- al menos seis sesiones infantiles breves;
-- al menos una observación de cada uno de los once juegos;
+- al menos siete sesiones infantiles breves;
+- al menos una observación de cada uno de los trece juegos;
 - teléfono estrecho de 320 a 390 píxeles, tableta y computador;
 - interacción táctil, mouse y teclado entre el conjunto de sesiones;
 - al menos una sesión con texto grande, contraste alto, movimiento reducido y cronómetros ocultos;
@@ -146,7 +146,7 @@ Terminar o pausar inmediatamente si aparece cualquiera de estas señales:
 
 ## Matriz recomendada
 
-Las primeras cinco sesiones cubren los diez juegos originales una vez. S11 incorpora Tangram: con seis sesiones se cubre el catálogo de once juegos. S01–S12 permiten observar cada juego al menos dos veces sin alargar las sesiones.
+Las primeras cinco sesiones cubren los diez juegos originales una vez. S11 añade Tangram y Sudoku; S13 añade Diferencias. Ese conjunto de siete sesiones cubre el catálogo de trece juegos. S01–S14 permiten observar cada juego al menos dos veces sin alargar las sesiones.
 
 | Sesión | Juego 1 | Juego 2 | Dispositivo sugerido |
 |---|---|---|---|
@@ -160,8 +160,10 @@ Las primeras cinco sesiones cubren los diez juegos originales una vez. S11 incor
 | S08 | Comprensión lectora | Fracciones en acción | Teléfono táctil estrecho |
 | S09 | Programa al robot | Reloj de aventuras | Computador con mouse |
 | S10 | Laboratorio curioso | Memorama | Tableta táctil |
-| S11 | Tangram | Opcional: juego elegido por el niño | Teléfono táctil estrecho |
-| S12 | Tangram | Opcional: juego elegido por el niño | Computador con teclado |
+| S11 | Tangram | Sudoku de figuras | Teléfono táctil estrecho |
+| S12 | Tangram | Sudoku de figuras | Computador con teclado |
+| S13 | Busca las diferencias | Opcional: juego elegido por el niño | Teléfono táctil estrecho |
+| S14 | Busca las diferencias | Opcional: juego elegido por el niño | Computador con mouse |
 
 Si el niño solo desea completar un juego, se respeta su decisión y el segundo queda pendiente para otra sesión.
 

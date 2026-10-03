@@ -53,7 +53,7 @@ async function run() {
   assert.ok(cachedFiles.includes("./index.html"));
   assert.ok(cachedFiles.includes("./app.webmanifest?v=2026093001"));
   assert.ok(cachedFiles.includes("./assets/icons/chispora-512.png"));
-  ["sequence", "maze", "reading", "fraction", "robot", "clock", "science"].forEach(function (game) {
+  ["sequence", "maze", "reading", "fraction", "robot", "clock", "science", "tangram", "sudoku", "differences"].forEach(function (game) {
     assert.ok(cachedFiles.some(function (file) { return file.indexOf("./" + game + "-game.js?") === 0; }));
   });
   const html = fs.readFileSync(path.join(root, "index.html"), "utf8");

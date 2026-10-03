@@ -68,3 +68,6 @@ Los cambios importantes de Chispora se registran aquí. El proyecto utiliza un e
 - Tangram con siete piezas, tres dificultades, modelos de cuadrado, triángulo y rombo, giro de 45°, volteo y pistas sin límite de tiempo.
 - Catálogo de once juegos y constelación de 33 niveles, conservando el progreso anterior e incorporando Tangram al tutorial y al caché sin conexión.
 - Actualizaciones del caché descargan los recursos evitando copias HTTP obsoletas, para que aparezca el catálogo nuevo tras activarlas.
+- Sudoku de figuras: tableros de 4 × 4 con solución única, tres dificultades, pistas y controles de teclado.
+- Busca las diferencias: tres escenas SVG locales, cambios de forma o cantidad, zonas táctiles amplias y descripciones de texto.
+- Catálogo ampliado a trece juegos y 39 niveles, con tutoriales, progreso compatible y ciclo compartido de pausa, salida y guardado solo al finalizar para los dos nuevos juegos.

@@ -15,7 +15,9 @@
     robot: "[data-start-robot]",
     clock: "[data-clock-start]",
     science: "[data-science-start]",
-    tangram: "[data-tangram-start]"
+    tangram: "[data-tangram-start]",
+    sudoku: "[data-sudoku-start]",
+    differences: "[data-differences-start]"
   };
   let tutorial = null;
 

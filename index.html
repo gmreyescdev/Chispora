@@ -12,7 +12,7 @@
   <link rel="icon" href="assets/img/chispora-symbol.svg?v=2026090703" type="image/svg+xml">
   <link rel="apple-touch-icon" href="assets/icons/chispora-192.png">
   <link rel="manifest" href="app.webmanifest?v=2026093001">
-  <link rel="stylesheet" href="styles.css?v=2026100201">
+  <link rel="stylesheet" href="styles.css?v=2026100301">
   <script defer src="lib/gsap.min.js?v=2026090706"></script>
   <script defer src="lib/ScrollTrigger.min.js?v=2026090706"></script>
   <script defer src="lib/manifest.js?v=2026093008"></script>
@@ -24,15 +24,18 @@
   <script defer src="lib/sequence-engine.js?v=2026090706"></script>
   <script defer src="lib/maze-engine.js?v=2026090706"></script>
   <script defer src="lib/reading-engine.js?v=2026092901"></script>
-  <script defer src="lib/progress-engine.js?v=2026100201"></script>
+  <script defer src="lib/progress-engine.js?v=2026100301"></script>
   <script defer src="lib/fraction-engine.js?v=2026093001"></script>
   <script defer src="lib/robot-engine.js?v=2026093001"></script>
   <script defer src="lib/choice-game.js?v=2026093003"></script>
   <script defer src="lib/clock-engine.js?v=2026093003"></script>
   <script defer src="lib/science-engine.js?v=2026093003"></script>
   <script defer src="lib/mission-map-engine.js?v=2026093001"></script>
-  <script defer src="lib/tutorial-engine.js?v=2026100201"></script>
+  <script defer src="lib/tutorial-engine.js?v=2026100301"></script>
   <script defer src="lib/tangram-engine.js?v=2026100201"></script>
+  <script defer src="lib/sudoku-engine.js?v=2026100301"></script>
+  <script defer src="lib/differences-engine.js?v=2026100301"></script>
+  <script defer src="lib/puzzle-game.js?v=2026100301"></script>
   <script defer src="main.js?v=2026093008"></script>
   <script defer src="sequence-game.js?v=2026090706"></script>
   <script defer src="maze-game.js?v=2026090706"></script>
@@ -44,7 +47,9 @@
   <script defer src="clock-game.js?v=2026093003"></script>
   <script defer src="science-game.js?v=2026093003"></script>
   <script defer src="tangram-game.js?v=2026100201"></script>
-  <script defer src="tutorials.js?v=2026100201"></script>
+  <script defer src="sudoku-game.js?v=2026100301"></script>
+  <script defer src="differences-game.js?v=2026100301"></script>
+  <script defer src="tutorials.js?v=2026100301"></script>
   <script defer src="pwa.js?v=2026093001"></script>
 </head>
 <body>
@@ -138,13 +143,13 @@
 
       <nav class="mission-filters" aria-label="Filtrar misiones por área">
         <div class="mission-filter-buttons" role="group" aria-label="Áreas de juego">
-          <button class="mission-filter is-active" type="button" data-mission-filter="all" aria-pressed="true">Todas <span>11</span></button>
+          <button class="mission-filter is-active" type="button" data-mission-filter="all" aria-pressed="true">Todas <span>13</span></button>
           <button class="mission-filter" type="button" data-mission-filter="words" aria-pressed="false">Palabras <span>2</span></button>
           <button class="mission-filter" type="button" data-mission-filter="numbers" aria-pressed="false">Números <span>3</span></button>
-          <button class="mission-filter" type="button" data-mission-filter="logic" aria-pressed="false">Lógica <span>4</span></button>
-          <button class="mission-filter" type="button" data-mission-filter="exploration" aria-pressed="false">Exploración <span>2</span></button>
+          <button class="mission-filter" type="button" data-mission-filter="logic" aria-pressed="false">Lógica <span>5</span></button>
+          <button class="mission-filter" type="button" data-mission-filter="exploration" aria-pressed="false">Exploración <span>3</span></button>
         </div>
-        <p class="mission-filter-status" data-mission-filter-status aria-live="polite">11 juegos disponibles</p>
+        <p class="mission-filter-status" data-mission-filter-status aria-live="polite">13 juegos disponibles</p>
       </nav>
 
       <div class="mission-grid">
@@ -253,6 +258,16 @@
         <div class="mission-progress"><span data-tangram-progress-label>Listo para jugar</span><div class="progress-track" role="progressbar" aria-label="Progreso de Tangram" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" data-tangram-progress><span></span></div></div>
         <button class="button button-primary" type="button" data-go="introduccion-tangram">Ver misión</button>
       </article>
+      <article class="mission-card mission-card-active" data-mission-area="logic">
+        <div class="mission-icon" aria-hidden="true">□</div><div><span class="mission-status">Lógica</span><h3>Sudoku de figuras</h3><p>Completa el tablero sin repetir figuras en filas, columnas ni cuadros.</p></div>
+        <div class="mission-progress"><span data-sudoku-progress-label>Listo para jugar</span><div class="progress-track" role="progressbar" aria-label="Progreso de Sudoku de figuras" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" data-sudoku-progress><span></span></div></div>
+        <button class="button button-primary" type="button" data-go="introduccion-sudoku">Ver misión</button>
+      </article>
+      <article class="mission-card mission-card-active" data-mission-area="exploration">
+        <div class="mission-icon" aria-hidden="true">⌕</div><div><span class="mission-status">Exploración</span><h3>Busca las diferencias</h3><p>Compara dos escenas y descubre qué cambió.</p></div>
+        <div class="mission-progress"><span data-differences-progress-label>Listo para jugar</span><div class="progress-track" role="progressbar" aria-label="Progreso de Busca las diferencias" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" data-differences-progress><span></span></div></div>
+        <button class="button button-primary" type="button" data-go="introduccion-diferencias">Ver misión</button>
+      </article>
       </div>
 
       <section class="skill-constellation" aria-labelledby="skill-constellation-title">
@@ -262,7 +277,7 @@
             <h3 id="skill-constellation-title">Cada ruta deja una chispa</h3>
             <p data-overall-message>Tu mapa está listo para la primera misión.</p>
           </div>
-          <strong class="overall-level-count" data-overall-levels aria-label="Niveles recorridos">0/33</strong>
+          <strong class="overall-level-count" data-overall-levels aria-label="Niveles recorridos">0/39</strong>
         </div>
         <div class="progress-track overall-progress" role="progressbar" aria-label="Progreso total de habilidades" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" data-overall-progress><span></span></div>
         <div class="skill-grid">
@@ -277,6 +292,8 @@
           <article class="skill-card" data-skill-card="clock"><span class="skill-icon" aria-hidden="true">◷</span><div><h4>Tiempo y duración</h4><p data-skill-label>Lista para explorar</p></div><div class="skill-sparks" data-skill-sparks aria-label="0 de 3 niveles recorridos"></div><strong data-skill-count>0/3</strong></article>
           <article class="skill-card" data-skill-card="science"><span class="skill-icon" aria-hidden="true">⚗</span><div><h4>Investigación científica</h4><p data-skill-label>Lista para explorar</p></div><div class="skill-sparks" data-skill-sparks aria-label="0 de 3 niveles recorridos"></div><strong data-skill-count>0/3</strong></article>
           <article class="skill-card" data-skill-card="tangram"><span class="skill-icon" aria-hidden="true">△</span><div><h4>Composición de figuras</h4><p data-skill-label>Lista para explorar</p></div><div class="skill-sparks" data-skill-sparks aria-label="0 de 3 niveles recorridos"></div><strong data-skill-count>0/3</strong></article>
+          <article class="skill-card" data-skill-card="sudoku"><span class="skill-icon" aria-hidden="true">□</span><div><h4>Deducción lógica</h4><p data-skill-label>Lista para explorar</p></div><div class="skill-sparks" data-skill-sparks aria-label="0 de 3 niveles recorridos"></div><strong data-skill-count>0/3</strong></article>
+          <article class="skill-card" data-skill-card="differences"><span class="skill-icon" aria-hidden="true">⌕</span><div><h4>Observación de detalles</h4><p data-skill-label>Lista para explorar</p></div><div class="skill-sparks" data-skill-sparks aria-label="0 de 3 niveles recorridos"></div><strong data-skill-count>0/3</strong></article>
         </div>
         <p class="skill-note">Las chispas muestran caminos recorridos. No son puntos ni comparan a un niño con otro.</p>
       </section>
@@ -770,6 +787,43 @@
       <div class="result-spark" aria-hidden="true">△</div><p class="eyebrow">Misión completa</p><h2 id="tangram-result-title">¡Cada pieza encontró su lugar!</h2><p class="lead">Construiste <strong data-tangram-result-rounds>2</strong> figuras a tu ritmo.</p><div class="reward-card"><span aria-hidden="true">✦</span><div><strong>Una chispa para tu constelación</strong><p>Nivel <span data-tangram-result-level>Explorador</span>.</p></div></div><p data-tangram-save-status></p><p>Ahora puedes descansar.</p><div class="action-group action-group-centered"><button class="button button-primary" type="button" data-tangram-replay>Jugar otra vez</button><button class="text-button" type="button" data-go="misiones">Volver al mapa</button><button class="text-button" type="button" data-go="pausa">Terminar sesión</button></div>
     </section>
 
+    <section id="introduccion-sudoku" class="app-screen panel-screen" data-screen="introduccion-sudoku" aria-labelledby="sudoku-intro-title">
+      <div class="screen-heading"><button class="back-button" type="button" data-go="misiones">← Mapa de misiones</button><p class="eyebrow">Misión 12 · Deducción lógica</p><h2 id="sudoku-intro-title">Sudoku de figuras</h2><p>Completa las casillas. No repitas figuras en fila, columna ni cuadro de 2 × 2.</p></div>
+      <div class="form-card"><label class="field-label" for="sudoku-difficulty">Dificultad</label><select id="sudoku-difficulty" data-sudoku-difficulty><option value="explorador">Explorador</option><option value="aventurero">Aventurero</option><option value="maestro">Maestro de las figuras</option></select><p class="difficulty-summary" data-sudoku-summary>2 tableros · Cuatro casillas por completar</p><p class="field-help">Sin límite de tiempo. Cada tablero tiene una única solución.</p><button class="button button-primary button-full" type="button" data-sudoku-start>Jugar</button></div>
+    </section>
+    <section id="partida-sudoku" class="app-screen game-screen" data-screen="partida-sudoku" aria-labelledby="sudoku-game-title">
+      <div class="game-toolbar"><button class="text-button" type="button" data-sudoku-exit>Salir</button><div class="game-stats"><h2 id="sudoku-game-title" class="sr-only">Partida de Sudoku de figuras</h2><strong>Tablero <span data-sudoku-round>1</span>/<span data-sudoku-total>2</span></strong></div><button class="button button-small button-secondary" type="button" data-sudoku-pause>Pausa</button></div>
+      <div class="puzzle-stage sudoku-stage" data-sudoku-stage>
+        <h3 data-sudoku-title>Tablero 1</h3><p>No repitas ○, △, □ ni ☆ en cada fila, columna y cuadro.</p>
+        <div class="sudoku-board" data-sudoku-board role="group" aria-label="Tablero de cuatro filas y cuatro columnas"></div>
+        <p data-sudoku-selected>Elige una casilla vacía.</p><div class="sudoku-symbols" data-sudoku-symbols role="group" aria-label="Figuras para la casilla elegida"></div>
+      </div>
+      <div class="puzzle-help"><button class="button button-secondary" type="button" data-sudoku-hint>Pista</button><p data-sudoku-message aria-live="polite">Elige una casilla vacía y una figura.</p><button class="button button-primary" type="button" data-sudoku-continue hidden>Siguiente tablero</button></div>
+    </section>
+    <section id="resultado-sudoku" class="app-screen result-screen" data-screen="resultado-sudoku" aria-labelledby="sudoku-result-title">
+      <div class="result-spark" aria-hidden="true">□</div><p class="eyebrow">Misión completa</p><h2 id="sudoku-result-title">¡Las figuras encontraron su lugar!</h2><p class="lead">Completaste <strong data-sudoku-result-rounds>2</strong> tableros a tu ritmo.</p><div class="reward-card"><span aria-hidden="true">✦</span><div><strong>Una chispa para tu constelación</strong><p>Nivel <span data-sudoku-result-level>Explorador</span>.</p></div></div><p data-sudoku-save-status></p><p>Ahora puedes descansar.</p><div class="action-group action-group-centered"><button class="button button-primary" type="button" data-sudoku-replay>Jugar otra vez</button><button class="text-button" type="button" data-go="misiones">Volver al mapa</button><button class="text-button" type="button" data-go="pausa">Terminar sesión</button></div>
+    </section>
+
+    <section id="introduccion-diferencias" class="app-screen panel-screen" data-screen="introduccion-diferencias" aria-labelledby="differences-intro-title">
+      <div class="screen-heading"><button class="back-button" type="button" data-go="misiones">← Mapa de misiones</button><p class="eyebrow">Misión 13 · Observación de detalles</p><h2 id="differences-intro-title">Busca las diferencias</h2><p>Compara las dos escenas. Toca una zona de B donde veas un cambio.</p></div>
+      <div class="form-card"><label class="field-label" for="differences-difficulty">Dificultad</label><select id="differences-difficulty" data-differences-difficulty><option value="explorador">Explorador</option><option value="aventurero">Aventurero</option><option value="maestro">Maestro de la observación</option></select><p class="difficulty-summary" data-differences-summary>2 escenas · Tres cambios por escena</p><p class="field-help">Sin límite de tiempo. Puedes usar las descripciones de las escenas.</p><button class="button button-primary button-full" type="button" data-differences-start>Jugar</button></div>
+    </section>
+    <section id="partida-diferencias" class="app-screen game-screen differences-game-screen" data-screen="partida-diferencias" aria-labelledby="differences-game-title">
+      <div class="game-toolbar"><button class="text-button" type="button" data-differences-exit>Salir</button><div class="game-stats"><h2 id="differences-game-title" class="sr-only">Partida de Busca las diferencias</h2><strong>Escena <span data-differences-round>1</span>/<span data-differences-total>2</span></strong></div><button class="button button-small button-secondary" type="button" data-differences-pause>Pausa</button></div>
+      <div class="puzzle-stage" data-differences-stage>
+        <h3 data-differences-title>El jardín</h3><p data-differences-count>0 de 3 cambios encontrados</p>
+        <div class="difference-scenes">
+          <section class="difference-scene" aria-labelledby="differences-a-title"><h4 id="differences-a-title">A · Mira</h4><div class="difference-picture" data-differences-left></div></section>
+          <section class="difference-scene" aria-labelledby="differences-b-title"><h4 id="differences-b-title">B · Elige una zona</h4><div class="difference-picture"><div data-differences-right></div><div class="difference-zones" data-differences-zones role="group" aria-label="Nueve zonas de la escena B"></div></div></section>
+        </div>
+        <details class="difference-descriptions"><summary>Leer descripción de las escenas</summary><ol data-differences-descriptions></ol></details>
+      </div>
+      <div class="puzzle-help"><button class="button button-secondary" type="button" data-differences-hint>Pista</button><p data-differences-message aria-live="polite">Compara las escenas A y B.</p><button class="button button-primary" type="button" data-differences-continue hidden>Siguiente escena</button></div>
+    </section>
+    <section id="resultado-diferencias" class="app-screen result-screen" data-screen="resultado-diferencias" aria-labelledby="differences-result-title">
+      <div class="result-spark" aria-hidden="true">⌕</div><p class="eyebrow">Misión completa</p><h2 id="differences-result-title">¡Descubriste los cambios!</h2><p class="lead">Exploraste <strong data-differences-result-rounds>2</strong> escenas con atención.</p><div class="reward-card"><span aria-hidden="true">✦</span><div><strong>Una chispa para tu constelación</strong><p>Nivel <span data-differences-result-level>Explorador</span>.</p></div></div><p data-differences-save-status></p><p>Ahora puedes descansar.</p><div class="action-group action-group-centered"><button class="button button-primary" type="button" data-differences-replay>Jugar otra vez</button><button class="text-button" type="button" data-go="misiones">Volver al mapa</button><button class="text-button" type="button" data-go="pausa">Terminar sesión</button></div>
+    </section>
+
     <section id="panel-familiar" class="app-screen" data-screen="panel-familiar" aria-labelledby="family-title">
       <div class="screen-heading screen-heading-wide">
         <button class="back-button" type="button" data-go="bienvenida">← Salir del espacio familiar</button>
@@ -849,9 +903,9 @@
           <span class="mission-status">Solo en este equipo</span>
           <h3 id="local-progress-title">Progreso local</h3>
           <dl class="progress-list">
-            <div><dt>Juegos disponibles</dt><dd>11</dd></div>
+            <div><dt>Juegos disponibles</dt><dd>13</dd></div>
             <div><dt>Partidas terminadas</dt><dd data-completed-games>0</dd></div>
-            <div><dt>Niveles recorridos</dt><dd data-overall-levels>0/33</dd></div>
+            <div><dt>Niveles recorridos</dt><dd data-overall-levels>0/39</dd></div>
             <div><dt>Niveles de Memorama</dt><dd data-memory-levels>0/3</dd></div>
             <div><dt>Niveles de cálculo</dt><dd data-operation-levels>0/3</dd></div>
             <div><dt>Niveles de palabras</dt><dd data-word-levels>0/3</dd></div>
@@ -863,6 +917,8 @@
             <div><dt>Niveles de reloj</dt><dd data-clock-levels>0/3</dd></div>
             <div><dt>Niveles de ciencia</dt><dd data-science-levels>0/3</dd></div>
             <div><dt>Niveles de Tangram</dt><dd data-tangram-levels>0/3</dd></div>
+            <div><dt>Niveles de Sudoku</dt><dd data-sudoku-levels>0/3</dd></div>
+            <div><dt>Niveles de diferencias</dt><dd data-differences-levels>0/3</dd></div>
           </dl>
           <div class="progress-track" role="progressbar" aria-label="Progreso total de habilidades" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" data-overall-progress><span></span></div>
           <p data-overall-message>Tu mapa está listo para la primera misión.</p>
@@ -996,5 +1052,9 @@
   </dialog>
   <dialog class="app-dialog" data-tangram-pause-dialog aria-labelledby="tangram-pause-title"><form method="dialog"><p class="eyebrow">Partida en pausa</p><h2 id="tangram-pause-title">Las piezas te esperan.</h2><p>Continúa cuando quieras.</p><button class="button button-primary button-full" value="continue">Continuar</button></form></dialog>
   <dialog class="app-dialog" data-tangram-exit-dialog aria-labelledby="tangram-exit-title"><form method="dialog"><p class="eyebrow">Salir de la misión</p><h2 id="tangram-exit-title">¿Volvemos al mapa?</h2><p>Las figuras de una partida incompleta no se guardan.</p><div class="dialog-actions"><button class="button button-secondary" value="cancel">Seguir jugando</button><button class="button button-primary" value="leave">Volver al mapa</button></div></form></dialog>
+  <dialog class="app-dialog" data-sudoku-pause-dialog aria-labelledby="sudoku-pause-title"><form method="dialog"><p class="eyebrow">Partida en pausa</p><h2 id="sudoku-pause-title">Las figuras te esperan.</h2><p>Continúa cuando quieras.</p><button class="button button-primary button-full" value="continue">Continuar</button></form></dialog>
+  <dialog class="app-dialog" data-sudoku-exit-dialog aria-labelledby="sudoku-exit-title"><form method="dialog"><p class="eyebrow">Salir de la misión</p><h2 id="sudoku-exit-title">¿Volvemos al mapa?</h2><p>Los tableros de una partida incompleta no se guardan.</p><div class="dialog-actions"><button class="button button-secondary" value="cancel">Seguir jugando</button><button class="button button-primary" value="leave">Volver al mapa</button></div></form></dialog>
+  <dialog class="app-dialog" data-differences-pause-dialog aria-labelledby="differences-pause-title"><form method="dialog"><p class="eyebrow">Partida en pausa</p><h2 id="differences-pause-title">Las escenas te esperan.</h2><p>Continúa cuando quieras.</p><button class="button button-primary button-full" value="continue">Continuar</button></form></dialog>
+  <dialog class="app-dialog" data-differences-exit-dialog aria-labelledby="differences-exit-title"><form method="dialog"><p class="eyebrow">Salir de la misión</p><h2 id="differences-exit-title">¿Volvemos al mapa?</h2><p>Las escenas de una partida incompleta no se guardan.</p><div class="dialog-actions"><button class="button button-secondary" value="cancel">Seguir mirando</button><button class="button button-primary" value="leave">Volver al mapa</button></div></form></dialog>
 </body>
 </html>

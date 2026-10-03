@@ -16,8 +16,8 @@ function test(name, run) {
   catch (error) { process.stderr.write("✗ " + name + "\n"); throw error; }
 }
 
-test("incluye once tutoriales breves de tres pasos", () => {
-  assert.equal(Object.keys(engine.tutorials).length, 11);
+test("incluye trece tutoriales breves de tres pasos", () => {
+  assert.equal(Object.keys(engine.tutorials).length, 13);
   Object.values(engine.tutorials).forEach((tutorial) => {
     assert.equal(tutorial.steps.length, 3);
     tutorial.steps.forEach((step) => { assert.ok(step.title); assert.ok(step.text); assert.ok(step.visual); });

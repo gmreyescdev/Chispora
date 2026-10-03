@@ -1,12 +1,12 @@
 "use strict";
 
 const CACHE_PREFIX = "chispora-shell-";
-const CACHE_NAME = CACHE_PREFIX + "2026100203";
+const CACHE_NAME = CACHE_PREFIX + "2026100302";
 const SHELL_FILES = [
   "./",
   "./index.html",
   "./app.webmanifest?v=2026093001",
-  "./styles.css?v=2026100201",
+  "./styles.css?v=2026100301",
   "./assets/img/chispora-symbol.svg?v=2026090703",
   "./assets/img/chispora-symbol.svg",
   "./assets/icons/chispora-192.png",
@@ -22,15 +22,18 @@ const SHELL_FILES = [
   "./lib/sequence-engine.js?v=2026090706",
   "./lib/maze-engine.js?v=2026090706",
   "./lib/reading-engine.js?v=2026092901",
-  "./lib/progress-engine.js?v=2026100201",
+  "./lib/progress-engine.js?v=2026100301",
   "./lib/fraction-engine.js?v=2026093001",
   "./lib/robot-engine.js?v=2026093001",
   "./lib/choice-game.js?v=2026093003",
   "./lib/clock-engine.js?v=2026093003",
   "./lib/science-engine.js?v=2026093003",
   "./lib/mission-map-engine.js?v=2026093001",
-  "./lib/tutorial-engine.js?v=2026100201",
+  "./lib/tutorial-engine.js?v=2026100301",
   "./lib/tangram-engine.js?v=2026100201",
+  "./lib/sudoku-engine.js?v=2026100301",
+  "./lib/differences-engine.js?v=2026100301",
+  "./lib/puzzle-game.js?v=2026100301",
   "./main.js?v=2026093008",
   "./sequence-game.js?v=2026090706",
   "./maze-game.js?v=2026090706",
@@ -42,7 +45,9 @@ const SHELL_FILES = [
   "./clock-game.js?v=2026093003",
   "./science-game.js?v=2026093003",
   "./tangram-game.js?v=2026100201",
-  "./tutorials.js?v=2026100201",
+  "./sudoku-game.js?v=2026100301",
+  "./differences-game.js?v=2026100301",
+  "./tutorials.js?v=2026100301",
   "./pwa.js?v=2026093001"
 ];
 

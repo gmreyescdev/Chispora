@@ -551,3 +551,28 @@ Los controles de selección y espacio evitan exigir precisión de arrastre, pero
 - Se comprobó que incluso el caché recién instalado contenía el HTML anterior. Se cambió la instalación para solicitar todos los recursos con `cache: "reload"`, sin borrar datos de localStorage ni activar actualizaciones automáticamente.
 - Se añadió una comprobación de esa política en los tests del service worker y se incrementó la versión del caché a `2026100203`.
 - Verificación: suite completa de 18 archivos sin fallos, sintaxis de los dos JavaScript afectados correcta y catálogo de once tarjetas confirmado en `localhost:8765` tras activar la actualización. Se abrió la introducción de Tangram; no se borraron datos guardados.
+
+## 3 de octubre de 2026 — Sudoku y diferencias
+
+### Trabajo y decisiones
+
+- A petición del usuario se añadieron Sudoku de figuras y Busca las diferencias: trece juegos y 39 niveles en total.
+- Sudoku usa tableros de 4 × 4 con solución única y figuras SVG. Diferencias usa escenas locales con cambios de forma o cantidad y nueve zonas amplias.
+- Ambos tienen tres dificultades, pistas, tutorial, pausa, salida y resultado sin límite de tiempo. Solo guardan progreso al completar la partida; no empiezan otra automáticamente.
+- Se comparte únicamente el ciclo de partida en `lib/puzzle-game.js`; reglas y representaciones permanecen separadas. Decisión D-031 y documentos 37–38 explican los detalles.
+- El protocolo se amplió a siete sesiones mínimas para cubrir trece juegos. No se registraron sesiones reales nuevas.
+
+### Comprobaciones
+
+- `node --test tests/*.test.js`: veinte archivos, 38 entradas TAP, cero fallos. Sintaxis de los JavaScript modificados correcta y diff sin errores de espacios.
+- En el origen de auditoría `localhost:8767`, partidas completas de ambos juegos en las tres dificultades, errores corregibles, pistas, bloqueo y resultado comprobados.
+- Pausa con tablero oculto e inactivo, reanudación con Escape, salida cancelada, salida confirmada y Escape en el diálogo comprobados sin modificar progreso incompleto.
+- Enter y flechas en Sudoku y Espacio en Diferencias comprobados. No se probó hardware táctil real.
+- Vistas de 320, 375, 768 y 1280 px, también con texto grande y alto contraste: sin desbordamiento horizontal y controles mayores de 44 px.
+- Lighthouse en las dos partidas: 100 en accesibilidad, buenas prácticas y SEO, sin auditorías fallidas. Esto no sustituye lectores de pantalla ni pruebas infantiles reales.
+- Conservación de perfil, ajustes y progreso previo de Memorama y Tangram comprobada al completar Sudoku. Fallo de escritura simulado en Diferencias: resultado informa el problema y conserva los datos anteriores.
+- Caché `chispora-shell-2026100302` con 46 recursos y actualización sin borrar progreso. Con el servidor de auditoría detenido, ambos juegos se recargaron y aceptaron un acierto mediante pista. El navegador seguía conectado: se verificó indisponibilidad del servidor, no desconexión física del dispositivo.
+
+### Aprendizaje y siguiente paso
+
+Una solución única evita rechazar alternativas válidas en el Sudoku guiado; describir los dibujos permite una alternativa accesible en Diferencias. Pedir observaciones breves sobre las reglas de los cuadros, los números de zonas y comodidad móvil. La síntesis supervisada y la validación táctil real siguen pendientes antes de publicar la beta.

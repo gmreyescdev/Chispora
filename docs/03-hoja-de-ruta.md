@@ -34,6 +34,7 @@
 - Añadir Reloj de aventuras. **Completado y auditado.**
 - Añadir Laboratorio curioso. **Completado y auditado.**
 - Añadir Tangram. **Implementado y comprobado técnicamente; observación infantil específica pendiente.**
+- Añadir Sudoku de figuras y Busca las diferencias. **Implementados y comprobados técnicamente; observación infantil específica pendiente.**
 - Compactar la interfaz y simplificar instrucciones. **Completado y auditado.**
 - Organizar el mapa por áreas. **Completado y auditado.**
 - Añadir tutoriales breves por juego. **Completado y auditado.**
@@ -43,7 +44,7 @@
 
 ## Fase 3 — Validación
 
-- Ejecutar al menos seis sesiones breves con consentimiento y registros anónimos para cubrir once juegos sin superar dos juegos por sesión. **Síntesis de observaciones pendiente.**
+- Ejecutar al menos siete sesiones breves con consentimiento y registros anónimos para cubrir trece juegos sin superar dos juegos por sesión. **Síntesis de observaciones pendiente.**
 
 - Observar qué instrucciones generan confusión.
 - Evaluar si la dificultad aumenta correctamente.

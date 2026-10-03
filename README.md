@@ -14,7 +14,7 @@ Plataforma de juegos educativos clásicos para niños de aproximadamente 8 años
 
 ## Primera versión propuesta
 
-El catálogo actual incluye once juegos:
+El catálogo actual incluye trece juegos:
 
 1. Memorama.
 2. Operación misteriosa.
@@ -27,6 +27,8 @@ El catálogo actual incluye once juegos:
 9. Reloj de aventuras.
 10. Laboratorio curioso.
 11. Tangram.
+12. Sudoku de figuras.
+13. Busca las diferencias.
 
 Cada juego tendrá tres niveles de dificultad y sesiones sugeridas de entre 5 y 10 minutos.
 
@@ -69,11 +71,13 @@ Cada juego tendrá tres niveles de dificultad y sesiones sugeridas de entre 5 y 
 - [Guía para sintetizar pruebas](docs/34-guia-sintesis-pruebas.md)
 - [Buzón privado de sugerencias](docs/35-buzon-de-sugerencias.md)
 - [Implementación y auditoría de Tangram](docs/36-implementacion-y-auditoria-tangram.md)
+- [Implementación y auditoría de Sudoku de figuras](docs/37-implementacion-y-auditoria-sudoku.md)
+- [Implementación y auditoría de Busca las diferencias](docs/38-implementacion-y-auditoria-diferencias.md)
 - [Historial de versiones](CHANGELOG.md)
 
 ## Estado
 
-Fase 0 completada. Fase 1 técnica completada; la Fase 2 tiene once juegos funcionales, 33 niveles, recompensas visuales, accesibilidad ampliada e instalación opcional con funcionamiento sin conexión. El protocolo para pruebas supervisadas está preparado; la síntesis de observaciones reales sigue pendiente.
+Fase 0 completada. Fase 1 técnica completada; la Fase 2 tiene trece juegos funcionales, 39 niveles, recompensas visuales, accesibilidad ampliada e instalación opcional con funcionamiento sin conexión. El protocolo para pruebas supervisadas está preparado; la síntesis de observaciones reales sigue pendiente.
 
 - **Dominio:** `chispora.cl` adquirido por el propietario del proyecto.
 - **Marca CHISPORA:** disponibilidad preliminar informada; todavía no solicitada ni registrada en INAPI.

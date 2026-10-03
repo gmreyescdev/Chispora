@@ -31,6 +31,8 @@ El prototipo actual utiliza:
 - `clock-game.js` y `science-game.js` representan las interfaces específicas de los juegos noveno y décimo.
 - `lib/clock-engine.js` y `lib/science-engine.js` contienen los bancos y reglas educativas probadas.
 - `tangram-game.js` ofrece selección, giro, volteo, colocación y pausa mediante controles nativos; `lib/tangram-engine.js` valida geometría, simetrías y finalización sin DOM.
+- `sudoku-game.js` y `differences-game.js` controlan sus tableros y escenas. `lib/sudoku-engine.js` genera tableros con solución única y `lib/differences-engine.js` define cambios, hallazgos y pistas sin DOM.
+- `lib/puzzle-game.js` comparte únicamente inicio, pausa, salida, resultado y persistencia de Sudoku y Diferencias; sus interacciones y representaciones siguen en cada controlador.
 - `lib/choice-game.js` reutiliza el flujo de opciones, pausa, salida y progreso sin mezclar reglas de contenido.
 - `lib/mission-map-engine.js` define las áreas y reglas puras del filtro; `mission-map.js` actualiza el mapa sin modificar progreso.
 - `lib/tutorial-engine.js` contiene las guías y su avance; `tutorials.js` reutiliza un diálogo y registra únicamente tutoriales completados.
