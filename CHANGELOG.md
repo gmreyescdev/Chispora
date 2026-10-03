@@ -67,3 +67,4 @@ Los cambios importantes de Chispora se registran aquí. El proyecto utiliza un e
 - Acceso a sugerencias destacado al principio del panel familiar, antes de los ajustes y el progreso.
 - Tangram con siete piezas, tres dificultades, modelos de cuadrado, triángulo y rombo, giro de 45°, volteo y pistas sin límite de tiempo.
 - Catálogo de once juegos y constelación de 33 niveles, conservando el progreso anterior e incorporando Tangram al tutorial y al caché sin conexión.
+- Actualizaciones del caché descargan los recursos evitando copias HTTP obsoletas, para que aparezca el catálogo nuevo tras activarlas.

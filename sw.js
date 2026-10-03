@@ -1,7 +1,7 @@
 "use strict";
 
 const CACHE_PREFIX = "chispora-shell-";
-const CACHE_NAME = CACHE_PREFIX + "2026100202";
+const CACHE_NAME = CACHE_PREFIX + "2026100203";
 const SHELL_FILES = [
   "./",
   "./index.html",
@@ -48,7 +48,9 @@ const SHELL_FILES = [
 
 self.addEventListener("install", function (event) {
   event.waitUntil(caches.open(CACHE_NAME).then(function (cache) {
-    return cache.addAll(SHELL_FILES);
+    return cache.addAll(SHELL_FILES.map(function (file) {
+      return new Request(file, { cache: "reload" });
+    }));
   }));
 });
 

@@ -47,7 +47,7 @@ Giro, volteo y pistas están disponibles en los tres niveles para favorecer la e
 - Guarda en `chispora.mvp.v1` únicamente al completar toda la partida; un fallo de almacenamiento se informa en el resultado.
 - Pausa y salida cancelada mantienen la figura sin permitir interacciones. Escape reanuda; salida confirmada y navegación fuera de la partida limpian el estado temporal.
 - No existen temporizadores ni transiciones del juego que puedan avanzar durante la pausa.
-- Nueva versión completa del caché `chispora-shell-2026100202`, incluidos motor y controlador.
+- Nueva versión completa del caché `chispora-shell-2026100203`, incluidos motor y controlador; las solicitudes de instalación usan `cache: "reload"` para evitar copias HTTP obsoletas.
 - Contenido dinámico escapado al construir HTML; no hay recursos externos nuevos.
 
 ## Pruebas

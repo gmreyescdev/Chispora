@@ -10,15 +10,17 @@ const source = fs.readFileSync(path.join(root, "sw.js"), "utf8");
 const handlers = {};
 let cachedFiles = [];
 let skipped = false;
+const requestOptions = [];
 
 const context = {
   URL: URL,
   Promise: Promise,
+  Request: function (url, options) { this.url = url; requestOptions.push(options); },
   fetch: function () { return Promise.reject(new Error("sin red")); },
   caches: {
     open: function () {
       return Promise.resolve({
-        addAll: function (files) { cachedFiles = files.slice(); return Promise.resolve(); },
+        addAll: function (files) { cachedFiles = files.map(function (file) { return file.url; }); return Promise.resolve(); },
         match: function (request) {
           const value = typeof request === "string" ? request : request.url;
           return Promise.resolve(value === "./index.html" ? { source: "offline-index" } : null);
@@ -46,6 +48,8 @@ function waitFor(handler) {
 
 async function run() {
   await waitFor(handlers.install);
+  assert.equal(requestOptions.length, cachedFiles.length);
+  assert.ok(requestOptions.every(function (options) { return options.cache === "reload"; }), "la actualización debe evitar copias obsoletas de la caché HTTP");
   assert.ok(cachedFiles.includes("./index.html"));
   assert.ok(cachedFiles.includes("./app.webmanifest?v=2026093001"));
   assert.ok(cachedFiles.includes("./assets/icons/chispora-512.png"));

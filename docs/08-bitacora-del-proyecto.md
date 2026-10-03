@@ -544,3 +544,10 @@ El usuario informó que la página funcionó bien y pidió más juegos. Se acord
 ### Aprendizaje y próximo paso
 
 Los controles de selección y espacio evitan exigir precisión de arrastre, pero deben observarse con niños para confirmar que la relación entre número y forma se comprende. Probar Tangram en una sesión breve y en dispositivos táctiles reales antes de ampliar sus siluetas; mantener pendiente la síntesis de validación antes de la beta.
+
+## 2 de octubre de 2026 — Recuperación del catálogo actualizado
+
+- El usuario informó que Tangram no aparecía. En su origen habitual el navegador tenía diez tarjetas, aunque el servidor entregaba HTML con Tangram.
+- Se comprobó que incluso el caché recién instalado contenía el HTML anterior. Se cambió la instalación para solicitar todos los recursos con `cache: "reload"`, sin borrar datos de localStorage ni activar actualizaciones automáticamente.
+- Se añadió una comprobación de esa política en los tests del service worker y se incrementó la versión del caché a `2026100203`.
+- Verificación: suite completa de 18 archivos sin fallos, sintaxis de los dos JavaScript afectados correcta y catálogo de once tarjetas confirmado en `localhost:8765` tras activar la actualización. Se abrió la introducción de Tangram; no se borraron datos guardados.
