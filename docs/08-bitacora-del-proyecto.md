@@ -515,3 +515,32 @@ Comprobar la recepción, revisar ideas semanalmente y continuar las sesiones sup
 - Preparación recomendada: revisar el protocolo, usar uno o dos juegos en Explorador, limitar la actividad a 20 minutos y permitir detenerla en cualquier momento.
 - No se incorporan datos personales de participantes ni fichas individuales al repositorio.
 - Verificación: revisión de coherencia de la documentación; no se modificó código ni se requieren nuevas pruebas de motores.
+
+## 2 de octubre de 2026 — Tangram y ampliación a once juegos
+
+### Objetivo y contexto
+
+El usuario informó que la página funcionó bien y pidió más juegos. Se acordó empezar por Tangram para añadir composición espacial. Este comentario es informal y no constituye una síntesis de pruebas supervisadas.
+
+### Trabajo realizado
+
+- Motor geométrico puro con siete piezas tradicionales y modelos de cuadrado, triángulo y rombo.
+- Controlador independiente con selección, giro de 45°, volteo, colocación por espacio numerado y pistas.
+- Tres dificultades sin reloj ni penalizaciones; pausa, salida y resultado con continuación voluntaria.
+- Tutorial, filtro de Lógica, progreso familiar y constelación de 33 niveles, conservando datos anteriores.
+- Caché completo actualizado con motor y controlador, sin recursos externos.
+- Matriz de observación ampliada con S11 y S12 para Tangram; mínimo de seis sesiones para cubrir once juegos con uno o dos por sesión.
+
+### Verificación
+
+- Suite de 18 archivos sin fallos, incluidas seis pruebas deterministas nuevas y recuperación de los treinta niveles anteriores.
+- Sintaxis de nueve JavaScript comprobada y diff sin errores.
+- Flujo completo de las tres dificultades, pistas, giro, volteo, corrección, pausa/Escape y salida cancelada/confirmada.
+- Guardado únicamente al completar; conservación de perfil, ajustes y otro juego. Fallo de almacenamiento simulado informado sin pérdida de datos anteriores.
+- Vistas de 320, 375, 768 y 1280 px con texto grande y contraste alto sin desbordamiento; selección por Enter y controles con foco.
+- Caché de 41 recursos, actualización explícita sin pérdida de progreso y partida abierta con el servidor de auditoría detenido.
+- Lighthouse: 100 en accesibilidad, buenas prácticas y SEO con servidor disponible. Consola sin advertencias ni errores propios.
+
+### Aprendizaje y próximo paso
+
+Los controles de selección y espacio evitan exigir precisión de arrastre, pero deben observarse con niños para confirmar que la relación entre número y forma se comprende. Probar Tangram en una sesión breve y en dispositivos táctiles reales antes de ampliar sus siluetas; mantener pendiente la síntesis de validación antes de la beta.

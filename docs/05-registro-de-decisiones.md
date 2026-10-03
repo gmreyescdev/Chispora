@@ -232,6 +232,15 @@ Este archivo conserva las decisiones importantes y sus motivos. Se actualizará 
 - **Consecuencia:** requiere conexión y tratamiento externo de Google; no se envían perfil ni progreso, no se solicitan correos y las sugerencias nunca se publican automáticamente.
 - **Estado:** aceptada e implementada; recepción en Sheets confirmada por el propietario el 30 de septiembre de 2026.
 
+## D-030 — Tangram guiado con geometría y controles nativos
+
+- **Fecha:** 2 de octubre de 2026.
+- **Decisión:** introducir Tangram con siete piezas geométricas, espacios numerados, botones de selección, giro de 45° y volteo, y tres modelos sin reloj.
+- **Motivo:** el usuario pidió ampliar la variedad; la composición espacial añade una actividad distinta sin exigir destreza de arrastre ni precisión táctil.
+- **Alternativas consideradas:** arrastre libre en Canvas, respuestas de opción múltiple y siluetas sin guías.
+- **Consecuencia:** primera versión guiada, no editor libre. Se aceptan simetrías e intercambio de triángulos iguales. Los modelos geométricos son cuadrado, triángulo y rombo; ampliar siluetas dependerá de observaciones. No hay sonido, cronómetro ni transiciones pendientes. El progreso pasa de 30 a 33 niveles sin borrar avances anteriores.
+- **Estado:** implementada y comprobada técnicamente; validación infantil específica pendiente.
+
 ## Plantilla para próximas decisiones
 
 - **Fecha:**

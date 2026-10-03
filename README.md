@@ -14,7 +14,7 @@ Plataforma de juegos educativos clásicos para niños de aproximadamente 8 años
 
 ## Primera versión propuesta
 
-El catálogo actual incluye diez juegos:
+El catálogo actual incluye once juegos:
 
 1. Memorama.
 2. Operación misteriosa.
@@ -26,6 +26,7 @@ El catálogo actual incluye diez juegos:
 8. Programa al robot.
 9. Reloj de aventuras.
 10. Laboratorio curioso.
+11. Tangram.
 
 Cada juego tendrá tres niveles de dificultad y sesiones sugeridas de entre 5 y 10 minutos.
 
@@ -60,18 +61,19 @@ Cada juego tendrá tres niveles de dificultad y sesiones sugeridas de entre 5 y 
 - [Compactación visual e instrucciones](docs/26-compactacion-visual-e-instrucciones.md)
 - [Plan de evolución del producto](docs/27-plan-de-evolucion-del-producto.md)
 - [Organización del mapa por áreas](docs/28-organizacion-del-mapa-por-areas.md)
-- [Tutoriales breves para los diez juegos](docs/29-tutoriales-breves.md)
+- [Tutoriales breves](docs/29-tutoriales-breves.md)
 - [Accesibilidad ampliada](docs/30-accesibilidad-ampliada.md)
 - [Funcionamiento sin conexión e instalación](docs/31-funcionamiento-sin-conexion-e-instalacion.md)
 - [Protocolo de pruebas supervisadas](docs/32-protocolo-pruebas-supervisadas.md)
 - [Ficha anónima de observación](docs/33-ficha-observacion-anonima.md)
 - [Guía para sintetizar pruebas](docs/34-guia-sintesis-pruebas.md)
 - [Buzón privado de sugerencias](docs/35-buzon-de-sugerencias.md)
+- [Implementación y auditoría de Tangram](docs/36-implementacion-y-auditoria-tangram.md)
 - [Historial de versiones](CHANGELOG.md)
 
 ## Estado
 
-Fase 0 completada. Fase 1 técnica completada; la Fase 2 tiene diez juegos funcionales, recompensas visuales, accesibilidad ampliada e instalación opcional con funcionamiento sin conexión. El protocolo para pruebas supervisadas está preparado; las sesiones reales siguen pendientes.
+Fase 0 completada. Fase 1 técnica completada; la Fase 2 tiene once juegos funcionales, 33 niveles, recompensas visuales, accesibilidad ampliada e instalación opcional con funcionamiento sin conexión. El protocolo para pruebas supervisadas está preparado; la síntesis de observaciones reales sigue pendiente.
 
 - **Dominio:** `chispora.cl` adquirido por el propietario del proyecto.
 - **Marca CHISPORA:** disponibilidad preliminar informada; todavía no solicitada ni registrada en INAPI.

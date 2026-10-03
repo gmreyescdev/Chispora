@@ -14,7 +14,8 @@
     fraction: "[data-start-fraction]",
     robot: "[data-start-robot]",
     clock: "[data-clock-start]",
-    science: "[data-science-start]"
+    science: "[data-science-start]",
+    tangram: "[data-tangram-start]"
   };
   let tutorial = null;
 

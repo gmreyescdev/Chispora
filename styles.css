@@ -1736,6 +1736,43 @@ input:focus, select:focus {
   text-align: center;
 }
 
+.tangram-stage {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  gap: 1.2rem;
+  width: 100%;
+}
+
+.tangram-model, .tangram-workspace {
+  display: grid;
+  align-content: start;
+  gap: 0.75rem;
+  min-width: 0;
+  border: 2px solid var(--line);
+  border-radius: var(--radius-medium);
+  background: var(--surface-solid);
+  padding: clamp(0.8rem, 2vw, 1.2rem);
+}
+
+.tangram-model svg { display: block; width: 100%; max-height: 19rem; }
+.tangram-slot polygon { fill: var(--paper-deep); stroke: var(--ink); stroke-width: 0.035; }
+.tangram-slot.is-filled polygon { fill: var(--turquoise); }
+html[data-contrast="high"] .tangram-slot.is-filled polygon { fill: var(--yellow); }
+.tangram-slot text { fill: var(--ink); font-size: 0.32px; font-weight: 900; text-anchor: middle; dominant-baseline: middle; }
+.tangram-pieces, .tangram-slots { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.5rem; }
+.tangram-piece { display: flex; align-items: center; gap: 0.35rem; min-height: 4rem; border: 2px solid var(--ink); border-radius: var(--radius-small); background: var(--paper); padding: 0.4rem; color: var(--ink); font-weight: 700; text-align: left; }
+.tangram-piece svg { width: 3rem; height: 3rem; flex: 0 0 3rem; }
+.tangram-piece polygon { fill: var(--sky); stroke: var(--ink); stroke-width: 0.1; }
+.tangram-piece[aria-pressed="true"] { background: var(--yellow); box-shadow: inset 0 0 0 2px var(--ink); }
+.tangram-piece:disabled { opacity: 0.6; }
+.tangram-slots .button { padding: 0.65rem 0.4rem; font-size: 0.9rem; }
+.tangram-stage.is-paused { visibility: hidden; }
+
+@media (max-width: 760px) {
+  .tangram-stage { grid-template-columns: minmax(0, 1fr); }
+  .tangram-model svg { max-height: 14rem; }
+}
+
 .connection-status {
   width: fit-content;
   border: 2px solid var(--ink);

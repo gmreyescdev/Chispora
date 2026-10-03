@@ -8,7 +8,7 @@ Convertir fichas anónimas en decisiones de producto sin crear perfiles infantil
 
 Realiza una primera revisión después del piloto adulto y otra cuando:
 
-- los diez juegos hayan sido observados al menos una vez; o
+- los once juegos hayan sido observados al menos una vez; o
 - se detecte una barrera grave que deba corregirse antes de continuar.
 
 No esperes a completar todas las sesiones para corregir un problema de seguridad, privacidad, pérdida de progreso o control inaccesible.
